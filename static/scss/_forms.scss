@@ -9,7 +9,7 @@ input[type="tel"],
 input[type="password"],
 textarea,
 select {
-    background: blue none;
+    background: green none;
     border: .1rem solid color(border);
     @include border-radius(.4rem);
     color: color(text);
