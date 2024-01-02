@@ -43,21 +43,20 @@
         }
     }
 }
-
 @mixin transition($arguments...) {
     -webkit-transition: $arguments;
-    -moz-transition:    $arguments;
-    -ms-transition:     $arguments;
-    -o-transition:      $arguments;
-    transition:         $arguments;
+    -moz-transition: $arguments;
+    -ms-transition: $arguments;
+    -o-transition: $arguments;
+    transition: $arguments;
 }
 
 @mixin transform($arguments...) {
-    transform:          $arguments;
-    -ms-transform:      $arguments;
-    -moz-transform:     $arguments;
-    -webkit-transform:  $arguments;
-    -o-transform:       $arguments;
+    transform: $arguments;
+    -ms-transform: $arguments;
+    -moz-transform: $arguments;
+    -webkit-transform: $arguments;
+    -o-transform: $arguments;
 }
 
 @mixin background-size($arguments...) {
@@ -86,42 +85,10 @@
     -moz-border-radius: $arguments;
     border-radius: $arguments;
 }
-@mixin columns($arguments...) {
-    -webkit-columns: $arguments;
-    -moz-columns: $arguments;
-    columns: $arguments;
-}
 
-@mixin text-underline {
-    position: absolute;
-    bottom: -.5rem;
-    content: '';
-    height: 3px;
-}
-
-@mixin tags-fonts-style {
-    font-size: 1.2rem;
-    font-weight: 500;
-    letter-spacing: 1.1px;
-}
-
-@mixin tags($tags-color) {
-
-        &:first-of-type {
-           @include tags-fonts-style;
-
-            &::before {
-                @include text-underline;
-                height: 2px;
-                width: 16rem;
-                background: $tags-color;
-            }
-        }
-
-        &:last-of-type {
-            font-size: 1.2rem;
-            color: #414143;
-            font-weight: 300;
-        }
-
+@mixin inline-links {
+    font-size: 1.8rem;
+    color: color(primary);
+    text-decoration: underline;
+    text-underline-offset: .5rem;
 }
