@@ -1,61 +1,69 @@
-/**
- * dm-serif-display-regular - latin
- * https://gwfh.mranftl.com/fonts/dm-serif-display?subsets=latin
- */
+// Lato Regular
 @font-face {
-    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-    font-family: 'DM Serif Display';
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Lato';
     font-style: normal;
     font-weight: 400;
-    src: url('../fonts/dm-serif-display/dm-serif-display-v11-latin-regular.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+ */
-    url('../fonts/dm-serif-display/dm-serif-display-v11-latin-regular.woff') format('woff'); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    src: url('../fonts/lato/Lato-Regular.ttf') format('ttf'),
+        /* Chrome 36+, Opera 23+, Firefox 39+ */
+        url('../fonts/lato/lato-regular-webfont.woff') format('woff'),
+        url('../fonts/lato/lato-regular-webfont.woff2') format('woff2');
+    /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
-/**
- * poppins-300 - latin
- * https://gwfh.mranftl.com/fonts/poppins?subsets=latin
- */
+// Lato Black
 @font-face {
-    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-    font-family: 'Poppins';
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Lato Black';
     font-style: normal;
-    font-weight: 300;
-    src: url('../fonts/poppins/poppins-v20-latin-300.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+ */
-    url('../fonts/poppins/poppins-v20-latin-300.woff') format('woff'); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    font-weight: 900;
+    src: url('../fonts/lato/Lato-Black.ttf') format('ttf'),
+        /* Chrome 36+, Opera 23+, Firefox 39+ */
+        url('../fonts/lato/lato-black-webfont.woff') format('woff'),
+        url('../fonts/lato/lato-black-webfont.woff2') format('woff2');
+    /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
-/* poppins-regular - latin */
+
+// Lato Bold
 @font-face {
-    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 400;
-    src: url('../fonts/poppins/poppins-v20-latin-regular.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+ */
-    url('../fonts/poppins/poppins-v20-latin-regular.woff') format('woff'); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
-/* poppins-500 - latin */
-@font-face {
-    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 500;
-    src: url('../fonts/poppins/poppins-v20-latin-500.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+ */
-    url('../fonts/poppins/poppins-v20-latin-500.woff') format('woff'); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
-/* poppins-600 - latin */
-@font-face {
-    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 600;
-    src: url('../fonts/poppins/poppins-v20-latin-600.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+ */
-    url('../fonts/poppins/poppins-v20-latin-600.woff') format('woff'); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
-/* poppins-700 - latin */
-@font-face {
-    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-    font-family: 'Poppins';
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Lato Bold';
     font-style: normal;
     font-weight: 700;
-    src: url('../fonts/poppins/poppins-v20-latin-700.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+ */
-    url('../fonts/poppins/poppins-v20-latin-700.woff') format('woff'); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    src: url('../fonts/lato/Lato-Bold.ttf') format('ttf'),
+        /* Chrome 36+, Opera 23+, Firefox 39+ */
+        url('../fonts/lato/lato-bold-webfont.woff') format('woff'),
+        url('../fonts/lato/lato-bold-webfont.woff2') format('woff2');
+    /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+// Lato Light
+@font-face {
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Lato Light';
+    font-style: normal;
+    font-weight: 300;
+    src: url('../fonts/lato/Lato-Light.ttf') format('ttf'),
+        /* Chrome 36+, Opera 23+, Firefox 39+ */
+        url('../fonts/lato/lato-light-webfont.woff') format('woff'),
+        url('../fonts/lato/lato-light-webfont.woff2') format('woff2');
+    /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+// Lilita one regular
+@font-face {
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Lilita one';
+    font-style: normal;
+    font-weight: 300;
+    src: url('../fonts/lilita-one/LilitaOne-Regular.ttf') format('ttf'),
+        /* Chrome 36+, Opera 23+, Firefox 39+ */
+        url('../fonts/lilita-one/lilitaone-regular-webfont.woff') format('woff'),
+        url('../fonts/lilita-one/lilitaone-regular-webfont.woff2') format('woff2');
+    /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
