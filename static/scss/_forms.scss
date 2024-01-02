@@ -9,24 +9,16 @@ input[type="tel"],
 input[type="password"],
 textarea,
 select {
-    background: green none;
+    background: #fff none;
     border: .1rem solid color(border);
-    @include border-radius(.4rem);
+    border-radius: .5rem;
     color: color(text);
     display: block;
     font-size: 1.6rem;
     height: 3.5rem;
     padding: .5rem 1rem;
-    margin: 1.5rem 0;
-   width: 100%;
-
-    @include respond-to(from-sm) {
-        width: 35rem;
-    }
-
-    &:focus {
-        outline: color(border-dark) .2rem solid;
-    }
+    vertical-align: middle;
+    width: 100%;
 }
 
 input:disabled {
@@ -41,55 +33,25 @@ textarea {
 }
 
 button[type="button"],
-input[type="submit"],
-button{
-    appearance: none;
-    background: color(primary) ;
-    border: .1rem solid color(primary);
-    border-radius: $border-radius;
-    color: color(text-light);
+input[type="submit"] {
+    background: #fff none;
+    border: .1rem solid color(border);
+    border-radius: .5rem;
+    color: color(text);
     cursor: pointer;
     display: inline-block;
     font-size: 1.6rem;
     font-weight: normal;
-    padding: 1rem 8rem;
-    margin: 2rem 0 0 0;
+    margin-top: 1rem;
+    margin-bottom: 0;
+    padding: .5rem 1rem;
     text-align: center;
+    vertical-align: middle;
     white-space: nowrap;
-    text-transform: uppercase;
-    letter-spacing: .2rem;
-    min-width: 25.5rem;
-    width: auto;
-    //width: 100%;
 
     &:hover {
-        color: color(text-light);
-        background: color(primary-variation-1);
+        color: #333;
+        background-color: #ebebeb;
         border: .1rem solid #adadad;
-    }
-
-    @include respond-to(from-sm){
-        width: fit-content;
-    }
-
-}
-
-
-.newsletter {
-    padding: 2.5rem 0;
-    width: 100%;
-
-    &-form {
-        p{
-            line-height: $line-height;
-        }
-    }
-
-    figure {
-        margin: 1.5rem  0 0 0;
-
-        @include respond-to(from-lg) {
-            margin: 0;
-        }
     }
 }
