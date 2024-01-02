@@ -1,3 +1,4 @@
+
 h1 {
     font-family: 'Lato Black', sans-serif;
     font-size: 6.4rem;
@@ -86,12 +87,6 @@ button.button {
             color: color(hover);
         }
     }
-
-    &.tertiary {
-        background: color(tertiary);
-        border-color: color(tertiary);
-        color: #FFF;
-    }
 }
 
 p,
@@ -104,20 +99,6 @@ footer ol {
     line-height: 1.7;
 }
 
-.has-inline-color {
-
-    &.has-primary-color {
-        color: color(primary);
-    }
-
-    &.has-secondary-color {
-        color: color(secondary);
-    }
-
-    &.has-tertiary-color {
-        color: color(tertiary);
-    }
-}
 
 pre {
     background: #202124;

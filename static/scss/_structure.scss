@@ -4,7 +4,7 @@ html {
 }
 
 html, body {
-    font-family: $font-body;
+    font-family: $font;
     height: 100%;
     margin: 0;
     padding: 0;
@@ -17,7 +17,12 @@ body {
     height: auto; // Fixed sticky header#top
     min-height: 100%;
     overflow-x: hidden;
-    background: red;
+    background-color: color(background);
+}
+
+section {
+    padding: 5rem 0;
+    width: 100%;
 }
 
 img {
@@ -87,14 +92,14 @@ img {
 /**
  * Header
  */
-header#top {
+header {
     display: block;
     position: sticky;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 150; // higher z-index than nav.off-canvas-nav .menu
-    background: color(background-dark);
+    background: color(background-light);
     padding: 1.3rem 0;
 
     .row {
@@ -211,97 +216,28 @@ main {
     }
 }
 
+//Introduction
+.introduction-hero {
+    background: color(background-variation-2);
+    padding: 5rem;
+    position: relative;
+    width: 100%;
+    height: 100%;
 
+    img {
+      object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+}
 
+.introduction p {
+    columns: 3;
+}
 /**
  * Footer
  */
 
-footer#bottom {
-    background: color(background-dark);
-    flex-shrink: 0;
-    width: 100%;
-    color: color(text-light);
-    margin-top:7.5rem;
-    padding: 1rem 0;
-
-    a {
-        display: inline-block;
-        color: color(text-light);
-        padding: 1rem 0;
-        font-size: 1.4rem;
-    }
-
-    i {
-       padding-right: 1rem;
-    }
-
-    nav{
-        &.social-media,
-        &.footer-links {
-
-            ul{
-                padding: 0;
-                @include columns(2);
-
-                @include respond-to(from-md) {
-                    padding: 0 0 0 2rem;
-
-                    @include columns(1);
-
-                    li{
-                        width: fit-content;
-                    }
-
-                    @include respond-to(from-lg) {
-                        @include columns(2);
-                        padding: 0 0 0 4rem ;
-                    }
-                }
-            }
-        }
-    }
-
-    .footer-content {
-
-        h2 {
-            font-family: $font-body;
-            font-weight: 500;
-            font-size: 2.3rem;
-            margin-bottom: 0;
-        }
-
-        .tags {
-            font-weight: 700;
-            font-size: 1.4rem;
-            margin-top:  .5rem;
-        }
-
-        .footer-summary {
-            font-weight: 400;
-            line-height: $line-height;
-            font-size: 1.4rem;
-        }
-    }
-
-    .copyright {
-        ul {
-
-            padding: 0 0 1.6rem 0;
-            margin-bottom: 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            border-top: 1px solid color(border);
-
-            @include respond-to(from-md) {
-                flex-direction: row;
-            }
-
-            a {
-                opacity: 80%;
-                font-size: 1.2rem;
-            }
-        }
-    }
-}
+// footer#bottom {
+   
+// }
