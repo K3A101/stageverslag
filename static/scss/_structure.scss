@@ -264,6 +264,9 @@ main {
             padding: 0.5rem;
             @include border-radius($border-radius-extra-small);
         }
+        h2 {
+            height: 5.5rem;
+        }
 
         a, button {
             margin: 1.5rem 0;
@@ -314,6 +317,17 @@ main {
     overflow: hidden;
 }
 
+//learning goals
+.learn-goals {
+    background: color( background-variation-2);
+    position: relative;
+    overflow: hidden;
+    .row {
+        row-gap: 1.5rem;
+    }
+}
+
+//De bijlages
 .resources {
     padding: 2.5rem 0;
 
@@ -343,6 +357,14 @@ main {
      height: 60rem;
      left: -10%;
      bottom: -30%;
+ }
+ .circles-variation-2 {
+     background: radial-gradient(closest-corner, color(transparent) 0% 20%, color(background-variation-1) 20% 40%, color(transparent) 40%);
+     position: absolute;
+     width: 60rem;
+     height: 60rem;
+    right: -10%;
+        top: -30%;
  }
 //  Bron: go2people dienstenpagina; 
 
