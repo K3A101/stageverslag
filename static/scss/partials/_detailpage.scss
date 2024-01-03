@@ -1,0 +1,4 @@
+.content-img {
+    @include border-radius($border-radius-large);
+    @include box-shadow($box-shadow);
+}
