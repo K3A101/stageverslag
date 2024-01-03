@@ -265,7 +265,7 @@ main {
             @include border-radius($border-radius-extra-small);
         }
 
-        a {
+        a, button {
             margin: 1.5rem 0;
         }
     }
@@ -278,6 +278,8 @@ main {
         }
     }
 }
+
+
 //Introduction Hero
 .introduction-hero {
     background: color(background-variation-2);
@@ -310,10 +312,29 @@ main {
     color: color(background-light);
     position: relative;
     overflow: hidden;
-
-
 }
 
+.resources {
+    padding: 2.5rem 0;
+
+    ul {
+        row-gap: 1.5rem;
+        padding: 0;
+
+        li {
+            display: flex;
+            align-items: center;
+            
+            .learning-item {
+                width: 100%;
+              border-bottom: .2rem solid color(primary);
+            text-align: center;
+            padding: 2rem;  
+            }
+            
+        }
+    }
+}
 //circles 
  .circles {
      background: radial-gradient(closest-corner, color(transparent) 0% 20%, color(primary) 20% 40%, color(transparent) 40%);
