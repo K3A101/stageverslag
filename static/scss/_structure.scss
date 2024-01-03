@@ -305,6 +305,26 @@ main {
 }
 
 
+.company-description {
+    background: color(background-variation-3);
+    color: color(background-light);
+    position: relative;
+    overflow: hidden;
+
+
+}
+
+//circles 
+ .circles {
+     background: radial-gradient(closest-corner, color(transparent) 0% 20%, color(primary) 20% 40%, color(transparent) 40%);
+     position: absolute;
+     width: 60rem;
+     height: 60rem;
+     left: -10%;
+     bottom: -30%;
+ }
+//  Bron: go2people dienstenpagina; 
+
 // Word cloud
 .word-cloud {
     background: color(background-light);
