@@ -1,9 +1,9 @@
-
 html {
     font-size: 62.5%; // Set default px to 10px, so 16px is 1.6rem
 }
 
-html, body {
+html,
+body {
     font-family: $font;
     height: 100%;
     margin: 0;
@@ -50,8 +50,8 @@ img {
         clip-path: none;
         height: auto;
         width: auto;
-        left: .5rem;
-        top: .5rem;
+        left: 0.5rem;
+        top: 0.5rem;
         color: color(primary);
         border: 1px solid color(primary);
         padding: 1rem;
@@ -63,8 +63,8 @@ img {
  */
 
 @include respond-to(only-sm) {
-
-    .container, .container-sm {
+    .container,
+    .container-sm {
         padding-left: 3rem;
         padding-right: 3rem;
         max-width: none;
@@ -72,8 +72,8 @@ img {
 }
 
 @include respond-to(only-md) {
-
-    .container, .container-md {
+    .container,
+    .container-md {
         padding-left: 3rem;
         padding-right: 3rem;
         max-width: none;
@@ -81,8 +81,8 @@ img {
 }
 
 @include respond-to(only-lg) {
-
-    .container, .container-lg {
+    .container,
+    .container-lg {
         padding-left: 3rem;
         padding-right: 3rem;
         max-width: none;
@@ -114,10 +114,11 @@ header {
         }
 
         a {
-            padding:  2rem;
+            padding: 2rem;
 
-            &:nth-child(2) { // 'mijn frankrijk' with heart icon
-               padding: 2rem 2rem 2rem .4rem;
+            &:nth-child(2) {
+                // 'mijn frankrijk' with heart icon
+                padding: 2rem 2rem 2rem 0.4rem;
             }
         }
     }
@@ -129,12 +130,11 @@ header {
 
 main {
     flex: 1 0 auto;
-    min-height: .1rem; // This fixes the huge white space on IE11
+    min-height: 0.1rem; // This fixes the huge white space on IE11
 }
 
 .wp-block-g2p-wrapper,
 .wp-block-g2p-wrapper-inner {
-
     &.no-padding-top {
         padding-top: 0 !important;
     }
@@ -144,28 +144,48 @@ main {
     }
 
     @include respond-to(up-to-sm) {
-        &.xs-no-padding-top { padding-top: 0 !important; }
-        &.xs-no-padding-bottom { padding-bottom: 0 !important; }
+        &.xs-no-padding-top {
+            padding-top: 0 !important;
+        }
+        &.xs-no-padding-bottom {
+            padding-bottom: 0 !important;
+        }
     }
 
     @include respond-to(only-md) {
-        &.md-no-padding-top { padding-top: 0 !important; }
-        &.md-no-padding-bottom { padding-bottom: 0 !important; }
+        &.md-no-padding-top {
+            padding-top: 0 !important;
+        }
+        &.md-no-padding-bottom {
+            padding-bottom: 0 !important;
+        }
     }
 
     @include respond-to(only-lg) {
-        &.lg-no-padding-top { padding-top: 0 !important; }
-        &.lg-no-padding-bottom { padding-bottom: 0 !important; }
+        &.lg-no-padding-top {
+            padding-top: 0 !important;
+        }
+        &.lg-no-padding-bottom {
+            padding-bottom: 0 !important;
+        }
     }
 
     @include respond-to(only-xl) {
-        &.xl-no-padding-top { padding-top: 0 !important; }
-        &.xl-no-padding-bottom { padding-bottom: 0 !important; }
+        &.xl-no-padding-top {
+            padding-top: 0 !important;
+        }
+        &.xl-no-padding-bottom {
+            padding-bottom: 0 !important;
+        }
     }
 
     @include respond-to(only-xxl) {
-        &.xxl-no-padding-top { padding-top: 0 !important; }
-        &.xxl-no-padding-bottom { padding-bottom: 0 !important; }
+        &.xxl-no-padding-top {
+            padding-top: 0 !important;
+        }
+        &.xxl-no-padding-bottom {
+            padding-bottom: 0 !important;
+        }
     }
 
     > .container > .row > .col-12 > :first-child {
@@ -178,22 +198,18 @@ main {
 }
 
 .wp-block-g2p-wrapper {
-
     @include respond-to(from-sm) {
         padding: 2.5rem 0;
         margin: 0 auto;
         max-width: 1140px;
-
     }
 
     .wp-block-columns {
-
         @include respond-to(up-to-md) {
             flex-wrap: wrap;
         }
 
         .wp-block-column {
-
             @include respond-to(up-to-md) {
                 flex-basis: 100% !important;
             }
@@ -206,7 +222,6 @@ main {
 }
 
 .wp-block-g2p-wrapper-inner {
-
     > :first-child {
         margin-top: 0;
     }
@@ -231,18 +246,37 @@ main {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            @include transition($transition);
         }
-
     }
 
-.card-content {
-    position: absolute;
-    bottom: 0;
-    padding: 1.5rem;
-    background: color(background-light);
-    width: 100%;
-}
+    .card-content {
+        position: absolute;
+        bottom: 0;
+        padding: 1.5rem;
+        background: color(background-light);
+        width: 100%;
+        @include transform(translateY(8.5rem));
+        @include transition($transition);
 
+        .category {
+            background: color(background-variation-2);
+            padding: 0.5rem;
+            @include border-radius($border-radius-extra-small);
+        }
+
+        a {
+            margin: 1.5rem 0;
+        }
+    }
+    &:hover {
+        img {
+            @include transform(scale(1.1));
+        }
+        .card-content {
+            @include transform(translateY(0));
+        }
+    }
 }
 //Introduction
 .introduction-hero {
@@ -253,7 +287,7 @@ main {
     height: 100%;
 
     img {
-      object-fit: cover;
+        object-fit: cover;
         width: 100%;
         height: 100%;
     }
@@ -262,10 +296,27 @@ main {
 .introduction p {
     columns: 2;
 }
+
+
+// Word cloud
+.word-cloud {
+    background: color(background-light);
+    padding: 1.6rem;
+    @include border-radius($border-radius-small);
+    @include box-shadow($box-shadow);
+    width: auto;
+    display: inline-block;
+    font-family: 'Lato Light', sans-serif;
+
+    word-break: break-word;
+    letter-spacing: .1rem;
+    font-size: 1.6rem;
+    text-align: center;
+}
 /**
  * Footer
  */
 
 // footer#bottom {
-   
+
 // }
