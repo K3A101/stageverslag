@@ -151,22 +151,27 @@
                         </div>
                     </li>
                     <li class=" col-12 col-md-8 ">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore tenetur excepturi at, beatae,
-                            voluptates blanditiis, consectetur dignissimos inventore provident deleniti ut perspiciatis
-                            necessitatibus? Accusamus iusto nulla impedit quaerat maxime, similique saepe culpa dolorum
-                            qui ullam aut illo harum quasi sit illum, itaque, vel recusandae rerum explicabo beatae
-                            architecto sapiente autem. Molestiae necessitatibus numquam assumenda repudiandae amet omnis
-                            maiores impedit quis illum ad deleniti debitis corrupti non, magnam beatae. Tempora
-                            veritatis autem, quasi dolorum sit commodi maxime libero dolores magni. Voluptatum culpa
-                            architecto atque quis earum, quo laudantium voluptates facere fuga rem numquam at tempore,
-                            itaque necessitatibus ad est sint esse.</p>
+                        <p>De persoon die mij heeft begeleidt tijdens mij stage is Roy Csuka. Roy werkt als front-end developer bij go2people. Deze
+                        functie doet hij al voor twee jaar. Hij heeft CMD afgestudeerd en daarvoor op het Media college Interactief vormgeving
+                        gevolgd op het MBO. Roy heeft meerdere stages gelopen en aantal jaren gewerkt voor Go2people bij andere website
+                        bouwbedrijven.
+                        Zijn passie was altijd front-end,
+                        
+                        Als front-end developer bij go2people hou hij bezig met verschillende werkzaamheden. Hij werkt voornamelijk aan de
+                        technische vormgeving van websites. Denk vooral html, CSS enzovoorts. Verder geeft hij samen met backend developers
+                        trainingen aan klanten, zodat de klanten weten hoe ze met hun website kan werken. Als laatste doet hij wat websites
+                        onderhoud, wanneer klanten problemen hebben met hun websites.
+                        
+                        Daarnaast begeleidt hij stagiaires werkzaamheden. Vragen van stagiaires beantwoorden en ondersteuning bieden,
+                        beoordelingsgesprekken uitvoeren en stage beoordelen. Wat ik fijn vind van hem is dat hij dezelfde proces heb meegemaakt
+                        dus het zal makkelijker om mij te gaan begeleider.</p>
                     </li>
                 </ul>
             </div>
         </section>
         <section class="team-members">
             <div class="container">
-                <h2>Het Team</h2>
+                <h2>Andere coaches</h2>
         
                 <ul class="row team-members-list">
         
@@ -174,7 +179,7 @@
                     <li class=" col-12 col-sm-6 col-md-4 col-lg-4">
                         <div class="member">
                             <div class="thumbnail-container">
-                                <img src="{{ member.thumbnail }}" alt="foto van  {{ member.post_title }}">
+                                <img src="./static/images/Niels-team-go2people.png" alt="foto van Niels">
                             </div>
                             <div class="member-content">
                                 <div class="contact-icon">
@@ -187,8 +192,50 @@
                                         <i class="fa-solid fa-envelope fa-xl" style="color: #d20056;"></i>
                                     </a>
                                 </div>
-                                <h2>{{ member.post_title }}</h2>
-                                <h3>{{ term.name }}</h3>
+                                <h3>Niels Lust</h3>
+                                <p>Backend developer</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class=" col-12 col-sm-6 col-md-4 col-lg-4">
+                        <div class="member">
+                            <div class="thumbnail-container">
+                                <img src="./static/images/Niels-team-go2people.png" alt="foto van Niels">
+                            </div>
+                            <div class="member-content">
+                                <div class="contact-icon">
+                                    <a href="{{ member.discord.url }}">
+                                        <i class="fa-brands fa-discord fa-xl" style="color: #d20056;"></i>
+        
+                                    </a>
+                                    <a href="mailto:{{ member.team_member_email }}" title="{{ member.team_member_email }}">
+                                        <div class="label-on-hover"> {{ member.team_member_email }}</div>
+                                        <i class="fa-solid fa-envelope fa-xl" style="color: #d20056;"></i>
+                                    </a>
+                                </div>
+                                <h3>Denise Liebregts</h3>
+                                <p>Project Manager</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class=" col-12 col-sm-6 col-md-4 col-lg-4">
+                        <div class="member">
+                            <div class="thumbnail-container">
+                                <img src="./static/images/Niels-team-go2people.png" alt="foto van Niels">
+                            </div>
+                            <div class="member-content">
+                                <div class="contact-icon">
+                                    <a href="{{ member.discord.url }}">
+                                        <i class="fa-brands fa-discord fa-xl" style="color: #d20056;"></i>
+        
+                                    </a>
+                                    <a href="mailto:{{ member.team_member_email }}" title="{{ member.team_member_email }}">
+                                        <div class="label-on-hover"> {{ member.team_member_email }}</div>
+                                        <i class="fa-solid fa-envelope fa-xl" style="color: #d20056;"></i>
+                                    </a>
+                                </div>
+                                <h3>Zoe Jane Lub</h3>
+                                <p>UX designer</p>
                             </div>
                         </div>
                     </li>
@@ -210,6 +257,87 @@
                                 <article class="card-content">
                                     <h2>Leerdoel 1: Nieuwe framework leren</h2>
                                     <small class="category">Competentie: Prototype en uitwerken</small>
+                                    <div class="hover-content">
+                                        <a class="button primary" href="./leerdoelen/leerdoel-1.html">Lees meer</a>
+                                    </div>
+                                </article>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="card">
+                            <a href="./leerdoelen/leerdoel-1.html">
+                                <figure class="img-container">
+                                    <img src="./static/images/laptop-with-code-photo.jpeg" alt="Uitgelichte afbeelding">
+                                </figure>
+                                <article class="card-content">
+                                    <h2>Leerdoel 2: Samen ontwerpen</h2>
+                                    <small class="category">Competentie: Samen ontwerpen</small>
+                                    <div class="hover-content">
+                                        <a class="button primary" href="./leerdoelen/leerdoel-1.html">Lees meer</a>
+                                    </div>
+                                </article>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="card">
+                            <a href="./leerdoelen/leerdoel-1.html">
+                                <figure class="img-container">
+                                    <img src="./static/images/laptop-with-code-photo.jpeg" alt="Uitgelichte afbeelding">
+                                </figure>
+                                <article class="card-content">
+                                    <h2>Leerdoel 3: Prototypen met code</h2>
+                                    <small class="category">Competentie: Prototype en uitwerken</small>
+                                    <div class="hover-content">
+                                        <a class="button primary" href="./leerdoelen/leerdoel-1.html">Lees meer</a>
+                                    </div>
+                                </article>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="card">
+                            <a href="./leerdoelen/leerdoel-1.html">
+                                <figure class="img-container">
+                                    <img src="./static/images/laptop-with-code-photo.jpeg" alt="Uitgelichte afbeelding">
+                                </figure>
+                                <article class="card-content">
+                                    <h2>Leerdoel 4: Oplossingen bedenken</h2>
+                                    <small class="category"> Competentie: Verbeelden en conceptualiseren</small>
+                                    <div class="hover-content">
+                                        <a class="button primary" href="./leerdoelen/leerdoel-1.html">Lees meer</a>
+                                    </div>
+                                </article>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="card">
+                            <a href="./leerdoelen/leerdoel-1.html">
+                                <figure class="img-container">
+                                    <img src="./static/images/laptop-with-code-photo.jpeg" alt="Uitgelichte afbeelding">
+                                </figure>
+                                <article class="card-content">
+                                    <h2>Leerdoel 5: Prototype presenteren aan developers</h2>
+                                    <small class="category"> Competentie: Georganiseerd en profesioneel
+                                    ontwerpen.</small>
+                                    <div class="hover-content">
+                                        <a class="button primary" href="./leerdoelen/leerdoel-1.html">Lees meer</a>
+                                    </div>
+                                </article>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="card">
+                            <a href="./leerdoelen/leerdoel-1.html">
+                                <figure class="img-container">
+                                    <img src="./static/images/laptop-with-code-photo.jpeg" alt="Uitgelichte afbeelding">
+                                </figure>
+                                <article class="card-content">
+                                    <h2>Leerdoel 6: Prototypes testen</h2>
+                                    <small class="category"> Competentie: Evalueren</small>
                                     <div class="hover-content">
                                         <a class="button primary" href="./leerdoelen/leerdoel-1.html">Lees meer</a>
                                     </div>
