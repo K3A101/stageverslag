@@ -278,7 +278,7 @@ main {
         }
     }
 }
-//Introduction
+//Introduction Hero
 .introduction-hero {
     background: color(background-variation-2);
     padding: 5rem;
@@ -290,6 +290,13 @@ main {
         object-fit: cover;
         width: 100%;
         height: 100%;
+    }
+
+    .metadata {
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
     }
 }
 
