@@ -33,10 +33,45 @@
                         <ul>
                             <li><a href="./index.html">Homepagina</a></li>
                             <li>
+                                <a target="_blank" href="#">Inhoudspagina</a>
+                                <div class="toggle-button"><i class="fas fa-chevron-down"></i></div>
+                                <ul>
+                                    <li>
+                                        <a target="_blank" href="#">Inleiding
+                                            <i class="fa-solid fa-arrow-up-right-from-square fa-xs link-icons"></i></a>
+                                    </li>
+                                    <li>
+                                        <a target="_blank" href="#">Over go2people
+                                            <i class="fa-solid fa-arrow-up-right-from-square fa-xs link-icons"></i></a>
+                                    </li>
+                                    <li>
+                                        <a target="_blank" href="#">Stagebegeleider
+                                            <i class="fa-solid fa-arrow-up-right-from-square fa-xs link-icons"></i></a>
+                                    </li>
+                                    <li>
+                                        <a target="_blank" href="#">Leerdoelen
+                                            <i class="fa-solid fa-arrow-up-right-from-square fa-xs link-icons"></i></a>
+                                    </li>
+                                    <li>
+                                        <a target="_blank" href="#">Werkzaamheden
+                                            <i class="fa-solid fa-arrow-up-right-from-square fa-xs link-icons"></i></a>
+                                    </li>
+                                    <li>
+                                        <a target="_blank" href="#">Reflectie
+                                            <i class="fa-solid fa-arrow-up-right-from-square fa-xs link-icons"></i></a>
+                                    </li>
+                                    <li>
+                                        <a target="_blank" href="#">Bijlage
+                                            <i class="fa-solid fa-arrow-up-right-from-square fa-xs link-icons"></i></a>
+                                    </li>
+                                </ul>
+                              
+                            </li>
+                            <li>
                                 <a target="_blank" href="#">Leerdoelen</a>
                                 <div class="toggle-button"><i class="fas fa-chevron-down"></i></div>
                                 <ul>
-                                    <li class="{{ childItem.classes|join(' ') }}{{ extra_classes }}">
+                                    <li>
                                         <a target="_blank" href="#">Leerdoel 1
                                             <i class="fa-solid fa-arrow-up-right-from-square fa-xs link-icons"></i></a>
                                     </li>
@@ -47,7 +82,7 @@
                                 <a target="_blank" href="#">Stageopdrachten</a>
                                 <div class="toggle-button"><i class="fas fa-chevron-down"></i></div>
                                 <ul>   
-                                    <li class="{{ childItem.classes|join(' ') }}{{ extra_classes }}">
+                                    <li>
                                         <a target="_blank" href="#">Opdracht 1
                                             <i class="fa-solid fa-arrow-up-right-from-square fa-xs link-icons"></i></a>
                                     </li>  
@@ -86,7 +121,7 @@
                     </div>
                     <div class="col-12 col-md-6">
                         <div class="img-container">
-                            <img src="./static/images/go2people-team.jpeg" alt="Afbeelding van go2people">
+                            <img class="content-img-transparent" src="./static/images/4stagiars-met-monitor.png" alt="Afbeelding van go2people">
                         </div>
                     </div>
                 </div>
@@ -97,7 +132,8 @@
             <div class="container">
                 <div class="row">
                     <h2 class="large">Inleiding</h2>
-                    <p>
+                    <article>
+                         <p>
                         Het was ergens voor de zomervakantie, ik was helemaal op zoek naar een afstudeerstage voor mijn
                         opleiding bij CMD. Tot
                         nu toe had ik mijn cv en portfolio af en heb een LinkedIn bericht geschreven. En nu was het tijd
@@ -114,8 +150,17 @@
                         sollicitatiegesprek en die
                         ging goed en zo ben ik aangenomen bij go2people.
                     </p>
+                    </article>
+                   
                 </div>
             </div>
+        </section>
+        <section class="job-title">
+            <div class="container">
+                <h2 class="large">Front-end developer stagiair</h2>
+                
+            </div>
+
         </section>
 
         <section class="company-description">
@@ -418,6 +463,8 @@
                             </div>
                             <div class="swiper-slide card">Slide 2</div>
                             <div class="swiper-slide card">Slide 3</div>
+                            <div class="swiper-slide card">Slide 3</div>
+                            <div class="swiper-slide card">Slide 3</div>
                             ...
                         </div>
                         <!-- If we need pagination -->
@@ -533,7 +580,7 @@
                     <a target="_blank" href="#">Leerdoelen</a>
                     <div class="toggle-button"><i class="fas fa-chevron-down"></i></div>
                     <ul>
-                        <li class="{{ childItem.classes|join(' ') }}{{ extra_classes }}">
+                        <li>
                             <a target="_blank" href="#">Leerdoel 1
                                 <i class="fa-solid fa-arrow-up-right-from-square fa-xs link-icons"></i></a>
                         </li>
@@ -544,7 +591,7 @@
                     <a target="_blank" href="#">Stageopdrachten</a>
                     <div class="toggle-button"><i class="fas fa-chevron-down"></i></div>
                     <ul>
-                        <li class="{{ childItem.classes|join(' ') }}{{ extra_classes }}">
+                        <li>
                             <a target="_blank" href="#">Opdracht 1
                                 <i class="fa-solid fa-arrow-up-right-from-square fa-xs link-icons"></i></a>
                         </li>
