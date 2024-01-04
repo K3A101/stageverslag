@@ -8,6 +8,7 @@ body {
     height: 100%;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 
 body {
@@ -320,6 +321,10 @@ main {
     color: color(background-light);
     position: relative;
     overflow: hidden;
+
+    p {
+        position: relative;
+    }
 }
 
 //learning goals

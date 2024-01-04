@@ -1,41 +1,86 @@
-
-
 .columns-spacing-left {
-        padding: 0 0 0 2.5rem;
+    padding: 0 0 0 2.5rem;
 
-        h2 {
-            margin: 2rem 0 1rem 0;
-        }
+    h2 {
+        margin: 2rem 0 1rem 0;
+    }
 }
 
 .columns-spacing-right {
-        padding: 0 2.5rem 0 0;
+    padding: 0 2.5rem 0 0;
 
-        h2 {
-            margin: 2rem 0 1rem 0;
-        }
+    h2 {
+        margin: 2rem 0 1rem 0;
     }
+}
 
 // Algemene
-.custom-bullet-point{
-            list-style: none;
-            font-size: 1.7rem;
-            position: relative;
-            padding-left: 2rem;
-    
-            &::before {
-                content: "\2022";
-                position: absolute;
-                left: 0;
-                top: 0;
-                font-weight: bold;
-                display: inline-block;
-                width: 1rem;
-                color: color(primary);
-                margin: 0 .5rem 0 0;
+.custom-bullet-point {
+    list-style: none;
+    font-size: 1.7rem;
+    position: relative;
+    padding-left: 2rem;
+
+    &::before {
+        content: "\2022";
+        position: absolute;
+        left: 0;
+        top: 0;
+        font-weight: bold;
+        display: inline-block;
+        width: 1rem;
+        color: color(primary);
+        margin: 0 0.5rem 0 0;
+    }
+}
+
+.languages-list {
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1.3rem;
+    flex-wrap: wrap;
+    width: 100%;
+
+
+    li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+        background: color(background-light);
+        @include box-shadow($box-shadow);
+        @include border-radius($border-radius-small);
+        width: 100%;
+        height: 100%;
+        padding: 3rem 1rem;
+     
+
+        .img-container {
+            width: 6rem;
+            height: 6rem;
+
+            img {
+                object-fit: contain;
+                width: 100%;
+                height: 100%;
             }
         }
 
+        span {
+            font-family: "Lato", sans-serif;
+            font-size: 1.6rem;
+            text-align: center;
+        }
+
+        &:hover {
+            span {
+                color: color(primary);
+            }
+        }
+    }
+}
 
 .content-img {
     @include border-radius($border-radius-large);
@@ -53,5 +98,17 @@
 
     &-variation-2 {
         color: color(background-variation-1);
+    }
+}
+
+@include respond-to(from-sm) {
+        .languages-list{
+            flex-direction: row;
+        
+            li {
+                width: 16rem;
+                height: 100%;
+                padding: 3rem 1rem;
+            }
     }
 }
