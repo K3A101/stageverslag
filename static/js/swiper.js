@@ -1,6 +1,10 @@
 const swiper = new Swiper(".swiper", {
     direction: "horizontal",
     loop: true,
+    autoplay: true,
+    autoplay: {
+        delay: 5000,
+    },
     centeredSlides: true,
     grabCursor: true,
     spaceBetween: 15,
