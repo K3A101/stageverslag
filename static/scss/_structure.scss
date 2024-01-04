@@ -27,6 +27,11 @@ section {
 
 img {
     max-inline-size: 100%;
+
+    &.content-img {
+            @include border-radius($border-radius-large);
+            @include box-shadow($box-shadow);
+        }
 }
 
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
