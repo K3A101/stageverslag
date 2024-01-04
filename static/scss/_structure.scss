@@ -32,6 +32,10 @@ img {
     &.content-img {
             @include border-radius($border-radius-large);
             @include box-shadow($box-shadow);
+
+            &-transparent {
+                filter: drop-shadow(2px 1px 4px rgba(82, 138, 180, 0.25));
+            }
         }
 }
 
