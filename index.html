@@ -7,94 +7,103 @@
     <title>Homepagina</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="static/css/style.css">    
+    <link rel="stylesheet" href="static/css/style.css">
     <link rel="stylesheet" href="static/lib/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="static/lib/fontawesome/css/all.min.css">
     <script src="https://kit.fontawesome.com/c37b867389.js" crossorigin="anonymous"></script>
-    <script defer src="static/js/swiper.js"></script> 
+    <script defer src="static/js/swiper.js"></script>
 </head>
 
 <body>
     <header id="header">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-6 col-md-2">
-                <a href="./index.html" class="logo">
-                    <span>Stageverslag</span>
-                </a>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-6 col-md-2">
+                    <a href="./index.html" class="logo">
+                        <span>Stageverslag</span>
+                    </a>
+                </div>
+                <div class="col-6 col-md-10">
+                    <button class="menu-button">
+                        <div id="nav-toggle"><span></span></div>
+                        <span class="button-text"></span>
+                    </button>
+                    <nav class="header-nav">
+                        <div class="menu">
+                            <ul>
+                                <li><a href="./index.html">Homepagina</a></li>
+                                <li>
+                                    <a target="_blank" href="#">Inhoudspagina</a>
+                                    <div class="toggle-button"><i class="fas fa-chevron-down"></i></div>
+                                    <ul>
+                                        <li>
+                                            <a target="" href="#">Inleiding
+                                                <i
+                                                    class="fa-solid fa-arrow-up-right-from-square fa-xs link-icons"></i></a>
+                                        </li>
+                                        <li>
+                                            <a target="" href="#company-description">Over go2people
+                                                <i
+                                                    class="fa-solid fa-arrow-up-right-from-square fa-xs link-icons"></i></a>
+                                        </li>
+                                        <li>
+                                            <a target="" href="#intern-supervisor">Stagebegeleider
+                                                <i
+                                                    class="fa-solid fa-arrow-up-right-from-square fa-xs link-icons"></i></a>
+                                        </li>
+                                        <li>
+                                            <a target="" href="#learn-goals">Leerdoelen
+                                                <i
+                                                    class="fa-solid fa-arrow-up-right-from-square fa-xs link-icons"></i></a>
+                                        </li>
+                                        <li>
+                                            <a target="" href="#">Werkzaamheden
+                                                <i
+                                                    class="fa-solid fa-arrow-up-right-from-square fa-xs link-icons"></i></a>
+                                        </li>
+                                        <li>
+                                            <a target="" href="#reflection">Reflectie
+                                                <i
+                                                    class="fa-solid fa-arrow-up-right-from-square fa-xs link-icons"></i></a>
+                                        </li>
+                                        <li>
+                                            <a target="" href="#resources">Bijlage
+                                                <i
+                                                    class="fa-solid fa-arrow-up-right-from-square fa-xs link-icons"></i></a>
+                                        </li>
+                                    </ul>
+
+                                </li>
+                                <li>
+                                    <a target="_blank" href="#">Leerdoelen</a>
+                                    <div class="toggle-button"><i class="fas fa-chevron-down"></i></div>
+                                    <ul>
+                                        <li>
+                                            <a target="_blank" href="#">Leerdoel 1
+                                                <i
+                                                    class="fa-solid fa-arrow-up-right-from-square fa-xs link-icons"></i></a>
+                                        </li>
+                                    </ul>
+
+                                </li>
+                                <li>
+                                    <a target="_blank" href="#">Stageopdrachten</a>
+                                    <div class="toggle-button"><i class="fas fa-chevron-down"></i></div>
+                                    <ul>
+                                        <li>
+                                            <a target="_blank" href="#">Opdracht 1
+                                                <i
+                                                    class="fa-solid fa-arrow-up-right-from-square fa-xs link-icons"></i></a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
             </div>
-            <div class="col-6 col-md-10">
-                <button class="menu-button">
-                    <div id="nav-toggle"><span></span></div>
-                    <span class="button-text"></span>
-                </button>
-                <nav class="header-nav">
-                    <div class="menu">
-                        <ul>
-                            <li><a href="./index.html">Homepagina</a></li>
-                            <li>
-                                <a target="_blank" href="#">Inhoudspagina</a>
-                                <div class="toggle-button"><i class="fas fa-chevron-down"></i></div>
-                                <ul>
-                                    <li>
-                                        <a target="_blank" href="#">Inleiding
-                                            <i class="fa-solid fa-arrow-up-right-from-square fa-xs link-icons"></i></a>
-                                    </li>
-                                    <li>
-                                        <a target="_blank" href="#">Over go2people
-                                            <i class="fa-solid fa-arrow-up-right-from-square fa-xs link-icons"></i></a>
-                                    </li>
-                                    <li>
-                                        <a target="_blank" href="#">Stagebegeleider
-                                            <i class="fa-solid fa-arrow-up-right-from-square fa-xs link-icons"></i></a>
-                                    </li>
-                                    <li>
-                                        <a target="_blank" href="#">Leerdoelen
-                                            <i class="fa-solid fa-arrow-up-right-from-square fa-xs link-icons"></i></a>
-                                    </li>
-                                    <li>
-                                        <a target="_blank" href="#">Werkzaamheden
-                                            <i class="fa-solid fa-arrow-up-right-from-square fa-xs link-icons"></i></a>
-                                    </li>
-                                    <li>
-                                        <a target="_blank" href="#">Reflectie
-                                            <i class="fa-solid fa-arrow-up-right-from-square fa-xs link-icons"></i></a>
-                                    </li>
-                                    <li>
-                                        <a target="_blank" href="#">Bijlage
-                                            <i class="fa-solid fa-arrow-up-right-from-square fa-xs link-icons"></i></a>
-                                    </li>
-                                </ul>
-                              
-                            </li>
-                            <li>
-                                <a target="_blank" href="#">Leerdoelen</a>
-                                <div class="toggle-button"><i class="fas fa-chevron-down"></i></div>
-                                <ul>
-                                    <li>
-                                        <a target="_blank" href="#">Leerdoel 1
-                                            <i class="fa-solid fa-arrow-up-right-from-square fa-xs link-icons"></i></a>
-                                    </li>
-                                </ul>
-                              
-                            </li>
-                            <li>
-                                <a target="_blank" href="#">Stageopdrachten</a>
-                                <div class="toggle-button"><i class="fas fa-chevron-down"></i></div>
-                                <ul>   
-                                    <li>
-                                        <a target="_blank" href="#">Opdracht 1
-                                            <i class="fa-solid fa-arrow-up-right-from-square fa-xs link-icons"></i></a>
-                                    </li>  
-                                </ul>                             
-                            </li>                      
-                        </ul>
-                    </div>
-                </nav>
-            </div>
+
         </div>
-    
-    </div>
     </header>
     <main id="content">
         <section class="introduction-hero">
@@ -121,70 +130,96 @@
                     </div>
                     <div class="col-12 col-md-6">
                         <div class="img-container">
-                            <img class="content-img-transparent" src="./static/images/4stagiars-met-monitor.png" alt="Afbeelding van go2people">
+                            <img class="content-img-transparent" src="./static/images/4stagiars-met-monitor.png"
+                                alt="Afbeelding van go2people">
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="introduction">
+        <section id="introduction" class="introduction">
             <div class="container">
                 <div class="row">
                     <h2 class="large">Inleiding</h2>
                     <article>
-                         <p>
-                        Het was ergens voor de zomervakantie, ik was helemaal op zoek naar een afstudeerstage voor mijn
-                        opleiding bij CMD. Tot
-                        nu toe had ik mijn cv en portfolio af en heb een LinkedIn bericht geschreven. En nu was het tijd
-                        om te solliciteren.
-                        Voor mij afstudeerstage wilde ik frontend development doen want ik vond leuk. Alleen de
-                        sollicitaties waren een beetje
-                        moeilijk omdat meeste van de sollicitaties waren technische testen die ik niet helemaal begreep.
-                        En dan heb ik gehoord
-                        dat er weer een stagediving georganiseerd is, maar ik kon niet deelnemen. Go2people waren een
-                        van de bedrijven die
-                        aanwezig waren bij de stagediving. Dus wat ik heb gedaan, ik ging direct naar hun vacature
-                        pagina en direct bij hun
-                        gesolliciteerd en mijn portfolio en CV gestuurd naar Laura tool. En daarna ging ik naar het
-                        sollicitatiegesprek en die
-                        ging goed en zo ben ik aangenomen bij go2people.
-                    </p>
+                        <p>
+                            Het was ergens voor de zomervakantie, ik was helemaal op zoek naar een afstudeerstage voor
+                            mijn
+                            opleiding bij CMD. Tot
+                            nu toe had ik mijn cv en portfolio af en heb een LinkedIn bericht geschreven. En nu was het
+                            tijd
+                            om te solliciteren.
+                            Voor mij afstudeerstage wilde ik frontend development doen want ik vond leuk. Alleen de
+                            sollicitaties waren een beetje
+                            moeilijk omdat meeste van de sollicitaties waren technische testen die ik niet helemaal
+                            begreep.
+                            En dan heb ik gehoord
+                            dat er weer een stagediving georganiseerd is, maar ik kon niet deelnemen. Go2people waren
+                            een
+                            van de bedrijven die
+                            aanwezig waren bij de stagediving. Dus wat ik heb gedaan, ik ging direct naar hun vacature
+                            pagina en direct bij hun
+                            gesolliciteerd en mijn portfolio en CV gestuurd naar Laura tool. En daarna ging ik naar het
+                            sollicitatiegesprek en die
+                            ging goed en zo ben ik aangenomen bij go2people.
+                        </p>
                     </article>
-                   
+
                 </div>
             </div>
         </section>
-        <section class="job-title">
+        <section id="job-title" class="job-title">
             <div class="container">
                 <h2 class="large">Front-end developer stagiair</h2>
-                
+                <div class="row">
+                    <div class="col-12 col-md-6">
+                        <article class="columns-spacing-right">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit odio ducimus similique
+                                provident distinctio vero error amet maxime debitis rerum. Harum perferendis delectus
+                                perspiciatis porro architecto ducimus et expedita error rem impedit necessitatibus nisi
+                                facilis at nemo eum natus repudiandae nobis earum, ipsa corporis esse! Explicabo
+                                possimus maxime numquam voluptatum saepe dolores asperiores voluptatem ullam veniam
+                                repellendus, error quos, dicta consectetur doloribus ex fugit minima commodi deleniti,
+                                quis tenetur blanditiis ducimus dignissimos. Saepe, officiis, illo quia assumenda,
+                                magnam necessitatibus rem error corrupti possimus eos praesentium omnis? Alias dolorem
+                                ipsa, vitae error nihil architecto ea corrupti, nemo nostrum molestiae fugit reiciendis!
+                            </p>
+                        </article>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <img src="./static/images/illustration-typing.png" alt="Een illustratie van mezelf aan het typen">
+                    </div>
+                </div>
             </div>
 
         </section>
 
-        <section class="company-description">
+        <section id="company-description" class="company-description">
             <div class="circles"></div>
             <div class="container">
                 <div class="row">
                     <h2 class="large">Over Go2people</h2>
                     <div class="col-12 col-md-6">
                         <article class="columns-spacing-right">
-                             <p>
-                            Go2people is een klein ontwerpbureau met ongeveer 2o medewerkers. Het bedrijf is te vinden
-                            bij Java-eiland in Amsterdam.
-                            Go2people biedt verschillende diensten, onder andere websiteoptimalisatie, webdesign,
-                            webdevelopment en digitale
-                            strategieën. Bijvoorbeeld een herontwerp van een bestaande website voor verschillende
-                            klanten of een hele nieuwe website
-                            from scratch. Voor webdevelopment is ze gespecialiseerd in WordPress en Django. Als stagiair
-                            was ik bezig met frontend
-                            development en werk voornamelijk in maatwerk afdeling.
-                        </p>
+                            <p>
+                                Go2people is een klein ontwerpbureau met ongeveer 2o medewerkers. Het bedrijf is te
+                                vinden
+                                bij Java-eiland in Amsterdam.
+                                Go2people biedt verschillende diensten, onder andere websiteoptimalisatie, webdesign,
+                                webdevelopment en digitale
+                                strategieën. Bijvoorbeeld een herontwerp van een bestaande website voor verschillende
+                                klanten of een hele nieuwe website
+                                from scratch. Voor webdevelopment is ze gespecialiseerd in WordPress en Django. Als
+                                stagiair
+                                was ik bezig met frontend
+                                development en werk voornamelijk in maatwerk afdeling.
+                            </p>
 
-                        <img class="content-img" src="./static/images/go2people-team.jpeg" alt="Afbeelding van go2people">
+                            <img class="content-img" src="./static/images/go2people-team.jpeg"
+                                alt="Afbeelding van go2people">
                         </article>
-                       
+
                     </div>
                     <div class="col-12 col-md-3">
                         <div class="map-location">
@@ -204,7 +239,7 @@
             </div>
         </section>
 
-        <section class="team-members ">
+        <section id="intern-supervisor" class="team-members ">
             <div class="container">
                 <h2 class="large">Stagebegeleider</h2>
                 <p> Mij stagebegeleider die mij had begeleid tijdens mij stage</p>
@@ -238,29 +273,42 @@
                             </div>
                         </div>
                     </li>
-                    <li class=" col-12 col-md-8 ">
-                        <p>De persoon die mij heeft begeleidt tijdens mij stage is Roy Csuka. Roy werkt als front-end developer bij go2people. Deze
-                        functie doet hij al voor twee jaar. Hij heeft CMD afgestudeerd en daarvoor op het Media college Interactief vormgeving
-                        gevolgd op het MBO. Roy heeft meerdere stages gelopen en aantal jaren gewerkt voor Go2people bij andere website
-                        bouwbedrijven.
-                        Zijn passie was altijd front-end,
-                        
-                        Als front-end developer bij go2people hou hij bezig met verschillende werkzaamheden. Hij werkt voornamelijk aan de
-                        technische vormgeving van websites. Denk vooral html, CSS enzovoorts. Verder geeft hij samen met backend developers
-                        trainingen aan klanten, zodat de klanten weten hoe ze met hun website kan werken. Als laatste doet hij wat websites
-                        onderhoud, wanneer klanten problemen hebben met hun websites.
-                        
-                        Daarnaast begeleidt hij stagiaires werkzaamheden. Vragen van stagiaires beantwoorden en ondersteuning bieden,
-                        beoordelingsgesprekken uitvoeren en stage beoordelen. Wat ik fijn vind van hem is dat hij dezelfde proces heb meegemaakt
-                        dus het zal makkelijker om mij te gaan begeleider.</p>
+                    <li class="col-12 col-md-8 ">
+                        <article class="columns-spacing-left">
+                             <p>
+                            De persoon die mij heeft begeleidt tijdens mij stage is Roy Csuka. Roy werkt als front-end
+                            developer bij go2people. Deze
+                            functie doet hij al voor twee jaar. Hij heeft CMD afgestudeerd en daarvoor op het Media
+                            college Interactief vormgeving
+                            gevolgd op het MBO. Roy heeft meerdere stages gelopen en aantal jaren gewerkt voor Go2people
+                            bij andere website
+                            bouwbedrijven.
+                            Zijn passie was altijd front-end,
+
+                            Als front-end developer bij go2people hou hij bezig met verschillende werkzaamheden. Hij
+                            werkt voornamelijk aan de
+                            technische vormgeving van websites. Denk vooral html, CSS enzovoorts. Verder geeft hij samen
+                            met backend developers
+                            trainingen aan klanten, zodat de klanten weten hoe ze met hun website kan werken. Als
+                            laatste doet hij wat websites
+                            onderhoud, wanneer klanten problemen hebben met hun websites.
+
+                            Daarnaast begeleidt hij stagiaires werkzaamheden. Vragen van stagiaires beantwoorden en
+                            ondersteuning bieden,
+                            beoordelingsgesprekken uitvoeren en stage beoordelen. Wat ik fijn vind van hem is dat hij
+                            dezelfde proces heb meegemaakt
+                            dus het zal makkelijker om mij te gaan begeleider.
+                        </p>
+                        </article>
+                       
                     </li>
                 </ul>
             </div>
         </section>
-        <section class="team-members">
+        <section  class="team-members">
             <div class="container">
                 <h2>Andere coaches</h2>
-        
+
                 <ul class="row team-members-list">
                     <li class=" col-12 col-sm-6 col-md-4 col-lg-4">
                         <div class="member">
@@ -271,9 +319,10 @@
                                 <div class="contact-icon">
                                     <a href="{{ member.discord.url }}">
                                         <i class="fa-brands fa-discord fa-xl" style="color: #d20056;"></i>
-        
+
                                     </a>
-                                    <a href="mailto:{{ member.team_member_email }}" title="{{ member.team_member_email }}">
+                                    <a href="mailto:{{ member.team_member_email }}"
+                                        title="{{ member.team_member_email }}">
                                         <div class="label-on-hover"> {{ member.team_member_email }}</div>
                                         <i class="fa-solid fa-envelope fa-xl" style="color: #d20056;"></i>
                                     </a>
@@ -292,9 +341,10 @@
                                 <div class="contact-icon">
                                     <a href="{{ member.discord.url }}">
                                         <i class="fa-brands fa-discord fa-xl" style="color: #d20056;"></i>
-        
+
                                     </a>
-                                    <a href="mailto:{{ member.team_member_email }}" title="{{ member.team_member_email }}">
+                                    <a href="mailto:{{ member.team_member_email }}"
+                                        title="{{ member.team_member_email }}">
                                         <div class="label-on-hover"> {{ member.team_member_email }}</div>
                                         <i class="fa-solid fa-envelope fa-xl" style="color: #d20056;"></i>
                                     </a>
@@ -313,9 +363,10 @@
                                 <div class="contact-icon">
                                     <a href="{{ member.discord.url }}">
                                         <i class="fa-brands fa-discord fa-xl" style="color: #d20056;"></i>
-        
+
                                     </a>
-                                    <a href="mailto:{{ member.team_member_email }}" title="{{ member.team_member_email }}">
+                                    <a href="mailto:{{ member.team_member_email }}"
+                                        title="{{ member.team_member_email }}">
                                         <div class="label-on-hover"> {{ member.team_member_email }}</div>
                                         <i class="fa-solid fa-envelope fa-xl" style="color: #d20056;"></i>
                                     </a>
@@ -330,7 +381,7 @@
         </section>
 
 
-        <section class="learn-goals">
+        <section id="learn-goals" class="learn-goals">
             <div class="circles-variation-2"></div>
             <div class="container">
                 <h2 class="large">Leerdoelen</h2>
@@ -408,7 +459,7 @@
                                 <article class="card-content">
                                     <h2>Leerdoel 5: Prototype presenteren aan developers</h2>
                                     <small class="category"> Competentie: Georganiseerd en profesioneel
-                                    ontwerpen.</small>
+                                        ontwerpen.</small>
                                     <div class="hover-content">
                                         <a class="button primary" href="./leerdoelen/leerdoel-1.html">Lees meer</a>
                                     </div>
@@ -436,7 +487,7 @@
             </div>
         </section>
 
-        <section class="assignments">
+        <section id="assignments" class="assignments">
             <div class="container">
                 <div class="row">
                     <h2 class="large">Werkzaamheden</h2>
@@ -446,22 +497,32 @@
                         <div class="swiper-wrapper">
                             <!-- Slides -->
                             <div class="swiper-slide card">
-                                
+
                                 <div class="img-container">
-                                    <img src="https://images.unsplash.com/photo-1610986602726-19f650133f7a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGZyb250ZW5kJTIwZGV2ZWxvcG1lbnR8ZW58MHx8MHx8fDA%3D"
-                                        alt="">
-                                </div>
+                                    <img src="./static/images/4stagiairs-homepagina.png"alt="">
+                                </div>   
                                 <div class="card-content">
-                                    <h2>Wat kan je verwachten op je eerste dag?</h2>
-                                    <small class="category">Introductie</small>
+                                    <h2>4Stagiairs - Informatiepunt voor stagiairs bij go2people</h2>
+                                    <small class="category">Prototypen en uitwerken</small>
                                     <div class="hover-content">
-                                        <a class="button primary" href="#">Lees artikel </a>
+                                        <a class="button primary" href="./werkzaamheden/4stagiairs.html">Lees meer</a>
                                     </div>
-                                
                                 </div>
 
                             </div>
-                            <div class="swiper-slide card">Slide 2</div>
+                            <div class="swiper-slide card">
+                                <div class="img-container">
+                                    <img src="./static/images/illustration-typing.png" alt="">
+                                </div>
+                                <div class="card-content">
+                                    <h2>4Stagiairs - Informatiepunt voor stagiairs bij go2people</h2>
+                                    <small class="category">Prototypen en uitwerken</small>
+                                    <div class="hover-content">
+                                        <a class="button primary" href="./werkzaamheden/4stagiairs.html">Lees meer</a>
+                                    </div>
+                                </div>
+
+                            </div>
                             <div class="swiper-slide card">Slide 3</div>
                             <div class="swiper-slide card">Slide 3</div>
                             <div class="swiper-slide card">Slide 3</div>
@@ -482,95 +543,109 @@
 
         <section class="programming-languages">
             <div class="container">
-                    <ul class="languages-list">
-                        <li class="language">
-                            <div class="img-container">
-                                 <img src="#" alt="">
-                            </div>
-                           <span>PHP</span>
-                        </li>
-                        <li class="language">
-                            <div class="img-container">
-                                 <img src="#" alt="">
-                            </div>
-                           <span>SCSS</span>
-                        </li>
-                        <li class="language">
-                            <div class="img-container">
-                                 <img src="#" alt="">
-                            </div>
-                           <span>Wordpress</span>
-                        </li>
-                        <li class="language">
-                            <div class="img-container">
-                                 <img src="#" alt="">
-                            </div>
-                           <span>Timber</span>
-                        </li>
-                        <li class="language">
-                            <div class="img-container">
-                                 <img src="#" alt="">
-                            </div>
-                           <span>Bootstrap 4</span>
-                        </li>
-                        <li class="language">
-                            <div class="img-container">
-                                 <img src="#" alt="">
-                            </div>
-                           <span>Twig</span>
-                        </li>
-                        <li class="language">
-                            <div class="img-container">
-                                 <img src="#" alt="">
-                            </div>
-                           <span>Swiperjs</span>
-                        </li>
-                    </ul>
+                <ul class="languages-list">
+                    <li class="language">
+                        <div class="img-container">
+                            <img src="#" alt="">
+                        </div>
+                        <span>PHP</span>
+                    </li>
+                    <li class="language">
+                        <div class="img-container">
+                            <img src="#" alt="">
+                        </div>
+                        <span>SCSS</span>
+                    </li>
+                    <li class="language">
+                        <div class="img-container">
+                            <img src="#" alt="">
+                        </div>
+                        <span>Wordpress</span>
+                    </li>
+                    <li class="language">
+                        <div class="img-container">
+                            <img src="#" alt="">
+                        </div>
+                        <span>Timber</span>
+                    </li>
+                    <li class="language">
+                        <div class="img-container">
+                            <img src="#" alt="">
+                        </div>
+                        <span>Bootstrap 4</span>
+                    </li>
+                    <li class="language">
+                        <div class="img-container">
+                            <img src="#" alt="">
+                        </div>
+                        <span>Twig</span>
+                    </li>
+                    <li class="language">
+                        <div class="img-container">
+                            <img src="#" alt="">
+                        </div>
+                        <span>Swiperjs</span>
+                    </li>
+                </ul>
             </div>
         </section>
 
-       
-        <section class="resources">
+    <section class="observations">
+        <div class="container">
+            <h2 class="large">Observatieopdrachten</h2>
+            <div class="row">
+                div
+                <article>
+                    <h3></h3>
+                    <p></p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+        <section id="resources" class="resources">
             <div class="container">
-                
-                    <h2>Bijlage</h2>
-                    <ul class="row">
-                       
-                        <li class="col-12 col-sm-6 col-lg-4">
-                            <div class="learning-item">Stageplan</div>
-                            <i class="fa-solid fa-cloud-arrow-down" style="color: #d20056;"></i>
-                        </li>
-                        <li class="col-12 col-sm-6 col-lg-4">
-                            <div class="learning-item">Feedbackformulier - tussenmeting</div>
-                            <i class="fa-solid fa-cloud-arrow-down" style="color: #d20056;"></i>
-                        </li>
-                        <li class="col-12 col-sm-6 col-lg-4">
-                            <div class="learning-item">Feedbackformulier - tussenmeting</div>
-                            <i class="fa-solid fa-cloud-arrow-down" style="color: #d20056;"></i>
-                        </li>
-                        <li class="col-12 col-sm-6 col-lg-4">
-                            <div class="learning-item">Feedbackformulier - tussenmeting</div>
-                            <i class="fa-solid fa-cloud-arrow-down" style="color: #d20056;"></i>
-                        </li>
-                        <li class="col-12 col-sm-6 col-lg-4">
-                            <div class="learning-item">Feedbackformulier - eindmeting</div>
-                            <i class="fa-solid fa-cloud-arrow-down" style="color: #d20056;"></i>
-                        </li>
-                        <li class="col-12 col-sm-6 col-lg-4">
-                            <div class="learning-item">Feedbackformulier - eindmeting</div>
-                            <i class="fa-solid fa-cloud-arrow-down" style="color: #d20056;"></i>
-                        </li>
-                        <li class="col-12 col-sm-6 col-lg-4">
-                            <div class="learning-item">Feedbackformulier - eindmeting</div>
-                            <i class="fa-solid fa-cloud-arrow-down" style="color: #d20056;"></i>
-                        </li>
-                       
-                    </ul>
-                
+
+                <h2>Bijlage</h2>
+                <ul class="row">
+
+                    <li class="col-12 col-sm-6 col-lg-4">
+                        <div class="learning-item">Stageplan</div>
+                        <i class="fa-solid fa-cloud-arrow-down" style="color: #d20056;"></i>
+                    </li>
+                    <li class="col-12 col-sm-6 col-lg-4">
+                        <div class="learning-item">Feedbackformulier - tussenmeting</div>
+                        <i class="fa-solid fa-cloud-arrow-down" style="color: #d20056;"></i>
+                    </li>
+                    <li class="col-12 col-sm-6 col-lg-4">
+                        <div class="learning-item">Feedbackformulier - tussenmeting</div>
+                        <i class="fa-solid fa-cloud-arrow-down" style="color: #d20056;"></i>
+                    </li>
+                    <li class="col-12 col-sm-6 col-lg-4">
+                        <div class="learning-item">Feedbackformulier - tussenmeting</div>
+                        <i class="fa-solid fa-cloud-arrow-down" style="color: #d20056;"></i>
+                    </li>
+                    <li class="col-12 col-sm-6 col-lg-4">
+                        <div class="learning-item">Feedbackformulier - eindmeting</div>
+                        <i class="fa-solid fa-cloud-arrow-down" style="color: #d20056;"></i>
+                    </li>
+                    <li class="col-12 col-sm-6 col-lg-4">
+                        <div class="learning-item">Feedbackformulier - eindmeting</div>
+                        <i class="fa-solid fa-cloud-arrow-down" style="color: #d20056;"></i>
+                    </li>
+                    <li class="col-12 col-sm-6 col-lg-4">
+                        <div class="learning-item">Feedbackformulier - eindmeting</div>
+                        <i class="fa-solid fa-cloud-arrow-down" style="color: #d20056;"></i>
+                    </li>
+
+                </ul>
+
             </div>
         </section>
+
+    
     </main>
-  
+
 
     <nav class="off-canvas-nav">
         <div class="menu">
@@ -585,7 +660,7 @@
                                 <i class="fa-solid fa-arrow-up-right-from-square fa-xs link-icons"></i></a>
                         </li>
                     </ul>
-        
+
                 </li>
                 <li>
                     <a target="_blank" href="#">Stageopdrachten</a>
@@ -599,7 +674,7 @@
                 </li>
             </ul>
         </div>
-        
+
     </nav>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
