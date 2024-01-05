@@ -5,6 +5,7 @@ const swiper = new Swiper(".swiper", {
     autoplay: {
         delay: 5000,
     },
+    // autoHeight: true,
     centeredSlides: true,
     grabCursor: true,
     spaceBetween: 15,
