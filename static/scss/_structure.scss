@@ -20,7 +20,68 @@ body {
     overflow-x: hidden;
     background-color: color(background);
 }
+table {
+    width: 100%;
+    font-family: "Lato", sans-serif;
+    font-size: 1.8rem;
 
+    th {
+            background:color(border-variation-2);
+            text-align: left;
+            border-top: solid 1px #bbb;
+
+            span {
+                padding:0 1rem;
+            }
+        }
+    
+    
+        td,
+        th {
+            border-right: .1rem solid color(border-variation-2);
+            border-bottom: .1rem solid color(border-variation-2);
+        }
+    
+    
+        tr {
+    
+            th,
+            td {
+                &:first-child {
+                    border-left: .1rem solid color(border-variation-2);
+                }
+            }
+    
+            &:first-child {
+    
+                th {
+                    &:first-child {
+                        border-top-left-radius: .5rem;
+                    }
+    
+                    &:last-child {
+                        border-top-right-radius: .5rem;
+                    }
+                }
+    
+            }
+    
+            &:last-child {
+    
+                td {
+                    &:first-child {
+                        border-bottom-left-radius: .5rem;
+                    }
+    
+                    &:last-child {
+                        border-bottom-right-radius: .5rem;
+                    }
+                }
+    
+            }
+        }
+
+}
 section {
     padding: 5rem 0;
     width: 100%;
@@ -30,13 +91,13 @@ img {
     max-inline-size: 100%;
 
     &.content-img {
-            @include border-radius($border-radius-large);
-            @include box-shadow($box-shadow);
+        @include border-radius($border-radius-large);
+        @include box-shadow($box-shadow);
 
-            &-transparent {
-                filter: drop-shadow(2px 1px 4px rgba(82, 138, 180, 0.25));
-            }
+        &-transparent {
+            filter: drop-shadow(2px 1px 4px rgba(82, 138, 180, 0.25));
         }
+    }
 }
 
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
@@ -278,7 +339,8 @@ main {
             height: 5.5rem;
         }
 
-        a, button {
+        a,
+        button {
             margin: 1.5rem 0;
         }
     }
@@ -291,7 +353,6 @@ main {
         }
     }
 }
-
 
 //Introduction Hero
 .introduction-hero {
@@ -319,7 +380,6 @@ main {
     columns: 2;
 }
 
-
 .company-description {
     background: color(background-variation-3);
     color: color(background-light);
@@ -333,13 +393,46 @@ main {
 
 //learning goals
 .learn-goals {
-    background: color( background-variation-2);
+    background: color(background-variation-2);
     position: relative;
     overflow: hidden;
     .row {
         row-gap: 1.5rem;
     }
 }
+
+.jobtask-overview {
+    background: color(background-variation-3);
+
+    table {
+        color: color(text-light);
+        border-collapse: separate;
+        border-spacing: 0;
+
+        th {
+            background: color(background-variation-4);
+            text-align: left;
+            border-top: solid 1px color(background);
+        }
+    
+        td,
+        th {
+            border-right: .1rem solid color(background);
+            border-bottom: .1rem solid color(background);
+        }
+    
+        tr {
+            th,
+            td {
+                &:first-child {
+                    border-left: .1rem solid color(background);
+                }
+            }
+        }
+    }
+}
+
+
 
 //De bijlages
 .resources {
@@ -352,35 +445,44 @@ main {
         li {
             display: flex;
             align-items: center;
-            
+
             .learning-item {
                 width: 100%;
-              border-bottom: .2rem solid color(primary);
-            text-align: center;
-            padding: 2rem;  
+                border-bottom: 0.2rem solid color(primary);
+                text-align: center;
+                padding: 2rem;
             }
-            
         }
     }
 }
-//circles 
- .circles {
-     background: radial-gradient(closest-corner, color(transparent) 0% 20%, color(primary) 20% 40%, color(transparent) 40%);
-     position: absolute;
-     width: 60rem;
-     height: 60rem;
-     left: -10%;
-     bottom: -30%;
- }
- .circles-variation-2 {
-     background: radial-gradient(closest-corner, color(transparent) 0% 20%, color(background-variation-1) 20% 40%, color(transparent) 40%);
-     position: absolute;
-     width: 60rem;
-     height: 60rem;
+//circles
+.circles {
+    background: radial-gradient(
+        closest-corner,
+        color(transparent) 0% 20%,
+        color(primary) 20% 40%,
+        color(transparent) 40%
+    );
+    position: absolute;
+    width: 60rem;
+    height: 60rem;
+    left: -10%;
+    bottom: -30%;
+}
+.circles-variation-2 {
+    background: radial-gradient(
+        closest-corner,
+        color(transparent) 0% 20%,
+        color(background-variation-1) 20% 40%,
+        color(transparent) 40%
+    );
+    position: absolute;
+    width: 60rem;
+    height: 60rem;
     right: -10%;
-        top: -30%;
- }
-//  Bron: go2people dienstenpagina; 
+    top: -30%;
+}
+//  Bron: go2people dienstenpagina;
 
 // Word cloud
 .word-cloud {
@@ -390,10 +492,10 @@ main {
     @include box-shadow($box-shadow);
     width: auto;
     display: inline-block;
-    font-family: 'Lato Light', sans-serif;
+    font-family: "Lato Light", sans-serif;
 
     word-break: break-word;
-    letter-spacing: .1rem;
+    letter-spacing: 0.1rem;
     font-size: 1.6rem;
     text-align: center;
 }
