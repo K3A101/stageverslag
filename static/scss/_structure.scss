@@ -372,12 +372,25 @@ main {
         padding: 0;
         display: flex;
         flex-wrap: wrap;
+        flex-direction: row;
         gap: 1.5rem;
+
+      
     }
 }
 
+
 .introduction p {
-    columns: 2;
+    columns: 1;
+}
+
+//on mobile
+@include respond-to(from-sm) {
+    .introduction {
+        p {
+            columns: 2;
+        }
+    }
 }
 
 .company-description {
@@ -390,6 +403,20 @@ main {
         position: relative;
     }
 }
+.map-wrapper {
+    display: block;
+    overflow: hidden;
+    border-radius: 10px;
+    transform: translateZ(0px);
+    
+    .map-location {
+            width: 100%;
+            position: relative;
+            padding: 1rem 0;
+            @include border-radius($border-radius-large);
+        }
+}
+// Bron: https://stackoverflow.com/a/36110063
 
 //learning goals
 .learn-goals {
@@ -499,6 +526,9 @@ main {
     font-size: 1.6rem;
     text-align: center;
 }
+
+
+
 /**
  * Footer
  */

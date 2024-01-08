@@ -1,7 +1,7 @@
 
 h1 {
     font-family: 'Lato Black', sans-serif;
-    font-size: 6.4rem;
+    font-size: 4rem;
 }
 
 h2 {
@@ -14,7 +14,7 @@ h2 {
     overflow: hidden;
 
     &.large {
-        font-size: 6.4rem;
+        font-size: 4rem;
         font-family: 'Lato Black', sans-serif;
     }
 }
@@ -118,4 +118,17 @@ th,td {
 
 .content-heading {
     font-size: 4rem;
+}
+
+//on bigger screen
+@include respond-to(from-sm) {
+    h1 {
+        font-size: 6.4rem;
+    }
+
+    h2 {
+        &.large {
+            font-size: 6.4rem;
+        }
+    }
 }
