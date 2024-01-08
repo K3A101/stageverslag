@@ -1,5 +1,5 @@
 .columns-spacing-left {
-    padding: 0 0 0 2.5rem;
+    padding: 0;
 
     h2 {
         margin: 2rem 0 1rem 0;
@@ -7,13 +7,23 @@
 }
 
 .columns-spacing-right {
-    padding: 0 2.5rem 0 0;
+    padding: 0;
 
     h2 {
         margin: 2rem 0 1rem 0;
     }
 }
 
+//for bigger screen
+@include respond-to(from-sm) {
+    .columns-spacing-left {
+            padding: 0 0 0 2.5rem;
+        }
+    
+        .columns-spacing-right {
+            padding: 0 2.5rem 0 0;
+        }
+}
 // Algemene
 .custom-bullet-point {
     list-style: none;
