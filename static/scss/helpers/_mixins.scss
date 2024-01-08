@@ -1,171 +1,56 @@
 /*!
  *SCSS custom mixin
- * By Go2People - https: //go2people.nl/
+ * By Go2People - https://go2people.nl/
  * Copyright 2011-2024 Go2People.
- * Licensed under MIT (https: //github.com/sass/dart-sass/blob/main/LICENSE)
+ * Licensed under MIT (https://github.com/sass/dart-sass/blob/main/LICENSE)
  */
 
+ 
 @mixin respond-to($media) {
 
     // Exclusively the requested breakpoint
-    @if $media ==only-xs {
-        @media screen and (min-width: 0) and (max-width: calc($breakpoint-sm - 1)) {
+    @if $media == only-xs {
+        @media screen and (min-width: 0) and (max-width: $breakpoint-sm-1) {
             @content;
         }
     }
-
-    @else if $media ==only-sm {
-        @media screen and (min-width: $breakpoint-sm) and (max-width: calc($breakpoint-md - 1)) {
-            @content;
-        }
-    }
-
-    @else if $media ==only-md {
-        @media screen and (min-width: $breakpoint-md) and (max-width: calc($breakpoint-lg - 1)) {
-            @content;
-        }
-    }
-
-    @else if $media ==only-lg {
-        @media screen and (min-width: $breakpoint-lg) and (max-width: calc($breakpoint-xl - 1)) {
-            @content;
-        }
-    }
-
-    @else if $media ==only-xl {
-        @media screen and (min-width: $breakpoint-xl) {
-            @content;
-        }
-    }
-
-    @else if $media ==only-xxl {
-        @media screen and (min-width: $breakpoint-xxl) {
-            @content;
-        }
-    }
-
-    // Up to and including the requested breakpoint
-    @else if $media ==up-to-xs {
-        @media screen and (max-width: calc(breakpoint-sm - 1)) {
-            @content;
-        }
-    }
-
-    @else if $media ==up-to-sm {
-        @media screen and (max-width: calc($breakpoint-md - 1)) {
-            @content;
-        }
-    }
-
-    @else if $media ==up-to-md {
-        @media screen and (max-width: calc($breakpoint-lg - 1)) {
-            @content;
-        }
-    }
-
-    @else if $media ==up-to-lg {
-        @media screen and (max-width: calc($breakpoint-xl - 1)) {
-            @content;
-        }
-    }
-
-    @else if $media ==up-to-xl {
-        @media screen and (max-width: calc($breakpoint-xxl - 1)) {
-            @content;
-        }
-    }
-
-    // Starting at the requested breakpoint
-    @else if $media ==from-sm {
+        // Starting at the requested breakpoint
+    @else if $media == from-sm {
         @media screen and (min-width: $breakpoint-sm) {
             @content;
         }
-    }
-
-    @else if $media ==from-md {
+    } @else if $media == from-md {
         @media screen and (min-width: $breakpoint-md) {
             @content;
         }
-    }
-
-    @else if $media ==from-lg {
+    } @else if $media == from-lg {
         @media screen and (min-width: $breakpoint-lg) {
             @content;
         }
-    }
-
-    @else if $media ==from-xl {
+    } @else if $media == from-xl {
         @media screen and (min-width: $breakpoint-xl) {
             @content;
         }
-    }
-
-    @else if $media ==from-xxl {
+    } @else if $media == from-xxl {
         @media screen and (min-width: $breakpoint-xxl) {
             @content;
         }
     }
 
-    @else if $media ==fine {
+    @else if $media == fine {
 
-        @media (pointer: fine),
-        (-ms-high-contrast:none) {
+        @media (pointer: fine), (-ms-high-contrast:none) {
             @content;
         }
     }
 
-    @else if $media ==coarse {
+    @else if $media == coarse {
 
         @media (pointer: coarse) {
             @content;
         }
     }
 }
-// @mixin respond-to($media) {
-
-//     // Exclusively the requested breakpoint
-//     @if $media == only-xs {
-//         @media screen and (min-width: 0) and (max-width: $breakpoint-sm-1) {
-//             @content;
-//         }
-//     }
-//         // Starting at the requested breakpoint
-//     @else if $media == from-sm {
-//         @media screen and (min-width: $breakpoint-sm) {
-//             @content;
-//         }
-//     } @else if $media == from-md {
-//         @media screen and (min-width: $breakpoint-md) {
-//             @content;
-//         }
-//     } @else if $media == from-lg {
-//         @media screen and (min-width: $breakpoint-lg) {
-//             @content;
-//         }
-//     } @else if $media == from-xl {
-//         @media screen and (min-width: $breakpoint-xl) {
-//             @content;
-//         }
-//     } @else if $media == from-xxl {
-//         @media screen and (min-width: $breakpoint-xxl) {
-//             @content;
-//         }
-//     }
-
-//     @else if $media == fine {
-
-//         @media (pointer: fine), (-ms-high-contrast:none) {
-//             @content;
-//         }
-//     }
-
-//     @else if $media == coarse {
-
-//         @media (pointer: coarse) {
-//             @content;
-//         }
-//     }
-// }
 @mixin transition($arguments...) {
     -webkit-transition: $arguments;
     -moz-transition: $arguments;
