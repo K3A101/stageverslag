@@ -111,6 +111,13 @@
     }
 }
 
+.inline-link {
+    font-size: 1.8rem;
+    text-decoration: underline;
+    text-underline-offset: .8rem;
+    color: color(primary);
+}
+
 @include respond-to(from-sm) {
         .languages-list{
             flex-direction: row;

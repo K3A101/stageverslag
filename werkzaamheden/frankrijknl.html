@@ -294,94 +294,163 @@
                     <div class="row">
                         <article class="columns-spacing-right">
                             <figure>
-                                <img class="content-img" src="../static/images/opdracht-2/top-drie-post.png"
+                                <img class="content-img" src="../static/images/opdracht-2/navigatiemenu-opdr-2.png"
                                     alt="top drie berichten">
-                                <figcaption>Prototype versie 1</figcaption>
+                                <figcaption>Het navigatiemenu</figcaption>
                             </figure>
 
                         </article>
                     </div>
                     <div class="row">
                         <div class="col-md-6">
+                            <article>
+                                <h2>Hoe ziet de navigatiemenu uit?</h2>
+                                <p>
+                                    De Navigatiemnu op de figma bestand ziet in het eerste instantie heel simpel uit.
+                                    Het
+                                    bestaat namelijk uit de logo, twee menu items en de een hamburger menu met de
+                                    verborgen
+                                    submenu. De Menu kun je aanschaffen door op de hamburger icoon te klikken. Hierin
+                                    krijg
+                                    je nog meer links naar andere webpagina's.
+                                </p>
 
+                                <details>
+                                    <summary>Zo ziet mijn css code eruit</summary>
 
-
-                            <h2>Hoe ziet de navigatiemenu uit?</h2>
-                            <p>
-                                De Navigatiemnu op de figma bestand ziet in het eerste instantie heel simpel uit. Het
-                                bestaat namelijk uit de logo, twee menu items en de een hamburger menu met de verborgen
-                                submenu. De Menu kun je aanschaffen door op de hamburger icoon te klikken. Hierin krijg
-                                je nog meer links naar andere webpagina's
-                            </p>
-
-                            <details>
-                                <summary>Zo ziet mijn css code eruit</summary>
-
-                            <pre>
+                                    <pre>
                                 <code class="language-scss">
                                     .three-featured-post {
                                     padding: 2.5rem 0 2.5rem 0;
-                                    
-                                    @include respond-to(from-sm) {
-                                    padding-top: .5rem;
-                                    
-                                    }
+                                        
+                                        @include respond-to(from-sm) {
+                                        padding-top: .5rem;
+                                        
+                                        }
 
-                                    small {
-                                    
-                                    position: relative;
-                                    @include tags(color(primary));
-                                    
-                                    &:first-of-type{
-                                    font-weight: 500;
-                                    }
-                                    }
-                                    
-                                    a {
-                                    width: 100%;
-                                    
-                                    img {
-                                    width: 100%;
-                                    height: 100%;
-                                    object-fit: cover;
-                                    
-                                    }
-                                    }
-                                    }
-                                    
-                                    @include respond-to(from-md) {
-                                    .three-featured-post{
-                                    padding-bottom: 10rem;
-                                    
-                                    img {
-                                    width: 100%;
-                                    height: 100%;
-                                    object-fit: cover;
-                                    object-position: center;
-                                    }
-                                    
-                                    .flex-fit {
-                                    display: flex;
-                                    flex-wrap: wrap;
-                                    flex-flow: column;
-                                    align-items: stretch;
-                                    
-                                    a {
-                                    flex: 1 0 0;
-                                    }
-                                    }
-                                    
-                                    .absolute-content {
-                                    position: absolute;
-                                    top: 100%;
-                                    min-height: 10rem;
-                                    }
-                                    }
+                                        small {
+                                        
+                                        position: relative;
+                                        @include tags(color(primary));
+                                        
+                                            &:first-of-type {
+                                                font-weight: 500;
+                                            }
+                                        }
+                                            
+                                            a {
+                                            width: 100%;
+                                                
+                                                img {
+                                                width: 100%;
+                                                height: 100%;
+                                                object-fit: cover;
+                                                
+                                                }
+                                            }
+                                        }
+                                        
+                                            @include respond-to(from-md) {
+                                            .three-featured-post{
+                                            padding-bottom: 10rem;
+                                                
+                                                img {
+                                                width: 100%;
+                                                height: 100%;
+                                                object-fit: cover;
+                                                object-position: center;
+                                                }
+                                                
+                                                .flex-fit {
+                                                display: flex;
+                                                flex-wrap: wrap;
+                                                flex-flow: column;
+                                                align-items: stretch;
+                                                
+                                                a {
+                                                flex: 1 0 0;
+                                                }
+                                            }
+                                            
+                                            .absolute-content {
+                                            position: absolute;
+                                            top: 100%;
+                                            min-height: 10rem;
+                                            }
+                                        }
                                     }
                                 </code>
                             </pre>
-                            </details>
+                                </details>
 
+                                <h2>Tweede iteratie</h2>
+                                <p>
+                                    Bij de tweede iteratie van de navigatiemenu heb ik gefocust op de verhoudingen en de
+                                    spaties tussen
+                                    de menu elementen. Al de metingen waren te vinden in het Figma bestand. Dus hier heb
+                                    ik de juiste css toegvoegd en ging aan de
+                                    slag met de verborgen submenu. Om dit te bereiken heb ik gebruik gemaakt van
+                                    Javascript. Dus met javascript heb ik een event listener toegevoegd aan de hamburger
+                                    icoon. En als je op de icoon klikt wordt de submenu zichtbaar met een css class.
+                                </p>
+                                <figure>
+                                    <img class="content-img" src="../static/images/opdracht-2/navigatiemenu-opdr-2.png"
+                                        alt="top drie berichten">
+                                    <figcaption>Het navigatiemenu</figcaption>
+                                </figure>
+                                <details>
+                                    <summary>Javascript code</summary>
+                                    <pre>
+                                        <code class="language-js">
+                                            const submitButton = document.querySelector('form button');
+                                            const subMenu = document.querySelector('.header-nav .has-submenu ');
+                                            const subMenuBtn = document.querySelector('.menu-button ');
+                                            const subMenuContainer = document.querySelector('.header-nav .has-submenu ul');
+                                            const hamburgerMobile = document.querySelector('.nav-toggle');
+                                            
+                                            const mobileHeader = document.querySelector('.off-canvas-nav .has-submenu');
+                                            subMenu.addEventListener('click', toggleMenu);
+                                            hamburgerMobile.addEventListener('click', mobileToggleMenu);
+                                            
+                                            function toggleMenu() {
+                                                subMenuBtn.classList.toggle('active');
+                                                subMenuContainer.classList.toggle('open');
+                                            }
+                                            
+                                            function mobileToggleMenu() {
+                                                this.classList.toggle('active');
+                                                document.querySelector('nav.off-canvas-nav').classList.toggle('active');
+                                                mobileHeader.classList.toggle('active');
+                                            }
+                                            
+                                            if(mobileHeader.classList.contains('active')){
+                                            subMenuContainer.classList.toggle('close');
+                                        
+                                            }
+                                        </code>
+                                    </pre>
+                                </details>
+
+                                <h2>Derde iteratie</h2>
+                                <p>
+                                    In de derde versie heb ik nu wel een micro-interactie toegevoegd dat de hamburger
+                                    menu veranderd naar een kruisje
+                                    wanneer er geklikt wordt op de hamburgermenu.
+
+                                    Ik heb ook schaduw toegevoegd om het menu te onderscheiden tussen de navigatiebalk
+                                    en de pagina
+                                    content.
+
+                                    Alleen moet ik kijken hoe ik die schaduw achter kruisje kan plaatsen.
+                                </p>
+                                <figure>
+                                    <img class="content-img" src="../static/images/opdracht-2/open-naviagtiemenu.png"
+                                        alt="Opdracht 1 feedback">
+                                    <figcaption>Navigatiemenu iteratie drie</figcaption>
+                                </figure>
+
+
+                            </article>
 
                         </div>
                         <div class="col-md-6">
@@ -396,6 +465,80 @@
                         </div>
 
                     </div>
+                </div>
+            </section>
+
+            <section class="task-assignment">
+                <div class="container">
+                    <h2 class="large"> Carrousel</h2>
+                    <div class="row">
+                        <article class="columns-spacing-right">
+                            <figure>
+                                <img class="content-img" src="../static/images/opdracht-2/slideshow-v2.png"
+                                    alt="Het carrousel">
+                                <figcaption>Carrousel</figcaption>
+                            </figure>
+                
+                        </article>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-md-6">
+                            <article class="columns-spacing-right">
+                                <h2>Het Carrousel</h2>
+                                <p>Het volgende onderdeel die ik heb gebouwd is een carrousel met verschillende artikelen. 
+                                    De Opmaak van de artikelen zijn hetzelfde als de rest. Om het carrousel te maken heb ik een javascript 
+                                    bibliotheek gebruikt. Het heet swiperjs. Ik heb de bestand lokaal geïnstalleerd en in mijn project ingeladen.
+                                    Het is makkelijk te gebruiken. Het komt met een basis HTML structuur die je moet implementeren en classes daarbij
+                                    en in javascript bestand maak je een object aan met allerlei eigenschappen. Die eigenschappen  zijn functionaliteiten die 
+                                    je kan toevoegen onder andere paginering, autoplay, posities, pijltjes enzovoorts. Je kan <a class="inline-link" href="https://swiperjs.com/swiper-api#swiper-full-html-layout">hier  de documentatie lezen</a>.
+                                </p>
+
+                                <h2>Carrousel iteratie 2</h2>
+                                <p>
+                                    Voor de tweede iteratie heb moest ik ervoor zorgen dat de carrousel goed te zien krijgt op mobiel
+                                    dus ik heb de carrousel responsive gemaakt. Iets dat ik lastig vond was het verschil van breedte tussen de 
+                                    afbeeldingen. Dus ik moest ervoor zorgen dat de afbeeldingen altijd scherp blijven. Om dit te bereiken met javascript meer functionaliteiten 
+                                    toe door de properties breakpoints te gebruiken.
+                                </p>
+
+                                <details>
+                                    <summary>
+                                        Javascript code 
+                                    </summary>
+                                    <pre>
+                                        <code class="language-js">
+                                            const swiper = new Swiper('.swiper', {
+                                            // Optional parameters
+                                            autoHeight: true,
+                                            slidesPerView: 'auto',
+                                            spaceBetween: 30,
+                                            centerInsufficientSlides: true,
+                                            centeredSlidesBounds: true,
+                                            loop: true,
+                                            
+                                            // If we need pagination
+                                            pagination: {
+                                            el: '.swiper-pagination',
+                                            activeEl: '.swiper-pagination-bullet-active',
+                                            clickable: true,
+                                            },
+                                            
+                                            // Navigation arrows
+                                            navigation: {
+                                            nextEl: '.swiper-button-next',
+                                            prevEl: '.swiper-button-prev',
+                                            },
+                                            });
+                                        </code>
+                                    </pre>
+                                </details>
+
+
+                            </article>
+                        </div>
+
+                    </div>
+                       
                 </div>
             </section>
 
