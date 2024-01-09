@@ -265,6 +265,7 @@ main {
      background: color(background-variation-2);
      padding: 0.5rem;
      @include border-radius($border-radius-extra-small);
+     width: 100%;
  }
 
 //Introduction Hero
