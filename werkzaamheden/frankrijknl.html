@@ -589,9 +589,14 @@
                     <div class="row">
                         <article class="columns-spacing-right">
                             <figure>
-                                <img class="content-img" src="../static/images/opdracht-2/slideshow-v2.png"
-                                    alt="Het carrousel">
-                                <figcaption>Carrousel</figcaption>
+                                <img class="content-img" src="../static/images/opdracht-2/footer-versie-1.png"
+                                    alt="Footer versie 1">
+                                <figcaption>Footer versie 1</figcaption>
+                            </figure>
+                            <figure>
+                                <img class="content-img" src="../static/images/opdracht-2/footer-desktop.png"
+                                    alt="Footer versie 2">
+                                <figcaption>Footer versie 1</figcaption>
                             </figure>
 
                         </article>
@@ -599,62 +604,112 @@
                     <div class="row">
                         <div class="col-12 col-md-6">
                             <article class="columns-spacing-right">
-                                <h2>Het Carrousel</h2>
-                                <p>Het volgende onderdeel die ik heb gebouwd is een carrousel met verschillende
-                                    artikelen.
-                                    De Opmaak van de artikelen zijn hetzelfde als de rest. Om het carrousel te maken heb
-                                    ik een javascript
-                                    bibliotheek gebruikt. Het heet swiperjs. Ik heb de bestand lokaal geïnstalleerd en
-                                    in mijn project ingeladen.
-                                    Het is makkelijk te gebruiken. Het komt met een basis HTML structuur die je moet
-                                    implementeren en classes daarbij
-                                    en in javascript bestand maak je een object aan met allerlei eigenschappen. Die
-                                    eigenschappen zijn functionaliteiten die
-                                    je kan toevoegen onder andere paginering, autoplay, posities, pijltjes enzovoorts.
-                                    Je kan <a class="inline-link"
-                                        href="https://swiperjs.com/swiper-api#swiper-full-html-layout">hier de
-                                        documentatie lezen</a>.
+                                <h2>De footer</h2>
+                                <p>
+                                   Op de homepagina van frankrijk.nl heb je ook een footer met verschillende typen inhoud verdeeld in veir kolommen. Het footer heeft een zwarte achtegrond kleur met witte tekst. Om de footer te maken heb ik bootstrap gebruikt om de vier kolommen te maken. Verder heb ik iconen gebruikt van fontawesome voor de social media link en de juiste ruimte gegeven tussen de elementen op basis van het ontwerp.  Bovenaan kun jezien het proces van hoe ik ben begonnen en de eindversie. In de eerste versie heb ik het structuur in elkaar gezet en
                                 </p>
 
-                                <h2>Carrousel iteratie 2</h2>
+                                <h2>Footer iteratie 2 - Footer op kleiner schermen</h2>
                                 <p>
-                                    Voor de tweede iteratie heb moest ik ervoor zorgen dat de carrousel goed te zien
-                                    krijgt op mobiel
-                                    dus ik heb de carrousel responsive gemaakt. Iets dat ik lastig vond was het verschil
-                                    van breedte tussen de
-                                    afbeeldingen. Dus ik moest ervoor zorgen dat de afbeeldingen altijd scherp blijven.
-                                    Om dit te bereiken met javascript meer functionaliteiten
-                                    toe door de properties breakpoints te gebruiken.
+                                   
                                 </p>
 
                                 <details>
                                     <summary>
-                                        Javascript code
+                                        Carrousel responsive code
                                     </summary>
                                     <pre>
                                         <code class="language-js">
-                                            const swiper = new Swiper('.swiper', {
-                                            // Optional parameters
-                                            autoHeight: true,
-                                            slidesPerView: 'auto',
-                                            spaceBetween: 30,
-                                            centerInsufficientSlides: true,
-                                            centeredSlidesBounds: true,
-                                            loop: true,
+                                        footer#bottom {
+                                        background: color(background-dark);
+                                        flex-shrink: 0;
+                                        width: 100%;
+                                        color: color(text-light);
+                                        margin-top:7.5rem;
+                                        padding: 1rem 0;
+                                        
+                                            a {
+                                            display: inline-block;
+                                            color: color(text-light);
+                                            padding: 1rem 0;
+                                            font-size: 1.4rem;
+                                            }
                                             
-                                            // If we need pagination
-                                            pagination: {
-                                            el: '.swiper-pagination',
-                                            activeEl: '.swiper-pagination-bullet-active',
-                                            clickable: true,
-                                            },
+                                            i {
+                                            padding-right: 1rem;
+                                            }
                                             
-                                            // Navigation arrows
-                                            navigation: {
-                                            nextEl: '.swiper-button-next',
-                                            prevEl: '.swiper-button-prev',
-                                            },
-                                            });
+                                            nav {
+
+                                                &.social-media,
+                                                &.footer-links {
+                                            
+                                                    ul{
+                                                    padding: 0;
+                                                    @include columns(2);
+                                                    
+                                                    @include respond-to(from-md) {
+                                                    padding: 0 0 0 2rem;
+                                                    
+                                                    @include columns(1);
+                                                    
+                                                            li{
+                                                            width: fit-content;
+                                                            }
+                                                            
+                                                            @include respond-to(from-lg) {
+                                                            @include columns(2);
+                                                            padding: 0 0 0 4rem ;
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        
+                                        .footer-content {
+                                            
+                                            h2 {
+                                            font-family: $font-body;
+                                            font-weight: 500;
+                                            font-size: 2.3rem;
+                                            margin-bottom: 0;
+                                            }
+                                            
+                                            .tags {
+                                            font-weight: 700;
+                                            font-size: 1.4rem;
+                                            margin-top: .5rem;
+                                            }
+                                            
+                                            .footer-summary {
+                                            font-weight: 400;
+                                            line-height: $line-height;
+                                            font-size: 1.4rem;
+                                            }
+                                        }
+                                        
+                                        .copyright {
+                                        
+                                            ul {
+                                        
+                                                padding: 0 0 1.6rem 0;
+                                                margin-bottom: 0;
+                                                display: flex;
+                                                flex-direction: column;
+                                                justify-content: space-between;
+                                                border-top: 1px solid color(border);
+                                                
+                                                @include respond-to(from-md) {
+                                                flex-direction: row;
+                                                }
+                                        
+                                                    a {
+                                                    opacity: 80%;
+                                                    font-size: 1.2rem;
+                                                    }
+                                                }
+                                                }
+                                        }
                                         </code>
                                     </pre>
                                 </details>
@@ -669,28 +724,14 @@
                                     zijn verborgen en je kan alleen de artikelen zien.
                                 </p>
 
-                                <details>
-                                    <summary>
-                                        Carrousel responsive code
-                                    </summary>
-                                        <pre>
-                                            <code class="language-js">
-                                                @include respond-to(from-md) {
-                                                width: 25%;
-                                                
-                                                    &.wider {
-                                                    width: 50%;
-                                                }
-                                            }
-                                            </code>
-                                        </pre>
-                                </details>
+                              
                             </article>
                         </div>
                         <div class="col-12 col-md-6">
+                            <!-- Screenshot van de html code -->
                             <figure>
-                                <img class="content-img" src="../static/images/opdracht-2/carrousel-mobiel.png" alt="Het carrousel op mobiel" width="250">
-                                <figcaption>Carrousel op mobiel</figcaption>
+                                <img class="content-img" src="../static/images/opdracht-2/footer-mobiel.png" alt="Het carrousel op mobiel" width="250">
+                                <figcaption>Footer op mobiel</figcaption>
                             </figure>
                         </div>
 
