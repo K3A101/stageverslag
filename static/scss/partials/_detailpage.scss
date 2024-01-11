@@ -24,12 +24,15 @@
             padding: 0 2.5rem 0 0;
         }
 }
+
+
 // Algemene
 .custom-bullet-point {
     list-style: none;
     font-size: 1.7rem;
     position: relative;
     padding-left: 2rem;
+    padding-bottom: .8rem;
 
     &::before {
         content: "\2022";
