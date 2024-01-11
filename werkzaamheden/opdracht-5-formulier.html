@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email sturen met AJAX</title>
+    <link rel="icon" href="../static/icons/favicon/favicon-16x16.png" type="image/x-icon">
+    <link rel="manifest" href="../site.webmanifest">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/lib/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../static/lib/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="../static/lib/prism/prism.css">
+    <script src="https://kit.fontawesome.com/c37b867389.js" crossorigin="anonymous"></script>
+    <script defer src="../static/js/swiper.js"></script>
+</head>
+
+<body>
+    <header>
+
+    </header>
+    <main>
+        <main id="content">
+            <section class="task-hero">
+                <div class="container">
+                    <div class="row">
+                        <article>
+                            <p class="word-cloud"><i class="fa-solid fa-hashtag" style="color: #d2ebe1;"></i>14 September 2023 - 3 Oktober 2023</p>
+                            <h1>Email sturen met AJAX </h1>
+                            <h2 class="category">Prototypen en uitwerken</h2>
+                            <img class="content-img" src="../static/images/opdracht-2/frankrijk-nl-homepage.png"
+                                alt="Uitgelichte afbeelding">
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section class="task-assignment">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 col-md-6">
+                            <article class="columns-spacing-right">
+                                <h2 class="large"> Inleiding</h2>
+                                <p>
+                                    Bij mij derde stageopdracht, moest met <span class="colored-inline-text-variation-1">PHP</span> en 
+                                    <span class="colored-inline-text-variation-1">Javascript</span>, een formulier waar je data naar de PHP server kan sturen. Dit opdracht was meer bedoeld voor backend dan frontend. Voor dit opdracht moest ik veel met PHP en Javascript. Voor de formulier had ik geen ontwerp dus ik moest mij creativiteit gebruiken. Om dit opdracht te kunnen maken heb ik veel gelezen over PHP en ook enkele instructies videos gekeken. Met genoeg kennis ging ik aan de slag. 
+                                </p>
+                            </article>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <figure>
+                                <img class="content-img" src="../static/images/opdracht-2/figma-bestand-opdracht-2.png"
+                                    alt="Image 2">
+                                <figcaption> Het Figma bestand met het ontwerp </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="task-assignment">
+                <div class="container">
+                    <h2> Beschrijving opdracht</h2>
+                    <div class="row">
+                        <div class="col-12 col-md-6">
+                            <article class="columns-spacing-right">
+                                <p>
+                                   Zoals ik al heb geschreven ik moet een interface maken waar gebruikers email sturen. Het formulier moet verschillende invoervelden bevatten namelijk een tekst veld, mail veld en een bericht veld. Per veld moet er gecontroleerd worden of de juiste data ingevoerd worden. Dus ik moet ervoor zorgen dat de gebruiker een foutmelding krijgt wanneer. 
+                                </p>
+
+                                <h2>Doel van de opdracht</h2>
+                                <p>
+                                    Met deze opdracht willen ze kijken, hoeveel kennis ik heb met Formulieren. Dus er wordt gekeken of ik de juiste HTML elementen gebruikt voor de invoervelden. Verder werd er ook mijn javascript vaardigheden beoordeeld en als laatste mijn 
+                                </p>
+                            </article>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <figure>
+                                <img class="content-img" src="../static/images/opdracht-2/opdr-2-beschrijving.png"
+                                    alt="Opdracht 1 Beschrijving">
+                                <figcaption>Beschrijving van opdracht 1</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="task-assignment">
+                <div class="container">
+                    <h2 class="large"> HTML</h2>
+                    <div class="row">
+                        <div class="col-12 col-md-6">
+                            <figure>
+                                <img class="content-img" src="../static/images/opdracht-2/opdracht-2-html.png"
+                                    alt="Opdracht 1 Beschrijving">
+                                <figcaption>Opdracht 2 HTML Structuur versie 1</figcaption>
+                            </figure>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <article class="columns-spacing-right">
+                                <h2>HTML structuur</h2>
+                                <p>
+                                    Het eerst wat ik heb gedaan is het opstellen van de HTML structuur. Ik heb mijn
+                                    kennis toegepast die ik heb tot nu heb geleerd. Ik heb alleen een HTML pagina
+                                    gebruikt voor deze opdracht. Ik heb de HTML structuur verdeeld in aantal onderdelen.
+                                <ul>
+                                    <li class="custom-bullet-point">De navigatiemenu</li>
+                                    <li class="custom-bullet-point">Drie recente posts onderdeel</li>
+                                    <li class="custom-bullet-point">De uitgelichte post onderdeel</li>
+                                    <li class="custom-bullet-point">De carrousel met blogs</li>
+                                    <li class="custom-bullet-point">Het Nieuwsbrief formulier</li>
+                                    <li class="custom-bullet-point">De footer</li>
+                                </ul>
+                                </p>
+                                <p></p>
+                            </article>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+            <section class="task-assignment">
+                <div class="container">
+                    <h2 class="large"> SCSS</h2>
+                    <div class="row">
+                        <div class="col-12 col-md-6">
+                            <figure>
+                                <img class="content-img" src="../static/images/opdracht-2/scss-recent-post.png"
+                                    alt="Opdracht 2 Scherm foto van stukje code">
+                                <figcaption>Opdracht 2: SCSS</figcaption>
+                            </figure>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <article class="columns-spacing-right">
+                                <h2>Scss</h2>
+                                <p>
+                                    Wat is scss? Het is een css preprocessor om de je css code wat overzichtelijke te
+                                    houden. Het is wel handig wanneer je
+                                    een grote stylesheet en wanneer je met verschillende programmeurs werken. Met SCSS
+                                    kan je code opsplitsen en in module
+                                    schrijven. Dus hiermee vermijd code wordt herhaalt. Wat ik heel fijn vind van SCSS
+                                    is dat je css code kan nesten. Dus
+                                    een de child elementen kunnen binnen een parent element genest worden. Verder het is
+                                    ook fijn om met custom variabele te
+                                    werken. Dit zorgt ervoor dat ik niet een voor een waardes moeten aanpassen. Het een
+                                    punt die je moet rekening houden is
+                                    dat de browser alleen css kan lezen. Dus voordat de website online wordt moet alle
+                                    scss bestanden omgezet worden naar
+                                    css. Dit doe je met scss compiler. Bij go2people word de compiler opgestart door
+                                    middel van een commando: <span class="colored-inline-text-variation-1"></span>
+
+                                </p>
+                                <p></p>
+                            </article>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <section class="task-assignment">
+                <div class="container">
+                    <h2 class="large"> Prototype versie 1</h2>
+                    <div class="row">
+                        <div class="col-12 col-md-6">
+
+                            <p>
+                                Ik heb hier gewerkt aan de html structuur met weinig css opmaak. in de eerste versie heb
+                                ik alleen gefocust op de grid met bootstrap. Want bij elke onderdeel heb je een andere
+                                type grid layout. Hier gebruiken we een grid layout van 12 kolommen. Dit is de standaard
+                                hoeveelheid kolommen die men gebruikt bij websites. Ik ga per onderdeel een beetje
+                                vertellen hoe ik heb eraan toegekomen.
+                            </p>
+
+                            <h2>Het laatste drie posts</h2>
+                            <p>
+                                Bij de eerste onderdeel heb ik drie post. Een post heeft een grotere afbeelding. De twee
+                                afbeelding heeft nog twee klein andere foto's onder elkaar. dus het layout bestaat uit
+                                twee kolommen.
+                            </p>
+                            <h2>Recent verschenen onderdeel</h2>
+                            <p>
+                                De tweede onderdeel van de pagina bestaat uit zes artikelen. Elk artikel bestaat uit de
+                                titel, uitgelichte afbeelding, categorie en de publicatiedatum. Ik moest ervoor zorgen
+                                dat de afbeelding niet uitgerekt blijven. De layout zelf moet drie kolommen blijven
+                                hiervoor heb ik de class col-12 col-md-4
+                            </p>
+
+                            <h2>"Hightlights" Carrousel onderdeel</h2>
+                            <p>
+                                Verder heb je op de pagina een carrousel met artikelen. Om de carrousel te maken heb ik
+                                een javascript bibliotheek gebruikt. De bibliotheek heet swiperjs. Met javascript kun je
+                                verschillende functionaliteit aan de carrousel toevoegen. En je kan stijlen met de
+                                ingestelde css class. Dit was een uitdaging voor mij omdat ik moest ook ervoor zorgen
+                                dat het goed op mobiel eruit ziet.
+                            </p>
+                            <h2>Nieuwsbrief formulier</h2>
+                            <p>
+                                De volgende onderdeel op de pagina is de nieuwsbrief formulier. Hier heb je een aantal
+                                formulier html elementen. Hier moest ik ervoor zorgen dat ik de juiste html element
+                                gebruikt die past bij een formulier. Qua layout bestaat het namelijk uit twee kolommen.
+                            </p>
+                            <h2>Footer</h2>
+                            <p>
+                                Als laatste heb je de footer, in de footer heb je een kleine samenvatting van de
+                                websites met verschillende social media links, links naar de andere webpagina's en de
+                                auteursrecht.
+                            </p>
+
+
+
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <article class="columns-spacing-right">
+                                <figure>
+                                    <img class="content-img" src="../static/images/opdracht-2/versie-1.png"
+                                        alt="Opdracht 2 versie 1">
+                                    <figcaption>Prototype versie 1</figcaption>
+                                </figure>
+
+                            </article>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <section class="task-assignment Feedback">
+                <div class="container">
+                    <h2 class="large"> Alle verzamelde feedback en kritiekpunten</h2>
+                    <div class="row">
+                        <div class="col-12 col-md-6">
+                            <ul class="spacing-between-list-item">
+                                <li class="custom-bullet-point">
+                                    Regel 83 en 91 hebben geen col-12 nodig, gewoon alleen de .post class is prima,
+                                    col-12 heeft
+                                    geen toevoeging hier. Zorgt
+                                    er zelfs voor dat de items 15px van links en rechts krijgen wat onnodig is.Structuur
+                                    klopt wel!
+                                </li>
+                                <li class="custom-bullet-point">
+                                    Regel 70 & Regel 106 hebben dezelfde module naam “recent-posts” weet niet of dat
+                                    bewust is? Zijn
+                                    twee aparte modules die
+                                    allebei andere styling nodig hebben denk ik. Wel zijn er overeenkomsten maar die
+                                    bepaal je niet
+                                    vanaf de section, maar
+                                    eerder vanaf het article niveau.
+                                </li>
+                                <li class="custom-bullet-point">
+                                    Voeg ook een plaatje toe die 1200 pixels hoog is (staand plaatje)
+                                    Voeg is een ander plaatje toe bij Recent verschenen die een ander formaat heeft
+                                    (niet vierkant)
+                                </li>
+                                <li class="custom-bullet-point">
+                                    Bij de navigatie menu is er een box-shadow die is nog niet toegevoegd
+                                </li>
+                                <li class="custom-bullet-point">
+                                    Slider de :not(.swiper-initialized )stijlen, dus als de swiper.js niet werkt moet ik
+                                    de slider
+                                    precies stijlen als
+                                    het zou werken.
+                                    In de netwerk tab in de dev tools kun je de URL blokkeren
+                                </li>
+                                <li class="custom-bullet-point">
+                                    Commentaren weghalen.
+                                </li>
+                                <li class="custom-bullet-point">
+                                    Gebruik rgba in plaats van transparent.
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4">
+                            <article class="columns-spacing-right">
+                                <figure>
+                                    <img class="content-img" src="../static/images/opdracht-2/feedback-opdracht-2.png"
+                                        alt="Opdracht 2 Scherm foto van stukje code">
+                                    <figcaption>Sommige feedback voor het prototype</figcaption>
+                                </figure>
+                            </article>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <section class="task-assignment">
+                <div class="container">
+                    <h2 class="large"> Top drie berichten</h2>
+                    <div class="row">
+                        <article class="columns-spacing-right">
+                            <figure>
+                                <img class="content-img" src="../static/images/opdracht-2/top-drie-post.png"
+                                    alt="top drie berichten">
+                                <figcaption>Functionaliteit: Top drie artikelen</figcaption>
+                            </figure>
+
+                        </article>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-md-6">
+
+
+
+                            <h2>Het laatste drie posts</h2>
+                            <p>
+                                In de volgende iteratie heb ik wel css gebruikt. Ik heb de juiste lettertype ingeladen
+                                met @font-face. Ik heb poppins gebruikt voor paragrafen en dm serif display voor kopjes.
+                                Daarna heb ik met scss de afbeeldingen dezelfde uitlijning gegeven. Verder heb ik ervoor
+                                gezorgd dat de website ook responsive is. Dit betekent dat dit onderdeel op mobiel te
+                                zien is. Dus wanneer je op mobiel bent staan alle artikelen onder elkaar door het gebrek
+                                aan ruimte.
+                            </p>
+
+
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <article class="columns-spacing-right">
+                                <figure>
+                                    <img class="content-img" src="../static/images/opdracht-2/opdracht-2-html.png"
+                                        alt="Opdracht 2 HTML structuur">
+                                    <figcaption>Opdracht 2 HTML structuur</figcaption>
+                                </figure>
+
+                            </article>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+            <section class="task-assignment">
+                <div class="container">
+                    <h2 class="large"> Navigatiemenu</h2>
+                    <div class="row">
+                        <article class="columns-spacing-right">
+                            <figure>
+                                <img class="content-img" src="../static/images/opdracht-2/navigatiemenu-opdr-2.png"
+                                    alt="Navigatie menu">
+                                <figcaption>Het navigatiemenu versie 1</figcaption>
+                            </figure>
+
+                        </article>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-md-6">
+                            <article class="columns-spacing-right">
+                                <h2>Hoe ziet de navigatiemenu uit?</h2>
+                                <p>
+                                    De Navigatiemnu op de figma bestand ziet in het eerste instantie heel simpel uit.
+                                    Het
+                                    bestaat namelijk uit de logo, twee menu items en de een hamburger menu met de
+                                    verborgen
+                                    submenu. De Menu kun je aanschaffen door op de hamburger icoon te klikken. Hierin
+                                    krijg
+                                    je nog meer links naar andere webpagina's.
+                                </p>
+
+                                <details>
+                                    <summary>Zo ziet mijn css code eruit</summary>
+
+                                    <pre>
+                                <code class="language-scss">
+                                    .three-featured-post {
+                                    padding: 2.5rem 0 2.5rem 0;
+                                        
+                                        @include respond-to(from-sm) {
+                                        padding-top: .5rem;
+                                        
+                                        }
+
+                                        small {
+                                        
+                                        position: relative;
+                                        @include tags(color(primary));
+                                        
+                                            &:first-of-type {
+                                                font-weight: 500;
+                                            }
+                                        }
+                                            
+                                            a {
+                                            width: 100%;
+                                                
+                                                img {
+                                                width: 100%;
+                                                height: 100%;
+                                                object-fit: cover;
+                                                
+                                                }
+                                            }
+                                        }
+                                        
+                                            @include respond-to(from-md) {
+                                            .three-featured-post{
+                                            padding-bottom: 10rem;
+                                                
+                                                img {
+                                                width: 100%;
+                                                height: 100%;
+                                                object-fit: cover;
+                                                object-position: center;
+                                                }
+                                                
+                                                .flex-fit {
+                                                display: flex;
+                                                flex-wrap: wrap;
+                                                flex-flow: column;
+                                                align-items: stretch;
+                                                
+                                                a {
+                                                flex: 1 0 0;
+                                                }
+                                            }
+                                            
+                                            .absolute-content {
+                                            position: absolute;
+                                            top: 100%;
+                                            min-height: 10rem;
+                                            }
+                                        }
+                                    }
+                                </code>
+                            </pre>
+                                </details>
+
+                                <h2>Tweede iteratie</h2>
+                                <p>
+                                    Bij de tweede iteratie van de navigatiemenu heb ik gefocust op de verhoudingen en de
+                                    spaties tussen
+                                    de menu elementen. Al de metingen waren te vinden in het Figma bestand. Dus hier heb
+                                    ik de juiste css toegevoegd en ging aan de
+                                    slag met de verborgen submenu. Om dit te bereiken heb ik gebruik gemaakt van
+                                    Javascript. Dus met javascript heb ik een event listener toegevoegd aan de hamburger
+                                    icoon. En als je op de icoon klikt wordt de submenu zichtbaar met een css class.
+                                </p>
+                                <figure>
+                                    <img class="content-img" src="../static/images/opdracht-2/navigatiemenu-opdr-2.png"
+                                        alt="top drie berichten">
+                                    <figcaption>Het navigatiemenu</figcaption>
+                                </figure>
+                                <details>
+                                    <summary>Javascript code</summary>
+                                    <pre>
+                                        <code class="language-js">
+                                            const submitButton = document.querySelector('form button');
+                                            const subMenu = document.querySelector('.header-nav .has-submenu ');
+                                            const subMenuBtn = document.querySelector('.menu-button ');
+                                            const subMenuContainer = document.querySelector('.header-nav .has-submenu ul');
+                                            const hamburgerMobile = document.querySelector('.nav-toggle');
+                                            
+                                            const mobileHeader = document.querySelector('.off-canvas-nav .has-submenu');
+                                            subMenu.addEventListener('click', toggleMenu);
+                                            hamburgerMobile.addEventListener('click', mobileToggleMenu);
+                                            
+                                            function toggleMenu() {
+                                                subMenuBtn.classList.toggle('active');
+                                                subMenuContainer.classList.toggle('open');
+                                            }
+                                            
+                                            function mobileToggleMenu() {
+                                                this.classList.toggle('active');
+                                                document.querySelector('nav.off-canvas-nav').classList.toggle('active');
+                                                mobileHeader.classList.toggle('active');
+                                            }
+                                            
+                                            if(mobileHeader.classList.contains('active')){
+                                            subMenuContainer.classList.toggle('close');
+                                        
+                                            }
+                                        </code>
+                                    </pre>
+                                </details>
+
+                                <h2>Derde iteratie</h2>
+                                <p>
+                                    In de derde versie heb ik nu wel een micro-interactie toegevoegd dat de hamburger
+                                    menu veranderd naar een kruisje
+                                    wanneer er geklikt wordt op de hamburgermenu.
+
+                                    Ik heb ook schaduw toegevoegd om het menu te onderscheiden tussen de navigatiebalk
+                                    en de pagina
+                                    content.
+
+                                    Alleen moet ik kijken hoe ik die schaduw achter kruisje kan plaatsen.
+                                </p>
+                                <figure>
+                                    <img class="content-img" src="../static/images/opdracht-2/open-naviagtiemenu.png"
+                                        alt="Opdracht 1 feedback">
+                                    <figcaption>Navigatiemenu iteratie drie</figcaption>
+                                </figure>
+
+
+                            </article>
+
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <article class="columns-spacing-right">
+                                <figure>
+                                    <img class="content-img" src="../static/images/opdracht-2/opdracht-2-html.png"
+                                        alt="Opdracht 1 feedback">
+                                    <figcaption>Prototype versie 1</figcaption>
+                                </figure>
+
+                            </article>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <section class="task-assignment">
+                <div class="container">
+                    <h2 class="large"> Carrousel</h2>
+                    <div class="row">
+                        <article class="columns-spacing-right">
+                            <figure>
+                                <img class="content-img" src="../static/images/opdracht-2/slideshow-v2.png"
+                                    alt="Het carrousel">
+                                <figcaption>Carrousel</figcaption>
+                            </figure>
+
+                        </article>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-md-6">
+                            <article class="columns-spacing-right">
+                                <h2>Het Carrousel</h2>
+                                <p>Het volgende onderdeel die ik heb gebouwd is een carrousel met verschillende
+                                    artikelen.
+                                    De Opmaak van de artikelen zijn hetzelfde als de rest. Om het carrousel te maken heb
+                                    ik een javascript
+                                    bibliotheek gebruikt. Het heet swiperjs. Ik heb de bestand lokaal geïnstalleerd en
+                                    in mijn project ingeladen.
+                                    Het is makkelijk te gebruiken. Het komt met een basis HTML structuur die je moet
+                                    implementeren en classes daarbij
+                                    en in javascript bestand maak je een object aan met allerlei eigenschappen. Die
+                                    eigenschappen zijn functionaliteiten die
+                                    je kan toevoegen onder andere paginering, autoplay, posities, pijltjes enzovoorts.
+                                    Je kan <a class="inline-link"
+                                        href="https://swiperjs.com/swiper-api#swiper-full-html-layout">hier de
+                                        documentatie lezen</a>.
+                                </p>
+
+                                <h2>Carrousel iteratie 2</h2>
+                                <p>
+                                    Voor de tweede iteratie heb moest ik ervoor zorgen dat de carrousel goed te zien
+                                    krijgt op mobiel
+                                    dus ik heb de carrousel responsive gemaakt. Iets dat ik lastig vond was het verschil
+                                    van breedte tussen de
+                                    afbeeldingen. Dus ik moest ervoor zorgen dat de afbeeldingen altijd scherp blijven.
+                                    Om dit te bereiken met javascript meer functionaliteiten
+                                    toe door de properties breakpoints te gebruiken.
+                                </p>
+
+                                <details>
+                                    <summary>
+                                        Javascript code
+                                    </summary>
+                                    <pre>
+                                        <code class="language-js">
+                                            const swiper = new Swiper('.swiper', {
+                                            // Optional parameters
+                                            autoHeight: true,
+                                            slidesPerView: 'auto',
+                                            spaceBetween: 30, // de ruimte tussen de dia's
+                                            centerInsufficientSlides: true,
+                                            centeredSlidesBounds: true,
+                                            loop: true,
+                                            
+                                            // If we need pagination
+                                            pagination: {
+                                            el: '.swiper-pagination', // paginering
+                                            activeEl: '.swiper-pagination-bullet-active',
+                                            clickable: true,
+                                            },
+                                            
+                                            // Navigation arrows
+                                            navigation: {
+                                            nextEl: '.swiper-button-next',
+                                            prevEl: '.swiper-button-prev',
+                                            },
+                                            });
+                                        </code>
+                                    </pre>
+                                </details>
+
+                                <h2>Carrousel iteratie 3</h2>
+                                <p>
+                                    Bij de volgende iteratie van de carrousel, heb ik ervoor gezorgd dat het carrousel
+                                    functioneel blijft
+                                    op kleinere schermen. Dus wanneer je de pagina op mobiel gebruikt kun je tussen de
+                                    artikelen slepen. Om dit te bereiken heb ik css media queries en swiperJs
+                                    bibliotheek gebruikt om het
+                                    carrousel responsive te maken. Het verschil op mobiel dat de pijlen aan de zijkanten
+                                    zijn verborgen en je kan alleen de artikelen zien.
+                                </p>
+
+                                <details>
+                                    <summary>
+                                        Carrousel responsive code
+                                    </summary>
+                                    <pre>
+                                            <code class="language-sass">
+                                                @include respond-to(from-md) {
+                                                width: 25%;
+                                                
+                                                    &.wider {
+                                                    width: 50%;
+                                                }
+                                            }
+                                            </code>
+                                        </pre>
+                                </details>
+                            </article>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <figure>
+                                <img class="content-img" src="../static/images/opdracht-2/carrousel-mobiel.png"
+                                    alt="Het carrousel op mobiel" width="250">
+                                <figcaption>Carrousel op mobiel</figcaption>
+                            </figure>
+                        </div>
+
+                    </div>
+
+                </div>
+            </section>
+            <section class="task-assignment">
+                <div class="container">
+                    <h2 class="large"> Footer</h2>
+                    <div class="row">
+                        <article class="columns-spacing-right">
+                            <figure>
+                                <img class="content-img" src="../static/images/opdracht-2/footer-versie-1.png"
+                                    alt="Footer versie 1">
+                                <figcaption>Footer versie 1</figcaption>
+                            </figure>
+                            <figure>
+                                <img class="content-img" src="../static/images/opdracht-2/footer-desktop.png"
+                                    alt="Footer versie 2">
+                                <figcaption>Footer versie 1</figcaption>
+                            </figure>
+
+                        </article>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-md-6">
+                            <article class="columns-spacing-right">
+                                <h2>De footer</h2>
+                                <p>
+                                    Op de homepagina van Frankrijk.nl heb je ook een footer met verschillende typen
+                                    inhoud verdeeld in vier kolommen. Het footer heeft een zwarte achtergrond kleur met
+                                    witte tekst. Om de footer te maken heb ik Bootstrap gebruikt om de vier kolommen te
+                                    maken. Verder heb ik iconen gebruikt van font-awesome voor de social media link en
+                                    de juiste ruimte gegeven tussen de elementen op basis van het ontwerp. Bovenaan kun
+                                    je zien het proces van hoe ik ben begonnen en de eindversie. In de eerste versie heb
+                                    ik het structuur in elkaar gezet en
+                                </p>
+
+                                <h2>Footer iteratie 2 - Footer op kleiner schermen</h2>
+                                <p>
+                                    De volgende iteratie van de footer is de footer op mobiel. Op grotere schermen heeft
+                                    de footer vier kolommen en in op mobiel werd de footer verdeeld naar twee kolommen.
+                                    Dit heb ik gedaan met behulp van Bootstrap 4. Voor meer informatie over Bootstrap 4
+                                    kun je <a class="inline-link" href="../leerdoelen/leerdoel-1.html">Leerdoel 1</a>
+                                    bekijken. Hieronder kun je de code voor dit iteratie zien.
+                                </p>
+
+
+
+                                <details>
+                                    <summary>
+                                        Code voor footer iteratie 2
+                                    </summary>
+                                    <pre>
+                                        <code class="language-scss">
+                                        footer#bottom {
+                                        background: color(background-dark);
+                                        flex-shrink: 0;
+                                        width: 100%;
+                                        color: color(text-light);
+                                        margin-top:7.5rem;
+                                        padding: 1rem 0;
+                                        
+                                            a {
+                                            display: inline-block;
+                                            color: color(text-light);
+                                            padding: 1rem 0;
+                                            font-size: 1.4rem;
+                                            }
+                                            
+                                            i {
+                                            padding-right: 1rem;
+                                            }
+                                            
+                                            nav {
+
+                                                &.social-media,
+                                                &.footer-links {
+                                            
+                                                    ul{
+                                                    padding: 0;
+                                                    @include columns(2);
+                                                    
+                                                    @include respond-to(from-md) {
+                                                    padding: 0 0 0 2rem;
+                                                    
+                                                    @include columns(1);
+                                                    
+                                                            li{
+                                                            width: fit-content;
+                                                            }
+                                                            
+                                                            @include respond-to(from-lg) {
+                                                            @include columns(2);
+                                                            padding: 0 0 0 4rem ;
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        
+                                        .footer-content {
+                                            
+                                            h2 {
+                                            font-family: $font-body;
+                                            font-weight: 500;
+                                            font-size: 2.3rem;
+                                            margin-bottom: 0;
+                                            }
+                                            
+                                            .tags {
+                                            font-weight: 700;
+                                            font-size: 1.4rem;
+                                            margin-top: .5rem;
+                                            }
+                                            
+                                            .footer-summary {
+                                            font-weight: 400;
+                                            line-height: $line-height;
+                                            font-size: 1.4rem;
+                                            }
+                                        }
+                                        
+                                        .copyright {
+                                        
+                                            ul {
+                                        
+                                                padding: 0 0 1.6rem 0;
+                                                margin-bottom: 0;
+                                                display: flex;
+                                                flex-direction: column;
+                                                justify-content: space-between;
+                                                border-top: 1px solid color(border);
+                                                
+                                                @include respond-to(from-md) {
+                                                flex-direction: row;
+                                                }
+                                        
+                                                    a {
+                                                    opacity: 80%;
+                                                    font-size: 1.2rem;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        </code>
+                                    </pre>
+                                </details>
+                            </article>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <article>
+                                <figure>
+                                    <img class="content-img" src="../static/images/opdracht-2/footer-html.png"
+                                        alt="HTML structuur van de footer">
+                                    <figcaption>HTML structuur van de footer</figcaption>
+                                </figure>
+                                <figure>
+                                    <img class="content-img" src="../static/images/opdracht-2/footer-mobiel.png"
+                                        alt="Het carrousel op mobiel" width="250">
+                                    <figcaption>Footer op mobiel</figcaption>
+                                </figure>
+                            </article>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </section>
+
+
+
+            <section class="task-assignment">
+                <div class="container">
+                    <h2 class="large"> Prototype laatste versie</h2>
+                    <div class="row">
+                        <div class="col-12 col-md-6">
+                            <article>
+                                <p>
+                                    Hier kan je de eindversie van mij gemaakte prototype. Ik heb veel feedback gekregen
+                                    van de programmeurs om aan het eindproduct te komen. Wanneer ik klaar was met een
+                                    onderdeel heb ik daarna een gesprek met de programmeur om code review te doen. Hij
+                                    gaat mijn code bekijken en benoem de aandachtpunten waaraan ik moet werken. All de
+                                    feedback heb ik genoteerd in mij notion. Door kritisch naar de code te kijken kon ik
+                                    een kwalitatieve product bouwen.
+
+                                    Hier is de link naar de live demo:
+                                </p>
+                                <a href="https://k3a101.github.io/lange-stage-opdrachten/" class="button primary"
+                                    target="_blank">Live demo</a>
+                            </article>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <article class="columns-spacing-right">
+                                <figure>
+                                    <img class="content-img" src="../static/images/opdracht-2/eindversie-opdracht.png"
+                                        alt="Eindversie prototype van frankrijk.nl homepagina">
+                                    <figcaption>Prototype eindversie</figcaption>
+                                </figure>
+                            </article>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+            <section class="task-assignment">
+                <div class="container">
+                    <h2 class="large"> Wat heb ik geleerd?</h2>
+                    <div class="row">
+                        <div class="col-12 col-lg-8">
+                            <article>
+                                <p>
+                                    Ten slotte heb ik veel van deze opdracht geleerd. Wat ik leuk vond, was dat mijn
+                                    begeleider het moeilijker gemaakt had
+                                    omdat hij merkte dat ik veel frontend-vaardigheden had. Terwijl ik aan het prototype
+                                    werkte, was het leren van SCSS,
+                                    Bootstrap en SwiperJs een uitdaging. Het was een kwestie van het begrijpen van de
+                                    frameworks en het bepalen van de
+                                    manier waarop je de nieuwe kennis in het prototype kon implementeren. Ik kon het
+                                    beter toepassen wanneer ik begreep hoe het allemaal in
+                                    elkaar zit.
+                                </p>
+                                <p>
+                                    Ik heb in deze les geleerd hoe je als programmeur bij go2people kunt werken. Ik heb
+                                    ontdekt wat de beste praktijken en
+                                    codenormen zijn voor front-end development en hoe je CSS-code in mappen kunt
+                                    organiseren.
+
+                                </p>
+                                <p>
+                                    Bovendien heb ik kennis opgedaan over het creëren van een klikbare prototype met
+                                    behulp van het Figma-ontwerp. Ik heb
+                                    ook verschillende iteraties kunnen uitvoeren op basis van de feedback. Om zo
+                                    nauwkeurig te werken, bereid ik me voor om
+                                    altijd kritisch naar me werk te kijken.
+                                </p>
+                            </article>
+                        </div>
+                        <div class="col-12 col-lg-8">
+                            <h2>Kernpunten</h2>
+                            <article>
+                                <ul>
+                                    <li class="custom-bullet-point">Leren hoe je scss kan implementeren in een project
+                                    </li>
+                                    <li class="custom-bullet-point">Leren hoe je met Bootstrap 4 grid systeem de layout
+                                        van de pagina </li>
+                                    <li class="custom-bullet-point">Prototypen op basis van een Figma ontwerp</li>
+                                    <li class="custom-bullet-point">Feedback ontvangen en verwerken</li>
+                                    <li class="custom-bullet-point">SwiperJs javascript bibliotheek implementeren om carrousel te maken</li>
+                                    <li class="custom-bullet-point">Protoype maken voor mobiel</li>
+                                    
+                                </ul>
+
+
+                            </article>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+
+
+
+
+        </main>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+            </script>
+        <script src="../static/lib/swiper/swiper-bundle.min.js"></script>
+        <script src="../static/lib/prism/prism.js"></script>
+
+</body>
+
+</html>
