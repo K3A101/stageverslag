@@ -549,7 +549,8 @@
                                     Bij de volgende iteratie van de carrousel, heb ik ervoor gezorgd dat het carrousel
                                     functioneel blijft
                                     op kleinere schermen. Dus wanneer je de pagina op mobiel gebruikt kun je tussen de
-                                    artikelen slepen. Om dit te bereiken heb ik css media queries  en swiperJs bibliotheek gebruikt om het
+                                    artikelen slepen. Om dit te bereiken heb ik css media queries en swiperJs
+                                    bibliotheek gebruikt om het
                                     carrousel responsive te maken. Het verschil op mobiel dat de pijlen aan de zijkanten
                                     zijn verborgen en je kan alleen de artikelen zien.
                                 </p>
@@ -558,8 +559,8 @@
                                     <summary>
                                         Carrousel responsive code
                                     </summary>
-                                        <pre>
-                                            <code class="language-js">
+                                    <pre>
+                                            <code class="language-sass">
                                                 @include respond-to(from-md) {
                                                 width: 25%;
                                                 
@@ -574,7 +575,8 @@
                         </div>
                         <div class="col-12 col-md-6">
                             <figure>
-                                <img class="content-img" src="../static/images/opdracht-2/carrousel-mobiel.png" alt="Het carrousel op mobiel" width="250">
+                                <img class="content-img" src="../static/images/opdracht-2/carrousel-mobiel.png"
+                                    alt="Het carrousel op mobiel" width="250">
                                 <figcaption>Carrousel op mobiel</figcaption>
                             </figure>
                         </div>
@@ -606,20 +608,32 @@
                             <article class="columns-spacing-right">
                                 <h2>De footer</h2>
                                 <p>
-                                   Op de homepagina van frankrijk.nl heb je ook een footer met verschillende typen inhoud verdeeld in veir kolommen. Het footer heeft een zwarte achtegrond kleur met witte tekst. Om de footer te maken heb ik bootstrap gebruikt om de vier kolommen te maken. Verder heb ik iconen gebruikt van fontawesome voor de social media link en de juiste ruimte gegeven tussen de elementen op basis van het ontwerp.  Bovenaan kun jezien het proces van hoe ik ben begonnen en de eindversie. In de eerste versie heb ik het structuur in elkaar gezet en
+                                    Op de homepagina van Frankrijk.nl heb je ook een footer met verschillende typen
+                                    inhoud verdeeld in vier kolommen. Het footer heeft een zwarte achtergrond kleur met
+                                    witte tekst. Om de footer te maken heb ik Bootstrap gebruikt om de vier kolommen te
+                                    maken. Verder heb ik iconen gebruikt van font-awesome voor de social media link en
+                                    de juiste ruimte gegeven tussen de elementen op basis van het ontwerp. Bovenaan kun
+                                    je zien het proces van hoe ik ben begonnen en de eindversie. In de eerste versie heb
+                                    ik het structuur in elkaar gezet en
                                 </p>
 
                                 <h2>Footer iteratie 2 - Footer op kleiner schermen</h2>
                                 <p>
-                                   
+                                    De volgende iteratie van de footer is de footer op mobiel. Op grotere schermen heeft
+                                    de footer vier kolommen en in op mobiel werd de footer verdeeld naar twee kolommen.
+                                    Dit heb ik gedaan met behulp van Bootstrap 4. Voor meer informatie over Bootstrap 4
+                                    kun je <a class="inline-link" href="../leerdoelen/leerdoel-1.html">Leerdoel 1</a>
+                                    bekijken. Hieronder kun je de code voor dit iteratie zien.
                                 </p>
+
+
 
                                 <details>
                                     <summary>
-                                        Carrousel responsive code
+                                        Code voor footer iteratie 2
                                     </summary>
                                     <pre>
-                                        <code class="language-js">
+                                        <code class="language-scss">
                                         footer#bottom {
                                         background: color(background-dark);
                                         flex-shrink: 0;
@@ -708,29 +722,23 @@
                                                     font-size: 1.2rem;
                                                     }
                                                 }
-                                                }
+                                            }
                                         }
                                         </code>
                                     </pre>
                                 </details>
-
-                                <h2>Carrousel iteratie 3</h2>
-                                <p>
-                                    Bij de volgende iteratie van de carrousel, heb ik ervoor gezorgd dat het carrousel
-                                    functioneel blijft
-                                    op kleinere schermen. Dus wanneer je de pagina op mobiel gebruikt kun je tussen de
-                                    artikelen slepen. Om dit te bereiken heb ik css media queries  en swiperJs bibliotheek gebruikt om het
-                                    carrousel responsive te maken. Het verschil op mobiel dat de pijlen aan de zijkanten
-                                    zijn verborgen en je kan alleen de artikelen zien.
-                                </p>
-
-                              
                             </article>
                         </div>
                         <div class="col-12 col-md-6">
                             <!-- Screenshot van de html code -->
                             <figure>
-                                <img class="content-img" src="../static/images/opdracht-2/footer-mobiel.png" alt="Het carrousel op mobiel" width="250">
+                                <img class="content-img" src="../static/images/opdracht-2/footer-html.png"
+                                    alt="HTML structuur van de footer">
+                                <figcaption>HTML structuur van de footer</figcaption>
+                            </figure>
+                            <figure>
+                                <img class="content-img" src="../static/images/opdracht-2/footer-mobiel.png"
+                                    alt="Het carrousel op mobiel" width="250">
                                 <figcaption>Footer op mobiel</figcaption>
                             </figure>
                         </div>
@@ -744,7 +752,7 @@
 
             <section class="task-assignment">
                 <div class="container">
-                    <h2 class="large"> Wat heb ik geleerd?</h2>
+                    <h2 class="large"> Prototype laatste versie</h2>
                     <div class="row">
                         <div class="col-md-6">
                             <article>
@@ -765,8 +773,40 @@
 
                                 </p>
                             </article>
+                        </div>
+                        <div class="col-md-6">
+                            <article class="columns-spacing-right">
+                                <figure>
+                                    <img class="content-img" src="../static/images/opdracht-2/eindversie-opdracht.png" alt="Eindversie prototype van frankrijk.nl homepagina">
+                                    <figcaption>Prototype eindversie</figcaption>
+                                </figure>
+                            </article>
+                        </div>
 
+                    </div>
+                </div>
+            </section>
+            <section class="task-assignment">
+                <div class="container">
+                    <h2 class="large"> Wat heb ik geleerd?</h2>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <article>
+                                <p>
+                                    Uiteindelijk heb ik geleerd hoe je altijd op de details moet focussen, en je moet
+                                    altijd bij het ontwerp houden. Deze tip was handig toen ik voor website voor klanten
+                                    die moest werken. In deze opdracht heb ik geleerd dat het is okay om classes te
+                                    gebruiken, om structuur in css te houden. Het is sowieso altijd goed om de css
+                                    selectoren te kennen. Verder heb ik geleerd hoe ik met de nieuwe PHPstorm kan werken
+                                    en als laatste hoe je met feedback kan ontvangen en verwerken.
+                                </p>
 
+                                <p>
+                                    Met deze werkzaamheid kon ik het competentie prototypen en uitwerken behalen omdat
+                                    hier kon ik aan de slag om het prototype te maken op basis van een bestaande ontwerp
+                                    te maken. Ook kon ik leren welke moet ik voldoen binnen de development team.
+                                </p>
+                            </article>
                         </div>
                         <div class="col-md-6">
                             <article class="columns-spacing-right">
