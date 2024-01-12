@@ -106,7 +106,7 @@
                     <div class="row">
                         <div class="col-12 col-md-6">
                             <figure>
-                                <img class="content-img" src="../static/images/opdracht-2/opdracht-2-html.png"
+                                <img class="content-img" src="../static/images/opdracht-5/form-html-code.png"
                                     alt="Opdracht 1 Beschrijving">
                                 <figcaption>Opdracht 5 HTML Structuur versie 1</figcaption>
                             </figure>
@@ -146,7 +146,7 @@
                     <div class="row">
                         <div class="col-12 col-md-6">
                             <figure>
-                                <img class="content-img" src="../static/images/opdracht-2/scss-recent-post.png"
+                                <img class="content-img" src="../static/images/opdracht-5/javascript-ajax.png"
                                     alt="Opdracht 2 Scherm foto van stukje code">
                                 <figcaption>Opdracht 5: Javascript</figcaption>
                             </figure>
@@ -164,6 +164,28 @@
                                     zoals het invoeren van tekst in de invoervelden, het indienen van het formulier en
                                     het hoveren over de verzendknop.
                                 </p>
+                                <details>
+                                    <summary>Variabelen voor dom manipulatie</summary>
+                                <pre>
+                                    <code class="language-js">
+                                        const subject = document.getElementById('subject');
+                                        const subjectError = document.querySelector('.subject-error');
+                                        const subjectPreview =document.querySelector('.subject-preview');
+                                        const form = document.querySelector('form');
+                                        const submitButton = document.querySelector('button');
+                                        const inputs = document.querySelectorAll('.input');
+                                        const email = document.querySelector('#sender');
+                                        const emailError = document.querySelector(".email-error");
+                                        const name = document.querySelector('#name');
+                                        const nameError = document.querySelector('.input-error');
+                                        const mailContent = document.querySelector('#message');
+                                        const mailContentError = document.querySelector('.message-error');
+                                        const sendButton = document.querySelector('.send-button');
+                                        const sendIcon = document.querySelector('.send-icon');
+                                    </code>
+                                </pre>
+                                </details>
+                              
                                 <h2>Formulier validatie</h2>
                                 <p>
                                     Bij het invoeren van gegevens in het formulier worden functies aangeroepen om de
@@ -173,6 +195,28 @@
                                     succes en fout. Bovendien is er een animatie toegevoegd aan het verzend icoon
                                     wanneer de gebruiker de knop aanwijst.
                                 </p>
+                                <details>
+                                    <summary>Code voor formulier validatie</summary>
+                                    <pre>
+                                        <code class="language-js">
+                                            form.addEventListener('submit', (e)=>{
+                                                if(!subject.validity.valid){
+                                                showSubjectError()
+                                                e.preventDefault()
+                                                }
+                                            });
+                                            function showSubjectError(){
+                                                if(subject.validity.valueMissing){
+                                                    subjectError.innerHTML = `${errorIcon} Voer een onderwerp in!`;
+                                                    subjectError.classList.add('error');
+                                                } else if(subject.validity.tooShort){
+                                                    subjectError.innerHTML = `${errorIcon} Het onderwerp moet minimaal ${subject.minLength} tekens bevatten!`;
+                                                    subjectError.classList.add('error');
+                                                }
+                                            }
+                                        </code>
+                                    </pre>
+                                </details>
 
                                 <h2>AJAX verzoek</h2>
                                 <p>
@@ -187,10 +231,142 @@
                                     de gebruiker tekst invoert om een visuele indicatie te geven dat er gegevens zijn
                                     ingevoerd.
                                 </p>
+                                <details>
+                                    <summary>Code voor AJAX verzoek</summary>
+                                    <pre>
+                                        <code class="language-js">
+                                            // send the form with ajax to php
+                                            function submitEmail(){
+                                                let fd = new FormData(form);
+                                                fetch('sent.php', {
+                                                method: "post",
+                                                body: fd,
+                                            })
+                                            .then(response => response.json())
+                                            .then(data => {
+                                                console.log(data)
+                                            })
+                                            .catch(error =>{
+                                                console.log(error)
+                                            })
+                                            }
+                                        </code>
+                                    </pre>
+                                </details>
 
                             </article>
                         </div>
 
+                    </div>
+                </div>
+            </section>
+            <section class="task-assignment">
+                <div class="container">
+                    <h2 class="large"> Data ontvangen in PHP server </h2>
+                    <div class="row">
+                        <div class="col-12 col-md-6">
+                            <figure>
+                                <img class="content-img" src="../static/images/opdracht-5/succespagina.png" alt="Opdracht 5 bedankt pagina">
+                                <figcaption>Bedankt pagina</figcaption>
+                            </figure>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <article class="columns-spacing-left">
+                                <h2>Data opslaan als JSON</h2>
+                            <p>
+                                Deze PHP-code verwerkt de gegevens die zijn verzonden via een formulier. Het begint door een lege array genaamd
+                                $errors
+                                te initialiseren en converteert de POST-gegevens naar JSON-formaat met behulp van json_encode. Vervolgens worden
+                                verschillende validaties uitgevoerd op de ontvangen gegevens, zoals het controleren op leegheid, het valideren van
+                                het
+                                e-mailadres en het beperken van de lengte van het onderwerp en de naam.
+                            </p>
+                            <details>
+                                <summary>Data opslaan in $errors Array</summary>
+
+                                <pre>
+                                    <code class="language-php">
+                                        $errors =[];
+                                        $jsonData = json_encode($_POST);
+                                        
+                                        $subject = $_POST["subject"];
+                                        $subjectLength = strlen($subject);
+                                        $name = $_POST["name"];
+                                        $nameLength = strlen($name);
+                                        $email = $_POST["email_sender"];
+                                        $message = $_POST["messages"];
+
+                                    </code>
+                                </pre>
+                            </details>
+
+                            <figure>
+                                <img class="content-img" src="../static/images/opdracht-5/gestuurde-data.png" alt="Formulier data gestuurd naar de Server">
+                                <figcaption>Formulier data gestuurd naar de Server</figcaption>
+                            </figure>
+                            
+                            <h2>Data valideren vanuit de server</h2>
+                            <p>
+                                 Als er fouten worden gedetecteerd tijdens de validatie, worden deze toegevoegd aan de $errors-array met bijbehorende
+                                foutmeldingen. Als er geen fouten zijn, wordt een succesfeedback gegenereerd en wordt de HTTP-statuscode ingesteld
+                                op
+                                200. In het geval van fouten wordt een array met foutenberichten gegenereerd en wordt de HTTP-statuscode ingesteld
+                                op
+                                400. Ten slotte wordt het resulterende feedback array omgezet naar JSON en uitvoer gegeven in de console.
+                            </p>
+                            <figure>
+                                <img class="content-img" src="../static/images/opdracht-5/server-validatie.png" alt="Wanneer er foute data naar de server gestuurd word">
+                                <figcaption>Wanneer er foute data naar de server gestuurd word</figcaption>
+                            </figure>
+
+                            <details>
+                                <summary>Server validatie</summary>
+                            
+                                <pre>
+                                    <code class="language-php">
+                                        if(empty($subject)) {
+                                            $errors["subject"] = "Voer een onderwerp in!";
+                                        }elseif($subjectLength < 3) { 
+                                            $errors["subject"]="Het onderwerp moet minimaal 3 karakters bevatten!" ;
+                                        }elseif($subjectLength> 50) {
+                                            $errors["subject"] = "Het onderwerp moet maximaal 50 karakters bevatten!";
+                                        }
+                                        if(empty($name)) {
+                                            $errors["name"] = "Voer je naam in!";
+                                        }elseif ($nameLength < 2 ) { $errors["name"]="Je naam moet  minimaal 2 karakter bevatten!" ; 
+                                        } elseif($nameLength>50) {
+                                            $errors["name"] = "Je naam moet maximaal 50 karakter bevatten!";
+                                        }
+                                        if(empty($email)) {
+                                            $errors["email"] = "Voer je email in!";
+                                        }elseif(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+                                            $errors["email"] = "Voer een geldig email in!";
+                                        }
+                                        if(empty($message)) {
+                                            $errors["message"] = "Voer een bericht in!";
+                                        }
+
+                                        if(empty($errors)) {
+                                            $feedback = array('success'=> 'Bedankt voor je bericht');
+                                            http_response_code(200);
+                                            include 'confirmation.php';
+                                        }else {
+                                            $feedback = array('errors'=> $errors);
+                                            http_response_code(400);
+                                            echo json_encode($feedback);
+                                        }
+
+                                    </code>
+                                </pre>
+                            </details>
+                            
+                            <h2>Geen fouten krijgen de gebruiker een bevestiging pagina</h2>
+                            <p>
+                                Als er geen fouten zijn, wordt de bedankpagina  naar de gebruiker gestuurd bevat  dat weergeeft dat het formulier succesvol is ingediend.
+                            </p>
+                               
+                        </div>
+            
                     </div>
                 </div>
             </section>
@@ -223,613 +399,199 @@
 
             <section class="task-assignment">
                 <div class="container">
-                    <h2 class="large"> Prototype versie 1</h2>
+                    <h2 class="large"> Formulier met succes of foutmelding</h2>
                     <div class="row">
-                        <div class="col-12 col-md-6">
-
-                            <p>
-                                Ik heb hier gewerkt aan de html structuur met weinig css opmaak. in de eerste versie heb
-                                ik alleen gefocust op de grid met bootstrap. Want bij elke onderdeel heb je een andere
-                                type grid layout. Hier gebruiken we een grid layout van 12 kolommen. Dit is de standaard
-                                hoeveelheid kolommen die men gebruikt bij websites. Ik ga per onderdeel een beetje
-                                vertellen hoe ik heb eraan toegekomen.
-                            </p>
-
-                            <h2>Het laatste drie posts</h2>
-                            <p>
-                                Bij de eerste onderdeel heb ik drie post. Een post heeft een grotere afbeelding. De twee
-                                afbeelding heeft nog twee klein andere foto's onder elkaar. dus het layout bestaat uit
-                                twee kolommen.
-                            </p>
-                            <h2>Recent verschenen onderdeel</h2>
-                            <p>
-                                De tweede onderdeel van de pagina bestaat uit zes artikelen. Elk artikel bestaat uit de
-                                titel, uitgelichte afbeelding, categorie en de publicatiedatum. Ik moest ervoor zorgen
-                                dat de afbeelding niet uitgerekt blijven. De layout zelf moet drie kolommen blijven
-                                hiervoor heb ik de class col-12 col-md-4
-                            </p>
-
-                            <h2>"Hightlights" Carrousel onderdeel</h2>
-                            <p>
-                                Verder heb je op de pagina een carrousel met artikelen. Om de carrousel te maken heb ik
-                                een javascript bibliotheek gebruikt. De bibliotheek heet swiperjs. Met javascript kun je
-                                verschillende functionaliteit aan de carrousel toevoegen. En je kan stijlen met de
-                                ingestelde css class. Dit was een uitdaging voor mij omdat ik moest ook ervoor zorgen
-                                dat het goed op mobiel eruit ziet.
-                            </p>
-                            <h2>Nieuwsbrief formulier</h2>
-                            <p>
-                                De volgende onderdeel op de pagina is de nieuwsbrief formulier. Hier heb je een aantal
-                                formulier html elementen. Hier moest ik ervoor zorgen dat ik de juiste html element
-                                gebruikt die past bij een formulier. Qua layout bestaat het namelijk uit twee kolommen.
-                            </p>
-                            <h2>Footer</h2>
-                            <p>
-                                Als laatste heb je de footer, in de footer heb je een kleine samenvatting van de
-                                websites met verschillende social media links, links naar de andere webpagina's en de
-                                auteursrecht.
-                            </p>
-
-
-
+                        <div class="col-12 ">
+                        <article class="columns-spacing-right">
+                          <h2>Formulier is niet correct ingevuld</h2>
+                        </article>
                         </div>
-                        <div class="col-12 col-md-6">
-                            <article class="columns-spacing-right">
+                        <div class="col-12">
+                            <article>
                                 <figure>
-                                    <img class="content-img" src="../static/images/opdracht-2/versie-1.png"
-                                        alt="Opdracht 2 versie 1">
-                                    <figcaption>Prototype versie 1</figcaption>
+                                    <img class="content-img" src="../static/images/opdracht-5/formulier-error-message.png"
+                                        alt="Opdracht 5 Formulier met fouten">
+                                    <figcaption>Opdracht 5 Formulier met fouten</figcaption>
                                 </figure>
-
                             </article>
                         </div>
-
                     </div>
-                </div>
-            </section>
 
-
-            <section class="task-assignment">
-                <div class="container">
-                    <h2 class="large"> Top drie berichten</h2>
                     <div class="row">
-                        <article class="columns-spacing-right">
-                            <figure>
-                                <img class="content-img" src="../static/images/opdracht-2/top-drie-post.png"
-                                    alt="top drie berichten">
-                                <figcaption>Functionaliteit: Top drie artikelen</figcaption>
-                            </figure>
-
-                        </article>
-                    </div>
-                    <div class="row">
-                        <div class="col-12 col-md-6">
-
-
-
-                            <h2>Het laatste drie posts</h2>
-                            <p>
-                                In de volgende iteratie heb ik wel css gebruikt. Ik heb de juiste lettertype ingeladen
-                                met @font-face. Ik heb poppins gebruikt voor paragrafen en dm serif display voor kopjes.
-                                Daarna heb ik met scss de afbeeldingen dezelfde uitlijning gegeven. Verder heb ik ervoor
-                                gezorgd dat de website ook responsive is. Dit betekent dat dit onderdeel op mobiel te
-                                zien is. Dus wanneer je op mobiel bent staan alle artikelen onder elkaar door het gebrek
-                                aan ruimte.
+                        <div class="col-12">
+                         <article class="columns-spacing-right">
+                            <h2>Foutmelding</h2>
+                            <p>Wanneer de gebruiker het formulier gebruikt, moeten ze feedback krijgen of ze iets niet goed heb ingevuld. De manier hoe ik dit heb aangepakt is een bericht zichtbaar maken met instructies hoe ze het fout kan verbeteren. Ik 
+                            heb daarna met css de kleur rood gebruikt om het aan te geven dat de ingevoerde data verkeerd is. Voor mensen die kleurenblind zijn heb ik iconen gebruikt om de boodschap duidelijker te maken. 
                             </p>
+                            <h2>Hoe krijg je deze foutmeldingen?</h2>
+                            <ul>
+                                <li class="custom-bullet-point">Wanneer je de verzend knop klikt zonder niks in te vullen</li>
+                                <li class="custom-bullet-point">Wanneer je ongeldige email adres invoert</li>
+                                <li class="custom-bullet-point">Wanneer je geen naam invoert</li>
+                                <li class="custom-bullet-point">Wanneer je geen bericht invoert</li>
+                            </ul>
+                         
 
+                        <details>
+                            <summary>Hier is de javascript code voor het formulier foutmelding</summary>
+                            <pre>
+                                <code class="language-js">   
+                                        // Show error if the user do not fill the form with the correct data
+                                        form.addEventListener('submit', (e)=>{
+                                                if(!subject.validity.valid){
+                                                showSubjectError()
+                                                e.preventDefault()
+                                            }
 
-                        </div>
-                        <div class="col-12 col-md-6">
-                            <article class="columns-spacing-right">
-                                <figure>
-                                    <img class="content-img" src="../static/images/opdracht-2/opdracht-2-html.png"
-                                        alt="Opdracht 2 HTML structuur">
-                                    <figcaption>Opdracht 2 HTML structuur</figcaption>
-                                </figure>
+                                                if(!name.validity.valid) {
+                                                showNameError();
+                                                e.preventDefault();
+                                            }
+                                                if(!email.validity.valid) {
+                                                showEmailError()
+                                                e.preventDefault();
+                                            }
+                                                if(!mailContent.validity.valid) {
+                                                showEmailContentError();
+                                                e.preventDefault();
+                                            }
+                                        })
 
-                            </article>
-                        </div>
-
-                    </div>
-                </div>
-            </section>
-            <section class="task-assignment">
-                <div class="container">
-                    <h2 class="large"> Navigatiemenu</h2>
-                    <div class="row">
-                        <article class="columns-spacing-right">
-                            <figure>
-                                <img class="content-img" src="../static/images/opdracht-2/navigatiemenu-opdr-2.png"
-                                    alt="Navigatie menu">
-                                <figcaption>Het navigatiemenu versie 1</figcaption>
-                            </figure>
-
-                        </article>
-                    </div>
-                    <div class="row">
-                        <div class="col-12 col-md-6">
-                            <article class="columns-spacing-right">
-                                <h2>Hoe ziet de navigatiemenu uit?</h2>
-                                <p>
-                                    De Navigatiemnu op de figma bestand ziet in het eerste instantie heel simpel uit.
-                                    Het
-                                    bestaat namelijk uit de logo, twee menu items en de een hamburger menu met de
-                                    verborgen
-                                    submenu. De Menu kun je aanschaffen door op de hamburger icoon te klikken. Hierin
-                                    krijg
-                                    je nog meer links naar andere webpagina's.
-                                </p>
-
-                                <details>
-                                    <summary>Zo ziet mijn css code eruit</summary>
-
-                                    <pre>
-                                <code class="language-scss">
-                                    .three-featured-post {
-                                    padding: 2.5rem 0 2.5rem 0;
-                                        
-                                        @include respond-to(from-sm) {
-                                        padding-top: .5rem;
-                                        
-                                        }
-
-                                        small {
-                                        
-                                        position: relative;
-                                        @include tags(color(primary));
-                                        
-                                            &:first-of-type {
-                                                font-weight: 500;
+                                        function showSubjectError() {
+                                            if(subject.validity.valueMissing) {
+                                            subjectError.innerHTML = `${errorIcon} Voer een onderwerp in!`;
+                                            subjectError.classList.add('error');
+                                            } else if(subject.validity.tooShort) {
+                                                subjectError.innerHTML = `${errorIcon} Het onderwerp moet minimaal ${subject.minLength} tekens bevatten!`;
+                                                subjectError.classList.add('error');
                                             }
                                         }
-                                            
-                                            a {
-                                            width: 100%;
-                                                
-                                                img {
-                                                width: 100%;
-                                                height: 100%;
-                                                object-fit: cover;
-                                                
-                                                }
+
+                                        function showNameError() {
+                                            if(name.validity.valueMissing) {
+                                            nameError.innerHTML = ` ${errorIcon} Voer uw naam in!`;
+                                            nameError.classList.add('error');
+                                            } else if(name.validity.tooShort) {
+                                                nameError.innerHTML = `${errorIcon} Uw naam moet minimaal ${name.minLength} tekens bevatten!`;
+                                                nameError.classList.add('error');
                                             }
                                         }
-                                        
-                                            @include respond-to(from-md) {
-                                            .three-featured-post{
-                                            padding-bottom: 10rem;
-                                                
-                                                img {
-                                                width: 100%;
-                                                height: 100%;
-                                                object-fit: cover;
-                                                object-position: center;
-                                                }
-                                                
-                                                .flex-fit {
-                                                display: flex;
-                                                flex-wrap: wrap;
-                                                flex-flow: column;
-                                                align-items: stretch;
-                                                
-                                                a {
-                                                flex: 1 0 0;
-                                                }
-                                            }
-                                            
-                                            .absolute-content {
-                                            position: absolute;
-                                            top: 100%;
-                                            min-height: 10rem;
+                                        function showEmailError(){
+                                            if (email.validity.valueMissing) {
+                                                emailError.innerHTML = ` ${errorIcon} Voer uw email in!`;
+                                                emailError.classList.add('error');
+                                            } else if(email.validity.typeMismatch){
+                                                emailError.innerHTML = ` ${errorIcon} Voer een geldig email adres in!`;
+                                                emailError.classList.add('error');
                                             }
                                         }
-                                    }
+                                        function showEmailContentError(){
+                                            if(mailContent.validity.valueMissing){
+                                                mailContentError.innerHTML = `${errorIcon} Je moet nog een bericht schrijven!`
+                                                mailContentError.classList.add('error');
+                                            }
+                                        }
+
+                                        submitButton.addEventListener('click',()=>{
+                                        submitEmail()
+                                        });
+
                                 </code>
                             </pre>
-                                </details>
-
-                                <h2>Tweede iteratie</h2>
-                                <p>
-                                    Bij de tweede iteratie van de navigatiemenu heb ik gefocust op de verhoudingen en de
-                                    spaties tussen
-                                    de menu elementen. Al de metingen waren te vinden in het Figma bestand. Dus hier heb
-                                    ik de juiste css toegevoegd en ging aan de
-                                    slag met de verborgen submenu. Om dit te bereiken heb ik gebruik gemaakt van
-                                    Javascript. Dus met javascript heb ik een event listener toegevoegd aan de hamburger
-                                    icoon. En als je op de icoon klikt wordt de submenu zichtbaar met een css class.
-                                </p>
+                        </details>
+                    </article>
+                        </div>
+                        <div class="col-12">
+                            <article class="columns-spacing-right">
+                                <h2>Formulier is correct ingevuld</h2>
                                 <figure>
-                                    <img class="content-img" src="../static/images/opdracht-2/navigatiemenu-opdr-2.png"
-                                        alt="top drie berichten">
-                                    <figcaption>Het navigatiemenu</figcaption>
+                                    <img class="content-img" src="../static/images/opdracht-5/formulier-good-state.png"
+                                        alt="Opdracht 5 Formulier met success">
+                                    <figcaption>Opdracht 5 Formulier met success</figcaption>
                                 </figure>
+
+                              
+                                    <p>
+                                        Aan de andere kant geef je ook feedback aan de gebruiker wanneer ze de juiste data invoert. Om dit te bereiken heb javascript gebruikt om een css class te maken wanneer de gebruiker goed heeft ingevuld. De class heb ik gezet bij de invoervelden. Dus wanneer de gebruiker de juiste data invoert ga de foutmeldingen weg en de border wordt verandert naar een groene kleur. Voor de mensen die geen groen kunnen zien heb ik een vinkje icoon gebruikt om aan te geven dat de formulier goed is ingevuld. 
+                                    </p>                             
+
                                 <details>
-                                    <summary>Javascript code</summary>
+                                    <summary>Hier is de javascript code voor het formulier foutmelding</summary>
                                     <pre>
                                         <code class="language-js">
-                                            const submitButton = document.querySelector('form button');
-                                            const subMenu = document.querySelector('.header-nav .has-submenu ');
-                                            const subMenuBtn = document.querySelector('.menu-button ');
-                                            const subMenuContainer = document.querySelector('.header-nav .has-submenu ul');
-                                            const hamburgerMobile = document.querySelector('.nav-toggle');
-                                            
-                                            const mobileHeader = document.querySelector('.off-canvas-nav .has-submenu');
-                                            subMenu.addEventListener('click', toggleMenu);
-                                            hamburgerMobile.addEventListener('click', mobileToggleMenu);
-                                            
-                                            function toggleMenu() {
-                                                subMenuBtn.classList.toggle('active');
-                                                subMenuContainer.classList.toggle('open');
-                                            }
-                                            
-                                            function mobileToggleMenu() {
-                                                this.classList.toggle('active');
-                                                document.querySelector('nav.off-canvas-nav').classList.toggle('active');
-                                                mobileHeader.classList.toggle('active');
-                                            }
-                                            
-                                            if(mobileHeader.classList.contains('active')){
-                                            subMenuContainer.classList.toggle('close');
-                                        
-                                            }
-                                        </code>
-                                    </pre>
-                                </details>
-
-                                <h2>Derde iteratie</h2>
-                                <p>
-                                    In de derde versie heb ik nu wel een micro-interactie toegevoegd dat de hamburger
-                                    menu veranderd naar een kruisje
-                                    wanneer er geklikt wordt op de hamburgermenu.
-
-                                    Ik heb ook schaduw toegevoegd om het menu te onderscheiden tussen de navigatiebalk
-                                    en de pagina
-                                    content.
-
-                                    Alleen moet ik kijken hoe ik die schaduw achter kruisje kan plaatsen.
-                                </p>
-                                <figure>
-                                    <img class="content-img" src="../static/images/opdracht-2/open-naviagtiemenu.png"
-                                        alt="Opdracht 1 feedback">
-                                    <figcaption>Navigatiemenu iteratie drie</figcaption>
-                                </figure>
-
-
-                            </article>
-
-                        </div>
-                        <div class="col-12 col-md-6">
-                            <article class="columns-spacing-right">
-                                <figure>
-                                    <img class="content-img" src="../static/images/opdracht-2/opdracht-2-html.png"
-                                        alt="Opdracht 1 feedback">
-                                    <figcaption>Prototype versie 1</figcaption>
-                                </figure>
-
-                            </article>
-                        </div>
-
-                    </div>
-                </div>
-            </section>
-
-            <section class="task-assignment">
-                <div class="container">
-                    <h2 class="large"> Carrousel</h2>
-                    <div class="row">
-                        <article class="columns-spacing-right">
-                            <figure>
-                                <img class="content-img" src="../static/images/opdracht-2/slideshow-v2.png"
-                                    alt="Het carrousel">
-                                <figcaption>Carrousel</figcaption>
-                            </figure>
-
-                        </article>
-                    </div>
-                    <div class="row">
-                        <div class="col-12 col-md-6">
-                            <article class="columns-spacing-right">
-                                <h2>Het Carrousel</h2>
-                                <p>Het volgende onderdeel die ik heb gebouwd is een carrousel met verschillende
-                                    artikelen.
-                                    De Opmaak van de artikelen zijn hetzelfde als de rest. Om het carrousel te maken heb
-                                    ik een javascript
-                                    bibliotheek gebruikt. Het heet swiperjs. Ik heb de bestand lokaal geïnstalleerd en
-                                    in mijn project ingeladen.
-                                    Het is makkelijk te gebruiken. Het komt met een basis HTML structuur die je moet
-                                    implementeren en classes daarbij
-                                    en in javascript bestand maak je een object aan met allerlei eigenschappen. Die
-                                    eigenschappen zijn functionaliteiten die
-                                    je kan toevoegen onder andere paginering, autoplay, posities, pijltjes enzovoorts.
-                                    Je kan <a class="inline-link"
-                                        href="https://swiperjs.com/swiper-api#swiper-full-html-layout">hier de
-                                        documentatie lezen</a>.
-                                </p>
-
-                                <h2>Carrousel iteratie 2</h2>
-                                <p>
-                                    Voor de tweede iteratie heb moest ik ervoor zorgen dat de carrousel goed te zien
-                                    krijgt op mobiel
-                                    dus ik heb de carrousel responsive gemaakt. Iets dat ik lastig vond was het verschil
-                                    van breedte tussen de
-                                    afbeeldingen. Dus ik moest ervoor zorgen dat de afbeeldingen altijd scherp blijven.
-                                    Om dit te bereiken met javascript meer functionaliteiten
-                                    toe door de properties breakpoints te gebruiken.
-                                </p>
-
-                                <details>
-                                    <summary>
-                                        Javascript code
-                                    </summary>
-                                    <pre>
-                                        <code class="language-js">
-                                            const swiper = new Swiper('.swiper', {
-                                            // Optional parameters
-                                            autoHeight: true,
-                                            slidesPerView: 'auto',
-                                            spaceBetween: 30, // de ruimte tussen de dia's
-                                            centerInsufficientSlides: true,
-                                            centeredSlidesBounds: true,
-                                            loop: true,
-                                            
-                                            // If we need pagination
-                                            pagination: {
-                                            el: '.swiper-pagination', // paginering
-                                            activeEl: '.swiper-pagination-bullet-active',
-                                            clickable: true,
-                                            },
-                                            
-                                            // Navigation arrows
-                                            navigation: {
-                                            nextEl: '.swiper-button-next',
-                                            prevEl: '.swiper-button-prev',
-                                            },
-                                            });
-                                        </code>
-                                    </pre>
-                                </details>
-
-                                <h2>Carrousel iteratie 3</h2>
-                                <p>
-                                    Bij de volgende iteratie van de carrousel, heb ik ervoor gezorgd dat het carrousel
-                                    functioneel blijft
-                                    op kleinere schermen. Dus wanneer je de pagina op mobiel gebruikt kun je tussen de
-                                    artikelen slepen. Om dit te bereiken heb ik css media queries en swiperJs
-                                    bibliotheek gebruikt om het
-                                    carrousel responsive te maken. Het verschil op mobiel dat de pijlen aan de zijkanten
-                                    zijn verborgen en je kan alleen de artikelen zien.
-                                </p>
-
-                                <details>
-                                    <summary>
-                                        Carrousel responsive code
-                                    </summary>
-                                    <pre>
-                                            <code class="language-sass">
-                                                @include respond-to(from-md) {
-                                                width: 25%;
+                                           const errorIcon = `<img class="error-icon" src="../../static/icons/circle-exclamation-solid.svg" alt="h" width=16
+                                                height=16>`; 
+                                             const successIcon = `<img class="success-icon" src="../../static/icons/circle-check-solid.svg" alt="h" width=16
+                                                height=16>`; 
+                                           
+                                            // feature detection let the code only run if the form element exists on the page
+                                            // used the same script file on the sent.php file
+        
+                                            if(form) {
+                                                // get form data values with the input eventlisteners
+                                                subject.addEventListener('input',() => {
+                
+                                                // console.log(emailSubject.value);
+                                                if(subject < 0){ 
+                                                    subjectPreview.innerHTML="Nieuwe Bericht" ; 
+                                                } else { 
+                                                    subjectPreview.innerHTML=`Onderwerp:
+                                                    ${subject.value}`; 
+                                                } 
                                                 
-                                                    &.wider {
-                                                    width: 50%;
-                                                }
-                                            }
-                                            </code>
-                                        </pre>
-                                </details>
-                            </article>
-                        </div>
-                        <div class="col-12 col-md-6">
-                            <figure>
-                                <img class="content-img" src="../static/images/opdracht-2/carrousel-mobiel.png"
-                                    alt="Het carrousel op mobiel" width="250">
-                                <figcaption>Carrousel op mobiel</figcaption>
-                            </figure>
-                        </div>
-
-                    </div>
-
-                </div>
-            </section>
-            <section class="task-assignment">
-                <div class="container">
-                    <h2 class="large"> Footer</h2>
-                    <div class="row">
-                        <article class="columns-spacing-right">
-                            <figure>
-                                <img class="content-img" src="../static/images/opdracht-2/footer-versie-1.png"
-                                    alt="Footer versie 1">
-                                <figcaption>Footer versie 1</figcaption>
-                            </figure>
-                            <figure>
-                                <img class="content-img" src="../static/images/opdracht-2/footer-desktop.png"
-                                    alt="Footer versie 2">
-                                <figcaption>Footer versie 1</figcaption>
-                            </figure>
-
-                        </article>
-                    </div>
-                    <div class="row">
-                        <div class="col-12 col-md-6">
-                            <article class="columns-spacing-right">
-                                <h2>De footer</h2>
-                                <p>
-                                    Op de homepagina van Frankrijk.nl heb je ook een footer met verschillende typen
-                                    inhoud verdeeld in vier kolommen. Het footer heeft een zwarte achtergrond kleur met
-                                    witte tekst. Om de footer te maken heb ik Bootstrap gebruikt om de vier kolommen te
-                                    maken. Verder heb ik iconen gebruikt van font-awesome voor de social media link en
-                                    de juiste ruimte gegeven tussen de elementen op basis van het ontwerp. Bovenaan kun
-                                    je zien het proces van hoe ik ben begonnen en de eindversie. In de eerste versie heb
-                                    ik het structuur in elkaar gezet en
-                                </p>
-
-                                <h2>Footer iteratie 2 - Footer op kleiner schermen</h2>
-                                <p>
-                                    De volgende iteratie van de footer is de footer op mobiel. Op grotere schermen heeft
-                                    de footer vier kolommen en in op mobiel werd de footer verdeeld naar twee kolommen.
-                                    Dit heb ik gedaan met behulp van Bootstrap 4. Voor meer informatie over Bootstrap 4
-                                    kun je <a class="inline-link" href="../leerdoelen/leerdoel-1.html">Leerdoel 1</a>
-                                    bekijken. Hieronder kun je de code voor dit iteratie zien.
-                                </p>
-
-
-
-                                <details>
-                                    <summary>
-                                        Code voor footer iteratie 2
-                                    </summary>
-                                    <pre>
-                                        <code class="language-scss">
-                                        footer#bottom {
-                                        background: color(background-dark);
-                                        flex-shrink: 0;
-                                        width: 100%;
-                                        color: color(text-light);
-                                        margin-top:7.5rem;
-                                        padding: 1rem 0;
-                                        
-                                            a {
-                                            display: inline-block;
-                                            color: color(text-light);
-                                            padding: 1rem 0;
-                                            font-size: 1.4rem;
-                                            }
-                                            
-                                            i {
-                                            padding-right: 1rem;
-                                            }
-                                            
-                                            nav {
-
-                                                &.social-media,
-                                                &.footer-links {
-                                            
-                                                    ul{
-                                                    padding: 0;
-                                                    @include columns(2);
+                                                if(subject.validity.valid) { 
+                                                    subjectError.innerHTML=`${successIcon}`;
+                                                    subjectError.classList.remove('error'); 
+                                                }else{ 
+                                                    showSubjectError() 
+                                                } });
                                                     
-                                                    @include respond-to(from-md) {
-                                                    padding: 0 0 0 2rem;
+                                                name.addEventListener('input', ()=>{
+                                                    const nameValue = name.value;
+                                                    console.log(nameValue);
                                                     
-                                                    @include columns(1);
-                                                    
-                                                            li{
-                                                            width: fit-content;
-                                                            }
-                                                            
-                                                            @include respond-to(from-lg) {
-                                                            @include columns(2);
-                                                            padding: 0 0 0 4rem ;
-                                                            }
-                                                        }
+                                                    if(name.validity.valid) {
+                                                    nameError.innerHTML = `${successIcon}`;
+                                                    nameError.classList.remove('error');
+                                                    } else {
+                                                    showNameError()
                                                     }
+                                                })
+        
+                                                email.addEventListener('input' , ()=>{
+                                                if(email.validity.valid){
+                                                emailError.innerHTML = `${successIcon}`;
+                                                emailError.classList.remove('error');
+                                                }else{
+                                                showEmailError()
                                                 }
-                                            }
-                                        
-                                        .footer-content {
-                                            
-                                            h2 {
-                                            font-family: $font-body;
-                                            font-weight: 500;
-                                            font-size: 2.3rem;
-                                            margin-bottom: 0;
-                                            }
-                                            
-                                            .tags {
-                                            font-weight: 700;
-                                            font-size: 1.4rem;
-                                            margin-top: .5rem;
-                                            }
-                                            
-                                            .footer-summary {
-                                            font-weight: 400;
-                                            line-height: $line-height;
-                                            font-size: 1.4rem;
-                                            }
-                                        }
-                                        
-                                        .copyright {
-                                        
-                                            ul {
-                                        
-                                                padding: 0 0 1.6rem 0;
-                                                margin-bottom: 0;
-                                                display: flex;
-                                                flex-direction: column;
-                                                justify-content: space-between;
-                                                border-top: 1px solid color(border);
-                                                
-                                                @include respond-to(from-md) {
-                                                flex-direction: row;
+                                                });
+        
+                                                mailContent.addEventListener('input' ,()=>{
+                                                if(mailContent.validity.valid){
+                                                mailContentError.innerHTML = `${successIcon}`;
+                                                mailContentError.classList.remove('error');
+                                                }else{
+                                                showEmailContentError()
                                                 }
+                                                })
+        
                                         
-                                                    a {
-                                                    opacity: 80%;
-                                                    font-size: 1.2rem;
-                                                    }
-                                                }
+                                                submitButton.addEventListener('click',()=>{
+                                                submitEmail()
+                                                });
+        
                                             }
-                                        }
                                         </code>
                                     </pre>
                                 </details>
                             </article>
                         </div>
-                        <div class="col-12 col-md-6">
-                            <article>
-                                <figure>
-                                    <img class="content-img" src="../static/images/opdracht-2/footer-html.png"
-                                        alt="HTML structuur van de footer">
-                                    <figcaption>HTML structuur van de footer</figcaption>
-                                </figure>
-                                <figure>
-                                    <img class="content-img" src="../static/images/opdracht-2/footer-mobiel.png"
-                                        alt="Het carrousel op mobiel" width="250">
-                                    <figcaption>Footer op mobiel</figcaption>
-                                </figure>
-                            </article>
-
-                        </div>
-
-                    </div>
-
-                </div>
-            </section>
-
-
-
-            <section class="task-assignment">
-                <div class="container">
-                    <h2 class="large"> Prototype laatste versie</h2>
-                    <div class="row">
-                        <div class="col-12 col-md-6">
-                            <article>
-                                <p>
-                                    Hier kan je de eindversie van mij gemaakte prototype. Ik heb veel feedback gekregen
-                                    van de programmeurs om aan het eindproduct te komen. Wanneer ik klaar was met een
-                                    onderdeel heb ik daarna een gesprek met de programmeur om code review te doen. Hij
-                                    gaat mijn code bekijken en benoem de aandachtpunten waaraan ik moet werken. All de
-                                    feedback heb ik genoteerd in mij notion. Door kritisch naar de code te kijken kon ik
-                                    een kwalitatieve product bouwen.
-
-                                    Hier is de link naar de live demo:
-                                </p>
-                                <a href="https://k3a101.github.io/lange-stage-opdrachten/" class="button primary"
-                                    target="_blank">Live demo</a>
-                            </article>
-                        </div>
-                        <div class="col-12 col-md-6">
-                            <article class="columns-spacing-right">
-                                <figure>
-                                    <img class="content-img" src="../static/images/opdracht-2/eindversie-opdracht.png"
-                                        alt="Eindversie prototype van frankrijk.nl homepagina">
-                                    <figcaption>Prototype eindversie</figcaption>
-                                </figure>
-                            </article>
-                        </div>
-
                     </div>
                 </div>
             </section>
+
             <section class="task-assignment">
                 <div class="container">
                     <h2 class="large"> Wat heb ik geleerd?</h2>
@@ -837,29 +599,13 @@
                         <div class="col-12 col-lg-8">
                             <article>
                                 <p>
-                                    Ten slotte heb ik veel van deze opdracht geleerd. Wat ik leuk vond, was dat mijn
-                                    begeleider het moeilijker gemaakt had
-                                    omdat hij merkte dat ik veel frontend-vaardigheden had. Terwijl ik aan het prototype
-                                    werkte, was het leren van SCSS,
-                                    Bootstrap en SwiperJs een uitdaging. Het was een kwestie van het begrijpen van de
-                                    frameworks en het bepalen van de
-                                    manier waarop je de nieuwe kennis in het prototype kon implementeren. Ik kon het
-                                    beter toepassen wanneer ik begreep hoe het allemaal in
-                                    elkaar zit.
+                                   In deze opdracht heb ik kennis gemaakt met PHP. Het is een nieuwe programmeertaal die ik niet bij CMD heb geleerd. Dit opdracht voldoet aan de leerdoel: Nieuwe frameworks leren. Ik heb daardoor veel documentatie gelezen over PHP zodat ik beter kan begrijpen hoe deze opdracht kan maken. Wat ik heb gelezen over PHP is alleen de basis. Het bevat dingen zoals, variabele aanmaken, de soorten operators, hoe je met arrays kan werken en over formulier validatie. Ik ben niet dieper in gegaan.
                                 </p>
                                 <p>
-                                    Ik heb in deze les geleerd hoe je als programmeur bij go2people kunt werken. Ik heb
-                                    ontdekt wat de beste praktijken en
-                                    codenormen zijn voor front-end development en hoe je CSS-code in mappen kunt
-                                    organiseren.
-
+                                 Verder heb ik geleerd om feedback te vragen aan andere expertise. Dit opdracht is meer gefocust op de backend en niet frontend dus ik moest een backend programmeur vragen stellen wanneer ik vast liep. Dat ing best wel simpel het is gewoon een kwestie van vragen. 
                                 </p>
                                 <p>
-                                    Bovendien heb ik kennis opgedaan over het creëren van een klikbare prototype met
-                                    behulp van het Figma-ontwerp. Ik heb
-                                    ook verschillende iteraties kunnen uitvoeren op basis van de feedback. Om zo
-                                    nauwkeurig te werken, bereid ik me voor om
-                                    altijd kritisch naar me werk te kijken.
+                                    Als laatste heb ik veel met javascript kunnen doen om het formulier interactief te maken. Met javascript was het mogelijk om feedback aan de gebruiker te geven de data goed of fout is ingevuld.
                                 </p>
                             </article>
                         </div>
@@ -867,15 +613,13 @@
                             <h2>Kernpunten</h2>
                             <article>
                                 <ul>
-                                    <li class="custom-bullet-point">Leren hoe je scss kan implementeren in een project
+                                    <li class="custom-bullet-point">Leren hoe je PHP kan implementeren in een project
                                     </li>
-                                    <li class="custom-bullet-point">Leren hoe je met Bootstrap 4 grid systeem de layout
-                                        van de pagina </li>
-                                    <li class="custom-bullet-point">Prototypen op basis van een Figma ontwerp</li>
+                                    <li class="custom-bullet-point">Formulier gegevens sturen vanuit de client naar de server me PHP </li>
+                                    <li class="custom-bullet-point">Juiste HTML elementen gebruiken voor formulier</li>
                                     <li class="custom-bullet-point">Feedback ontvangen en verwerken</li>
-                                    <li class="custom-bullet-point">SwiperJs javascript bibliotheek implementeren om
-                                        carrousel te maken</li>
-                                    <li class="custom-bullet-point">Protoype maken voor mobiel</li>
+                                    <li class="custom-bullet-point">Javascript gebruiken om de formulier data te controleren</li>
+                                    <li class="custom-bullet-point">Feedback aan de gebruiker geven of de formulier goed of fout is ingevuld </li>
 
                                 </ul>
 
