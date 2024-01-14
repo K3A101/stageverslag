@@ -47,6 +47,27 @@
     }
 }
 
+.custom-bullet-point-variation-1 {
+    list-style: none;
+    font-size: 1.7rem;
+    position: relative;
+    padding-left: 2rem;
+    padding-bottom: .8rem;
+
+    &::before {
+        content: "\2022";
+        position: absolute;
+        left: 0;
+        top: 0;
+        font-weight: bold;
+        display: inline-block;
+        width: 1rem;
+        color: color(white);
+        margin: 0 0.5rem 0 0;
+    }
+}
+
+
 .languages-list {
     padding: 0;
     display: flex;

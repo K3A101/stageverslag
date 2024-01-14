@@ -99,6 +99,9 @@ img {
         }
     }
 }
+hr {
+    margin: 2rem 0;
+}
 
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
     img[src$=".svg"] {
