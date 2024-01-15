@@ -46,6 +46,27 @@
         margin: 0 0.5rem 0 0;
     }
 }
+.custom-numbered-list {
+    list-style: none;
+    font-size: 1.8rem;
+    position: relative;
+    padding-left: 2rem;
+    padding-bottom: .8rem;
+  
+
+    &::before {
+        content: counter(item)".";
+        counter-increment: item;
+        position: absolute;
+        left: 0;
+        top: 0;
+        font-weight: bold;
+        display: inline-block;
+        width: 1rem;
+        color: color(primary);
+        margin: 0 0.5rem 0 0;
+    }
+}
 
 .custom-bullet-point-variation-1 {
     list-style: none;
@@ -140,6 +161,13 @@
     text-decoration: underline;
     text-underline-offset: .8rem;
     color: color(primary);
+
+
+    &:hover {
+        .fa-arrow-up-right-from-square {
+            color: color(background-variation-3);
+        }
+    }
 }
 
 @include respond-to(from-sm) {
