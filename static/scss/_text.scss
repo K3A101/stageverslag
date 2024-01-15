@@ -97,6 +97,7 @@ main ul,
 main ol,
 footer ul,
 footer ol {
+    counter-reset: item;
     font-family: "Lato", sans-serif;
     font-size: 1.8rem;
     line-height: 1.8;
