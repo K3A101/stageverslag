@@ -24,35 +24,11 @@ table {
     width: 100%;
     font-family: "Lato", sans-serif;
     font-size: 1.8rem;
+    border-collapse: separate;
+    border-spacing: 0;
 
-    th {
-            background:color(border-variation-2);
-            text-align: left;
-            border-top: solid 1px #bbb;
-
-            span {
-                padding:0 1rem;
-            }
-        }
-    
-    
-        td,
-        th {
-            border-right: .1rem solid color(border-variation-2);
-            border-bottom: .1rem solid color(border-variation-2);
-        }
-    
-    
-        tr {
-    
-            th,
-            td {
-                &:first-child {
-                    border-left: .1rem solid color(border-variation-2);
-                }
-            }
-    
-            &:first-child {
+    tr {
+         &:first-child {
     
                 th {
                     &:first-child {
@@ -77,11 +53,80 @@ table {
                         border-bottom-right-radius: .5rem;
                     }
                 }
+            }
     
+   
+    }
+     &.table-light-mode {
+        padding: 1rem 0;
+         color: color(text);
+         
+         th {
+            background:color(background-variation-3);
+            text-align: left;
+            border-top: solid 1px color(background-variation-4);
+            color: color(text-light);
+
+            span {
+                padding:0 1rem;
+            }
+        }
+    
+    
+        td,
+        th {
+            border-right: .1rem solid color(background-variation-3);
+            border-bottom: .1rem solid color(background-variation-3);
+        }
+    
+    
+        tr {
+    
+            th,
+            td {
+                &:first-child {
+                    border-left: .1rem solid color(border-variation-2);
+                }
+            }
+    
+           }
+        }
+
+
+    &.table-dark-mode {
+         color: color(text-light);
+       
+
+        th {
+            background: color(background-variation-4);
+            border-top: solid 1px color(background);
+        }
+    
+        td,
+        th {
+            border-right: .1rem solid color(background);
+            border-bottom: .1rem solid color(background);
+        }
+    
+        tr {
+            th,
+            td {
+                &:first-child {
+                    border-left: .1rem solid color(background);
+                }
             }
         }
 
+       .category {
+        color: color(text);
+        
+        }  
+    }
+
+    
 }
+
+
 section {
     padding: 5rem 0;
     width: 100%;
@@ -94,7 +139,6 @@ img {
         @include border-radius($border-radius-large);
         @include box-shadow($box-shadow);
         width: 100%;
-        height: 100%;
         object-fit: cover;
 
         &-transparent {
@@ -140,10 +184,22 @@ hr {
  .fa-arrow-up-right-from-square {
     padding: 0 .5rem;
     color: color(primary);
-
-    
  }
 
+ .fa-hashtag {
+    color: color(background-variation-2);
+ }
+
+ .fa-circle-check {
+
+    &.variation-1 {
+        color: color(background-light);
+    }
+
+    &.variation-2 {
+        color: color(background-variation-3);
+    }
+ }
 /**
  * Bootstrap changes
  */
@@ -299,13 +355,21 @@ main {
 
     .metadata {
         padding: 0;
+        margin: 0;
+            
+    }
+    
+}
+
+.metadata {
+        padding: 0;
+        margin: 1rem;
         display: flex;
         flex-wrap: wrap;
         flex-direction: row;
         gap: 1.5rem;
 
       
-    }
 }
 
 
@@ -364,37 +428,35 @@ main {
 .jobtask-overview {
     background: color(background-variation-3);
 
-    table {
-        color: color(text-light);
-        border-collapse: separate;
-        border-spacing: 0;
+    // table {
+    //     color: color(text-light);
+       
 
-        th {
-            background: color(background-variation-4);
-            text-align: left;
-            border-top: solid 1px color(background);
-        }
+    //     th {
+    //         background: color(background-variation-4);
+    //         border-top: solid 1px color(background);
+    //     }
     
-        td,
-        th {
-            border-right: .1rem solid color(background);
-            border-bottom: .1rem solid color(background);
-        }
+    //     td,
+    //     th {
+    //         border-right: .1rem solid color(background);
+    //         border-bottom: .1rem solid color(background);
+    //     }
     
-        tr {
-            th,
-            td {
-                &:first-child {
-                    border-left: .1rem solid color(background);
-                }
-            }
-        }
-    }
+    //     tr {
+    //         th,
+    //         td {
+    //             &:first-child {
+    //                 border-left: .1rem solid color(background);
+    //             }
+    //         }
+    //     }
+    // }
 
-    .category {
-        color: color(text);
+    // .category {
+    //     color: color(text);
         
-    }
+    // }
 }
 
 
