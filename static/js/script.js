@@ -4,6 +4,16 @@ const subMenu = document.querySelector('.header-nav .has-submenu ');
 const subMenuBtn = document.querySelector('.menu-button ');
 const subMenuContainer = document.querySelector('.header-nav .has-submenu ul');
 const hamburgerMobile = document.querySelector('.nav-toggle');
+    const tableOfContentBtn = document.querySelector('.table-of-contents-button');
+    const tableOfContentSideMenu = document.querySelector('.table-of-contents');
+    console.log("button:", tableOfContentBtn, "menu", tableOfContentSideMenu);
+
+    if (tableOfContentBtn) {
+        tableOfContentBtn.addEventListener('click', () => {
+            console.log('button clicked');
+            tableOfContentSideMenu.classList.toggle('open-table-of-content');
+        })
+    }
 
 const mobileHeader = document.querySelector('.off-canvas-nav .has-submenu');
 
