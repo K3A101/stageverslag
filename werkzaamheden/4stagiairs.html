@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="../static/lib/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="../static/lib/fontawesome/css/all.min.css">
     <script src="https://kit.fontawesome.com/c37b867389.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../static/lib/prism/prism.css">
     <script defer src="../static/js/swiper.js"></script>
     <title>4stagiairs</title>
 </head>
@@ -638,9 +639,21 @@
                            <p>
                             Wanneer ik klaar was met het prototype op figma en die goedgekeurd was door de stagebegeleider kon ik beginnen met bouwen van de website. Om te beginnen heeft de backend developer gezorgd dat ik toegang kon krijgen naar de server. De server moest ik via de terminal opstarten. <span class="colored-inline-text-variation-1"></span> heb ik toegang gekregen naar de server. Ook word via de server de scss omgezet naar css. 
                            </p>
+                        <figure>
+                            <img class="content-img" src="../static/images/code/server-scss-starten.png"
+                                alt="SCSS compiler opstarten in de server">
+                            <figcaption>SCSS compiler opstarten in de server"</figcaption>
+                        </figure>
                         </article>
                     </div>
-                    <div class="col-12 col-md-6"></div>
+                    <div class="col-12 col-md-6">
+                        <figure>
+                            <img class="content-img" src="../static/images/code/server-opstarten.png"
+                                alt="Het server opstarten">
+                            <figcaption>Het server opstarten</figcaption>
+                        </figure>
+                
+                    </div>
                 </div>
                 <div class="row">
                     <div class="col-12 col-md-6">
@@ -680,30 +693,149 @@
                                 Het carrousel is een gutenberg blok, dit betekent je in de wordpress text editor als stukje content kan toevoegen overal op de site.  Daarvoor moest ik eerst de blok registreren in register.php en de juiste bestanden en bibliotheken toevoegen om het te laten werken. Voor de slideshow heb ik swiperjs gebruikt, wat ik bij de eerdere stageopdrachten heb geleerd. 
                                 Wanneer de registreert was heb ik de twig en de scss bestand gemaakt waar ik de html en de css zou toevoegen. 
                             </p>
+                            <figure>
+                                <img class="content-img" src="../static/images/wordpress/carrousel-acf-blok.png" alt="Carrousel met swiperjs">
+                                <figcaption> Carrousel met swiperjs </figcaption>
+                            </figure>
                             <details>
                                 <summary>Hier is de code om de acf blok te registreren</summary>
+                                <pre>
+                                    <code class="language-php">
+                                        acf_register_block([
+                                            'name' => 'featured-posts-slider',
+                                            'title' => __('Uitgelichte post slider'),
+                                            'description' => __('Carrousel van uitgelichte post voor stagiairs'),
+                                            'render_callback' => __NAMESPACE__ . '\\gutenberg_featured_posts_slider',
+                                            'category' => 'g2p',
+                                            'icon' => 'slides',
+                                            'keywords' => ['artikelen', 'posts', 'uitgelichte', 'slider', 'carrousel'],
+                                            'enqueue_assets' => function(){
+                                        
+                                        if( !is_admin() ) {
+                                                wp_enqueue_script('swiper', get_template_directory_uri() . '/static/addons/swiper/swiper-bundle.min.js', '',HEME_VERSION, true);
+                                                wp_enqueue_style('swiper', get_template_directory_uri() . '/static/addons/swiper/swiper-bundle.min. css', '', THEME_VERSION, 'all');
+                                                wp_enqueue_script('g2p-featured-posts-slider', get_template_directory_uri() .
+                                                '/static/js/gutenberg/featured-posts-slider.js', '', THEME_VERSION, true);
+                                                wp_enqueue_style('g2p-featured-posts-slider', get_template_directory_uri() .
+                                                '/static/css/gutenberg/featured-posts-slider.css', '', THEME_VERSION, 'all');
+                                                }
+                                            },
+                                        ]);
+                                    </code>
+                                </pre>
                             </details>
                             <hr>
                             <h3>ACF veld aanmaken zodat je zelf post kan kiezen voor het carrousel</h3>
                             <p>
                                 WordPress is een eenvoudige CMS waar je zonder enige technische kennis je website kan beheren. IK heb dit ook bereiken voor mijn eigen website als iemand anders dit zou gebruiken. Ik heb met acf plugin ervoor gezorgd dat de gebruikers meer controle heeft op de content. Dus ik heb ervoor gekozen dat je zelf artikelen kon kiezen voor het carrousel. 
                             </p>
+                            <details>
+                                <summary> Acf</summary>
+                                <pre>
+                                    <code class="language-php">
+                                        function gutenberg_featured_posts_slider( $block, $content = '', $is_preview = false ){
+                                        
+                                        // underscores (_) are automatically replaced by minus (-)
+                                            $template = explode('/', $block['name'])[1];
+                                            
+                                            $context = Timber::context();
+                                            // Store block values.
+                                            $context['block'] = $block;
+                                            // Store field values.
+                                            $context['fields'] = get_fields();
+                                            // Store $is_preview value;
+                                            $context['is_preview'] = $is_preview;
+                                            // get selected posts
+                                            $context['posts'] = Timber::get_posts([
+                                            'post_type' => 'post',
+                                            'orderby' => 'post__in',
+                                            'post__in' => $context['fields']['selected_posts'],
+                                            'posts_per_page' => -1
+                                            ]);
+                                            
+                                            Timber::render(['gutenberg/' . $template . '.twig'], $context );
+                                        }
+
+                                    </code>
+                                </pre>
+                            </details>
                             <hr>
                             <h3>Swiperjs voor carrousel</h3>
                             <p>
-                                Voor het vormgeven van het carrousel heb ik gebruikt gemaakt van het slideshow library swiperjs en verschillende functionaliteiten te kunnen toevoegen. Hiermee was het mogelijk om het elke slides op elkaar overlappen. Als je op de carrossel hover shuift de witte vakje naar boven en het link naar een artikel of externe bron wordt zichtbaar. Ik heb dit microinteratcies voor alle artikelen binnen de site
+                                Voor het vormgeven van het carrousel heb ik gebruikt gemaakt van het slideshow library swiperjs en verschillende functionaliteiten te kunnen toevoegen. Hiermee was het mogelijk om het elke slides op elkaar overlappen. Als je op de carrossel hover shuift de witte vakje naar boven en het link naar een artikel of externe bron wordt zichtbaar. Ik heb dit micro-interatcies voor alle artikelen binnen de site
                             </p>
+                            <details>
+                                <summary>Javascript </summary>
+                                <pre>
+                                    <code class="language-javascript">
+                                    const swiper = new Swiper(".swiper", {
+                                        // Optional parameters
+                                        direction: "horizontal",
+                                        loop: true,
+                                        centeredSlides: true,
+                                        grabCursor: true,
+                                        effect: "coverflow",
+                                        coverflowEffect: {
+                                        rotate: 0,
+                                        stretch: 0,
+                                        depth: 100,
+                                        modifier: 3,
+                                        slideShadows: true
+                                        },
+                                    
+                                        breakpoints: {
+                                        576: {
+                                        slidesPerView: 1
+                                        },
+                                        992: {
+                                        slidesPerView: 2
+                                        },
+                                        1440: {
+                                        slidesPerView: 2
+                                        }
+                                    },
+                                    
+                                        //Use arrow keys to navigate slider
+                                        keyboard: {
+                                        enabled: true
+                                    },
+                                    
+                                        // If we need pagination
+                                        pagination: {
+                                        el: ".swiper-pagination",
+                                        clickable: true
+                                    },
+                                    
+                                        // Navigation arrows
+                                        navigation: {
+                                        nextEl: ".swiper-button-next",
+                                        prevEl: ".swiper-button-prev"
+                                        }
+                                    });
+
+                                    </code>
+                                </pre>
+                            </details>
+                            <hr>
                             <h3>HTML van de Carrousel gutenberg blok</h3>
                             <p>
                                 De HTML heb ik geschreven met twig hiermee kan ik de data vanuit wordpress weergeven. Het structuur heb ik gebruikt vanuit de library van swiperjs en ik heb een paar van de css opmaak overschreven met mijn eigen huisstijl
                             </p>
+                            <figure>
+                                <img class="content-img" src="../static/images/code/carrousel-html.png" alt="Carrousel met swiperjs">
+                                <figcaption> Carrousel met HTML structuur </figcaption>
+                            </figure>
 
                         </article>
                     </div>
                     <div class="col-12 col-md-6">
                         <figure>
-                            <img class="content-img" src="../static/images/laptop-with-code-photo.jpeg" alt="Image 2">
-                            <figcaption> Alternatieve tekst </figcaption>
+                            <img class="content-img" src="../static/images/4stagiairs-homepagina.png" alt="Carrousel met swiperjs">
+                            <figcaption> Carrousel met swiperjs </figcaption>
+                        </figure>
+                        <figure>
+                            <img class="content-img" src="../static/images/wordpress/acf-veld-carrousel.png" alt="Carrousel met swiperjs">
+                            <figcaption> Carrousel met swiperjs </figcaption>
                         </figure>
                     </div>
                 </div>
@@ -723,26 +855,233 @@
                                 <li class="custom-numbered-list">Hun taken en/of expertise</li>
 
                             </ol>
-                            <h3>Nieuwe collega's toevoegen in wordpress</h3>
+                            <h3>Nieuwe collega's toevoegen in wordPress</h3>
                             <p>Het is ook mogelijk om collega's in wordpress in de backend toevoegen en verwijderen. De content wordt dan automatische aangepast. </p>
+                            <figure>
+                                <img class="content-img" src="../static/images/wordpress/team-overzicht.png" alt="Collega's invullen in wordpress">
+                                <figcaption>Collega's invullen in wordpress</figcaption>
+                            </figure>
                             <hr>
                             <h3>Code Ophalen in PHP</h3>
                             <details>
                                 <summary>PHP code logica</summary>
+                                <pre>
+                                    <code class="language-php">
+                                        function gutenberg_team_members( $block, $content = '', $is_preview = false ){
+                                        
+                                        // underscores (_) are automatically replaced by minus (-)
+                                        $template = explode('/', $block['name'])[1];
+                                        
+                                        $context = Timber::context();
+                                        // Store block values.
+                                        $context['block'] = $block;
+                                        // Store field values.
+                                        $context['fields'] = get_fields();
+                                        // Store $is_preview value;
+                                        $context['is_preview'] = $is_preview;
+                                        
+                                        // Additional code for displaying all members or team members per expertise
+                                        $tax_query = [];
+                                        
+                                        if ($context['fields']['type'] == 'expertise') {
+                                            $tax_query = [
+                                            'relation' => 'OR',
+                                            [
+                                                'taxonomy' => 'expertise',
+                                                'field' => 'slug',
+                                                'terms' => (!empty($context['fields']['expertise_tax'])) ? $context['fields']['expertise_tax'] : null,
+                                            ],
+                                            [
+                                                'taxonomy' => 'responsibility',
+                                                'field' => 'slug',
+                                                'terms' => (!empty($context['fields']['responsibility_tax'])) ? $context['fields']['responsibility_tax'] : null,
+                                            ],
+                                            ];
+                                        }
+                                        
+                                        $member_args = [
+                                            'post_type' => 'team',
+                                            'posts_per_page' => -1,
+                                            'post_status' => 'publish',
+                                            'tax_query' => $tax_query,
+                                        ];
+                                        
+                                        $context['team_members'] = new PostQuery($member_args);
+                                        
+                                        // Render the block.
+                                        Timber::render(['gutenberg/' . $template . '.twig'], $context);
+                                        
+                                        
+                                        }
+                                    </code>
+                                </pre>
                             </details>
                             <hr>
                             <h3>Scss Opmaak</h3>
                             <details>
                                 <summary>SCSS</summary>
+                                <pre>
+
+                                    <code class="language-scss">
+                                        @import '../helpers/variables';
+                                        @import '../helpers/mixins';
+                                        @import '../helpers/functions';
+                                        
+                                        .block-team-members {
+                                            gap: 1.5rem;
+                                            color: color(text);
+                                            padding: 2.5rem;
+                                            
+                                            ul {
+                                            padding: 0;
+                                            row-gap: 3rem;
+                                            }
+                                        
+                                            .member {
+                                                height: 100%;
+                                                @include border-radius($border-radius-medium);
+                                                @include box-shadow($box-shadow);
+                                                padding: 0;
+                                                position: relative;
+                                            
+                                                    .member-content {
+                                                    padding: 3rem;
+                                                    position: relative;
+                                                    
+                                                    h2 {
+                                                    margin: 0;
+                                                    font-size: 3rem;
+                                                }
+                                        
+                                                .responsibility-list {
+                                                    margin:1.5rem 0 1.5rem 1rem;
+                                            
+                                                    li {
+                                                        list-style: none;
+                                                        font-size: 1.7rem;
+                                                        position: relative;
+                                                        padding-left: 2rem;
+                                                
+                                                            &::before {
+                                                                content: "\2022";
+                                                                position: absolute;
+                                                                left: 0;
+                                                                top: 0;
+                                                                font-weight: bold;
+                                                                display: inline-block;
+                                                                width: 1rem;
+                                                                color: color(primary);
+                                                                margin: 0 .5rem 0 0;
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        
+                                        
+                                        .contact-icon {
+                                            position: absolute;
+                                            width: 100%;
+                                            display: flex;
+                                            gap: 1.5rem;
+                                            @include transform(translateY(-6rem));
+                                            left: 1rem;
+                                        
+                                        a {
+                                            position: relative;
+                                            display: block;
+                                        
+                                            .label-on-hover {
+                                                opacity: 0;
+                                                background: color(primary);
+                                                color: color(background-light);
+                                                padding: 2rem 1.5rem;
+                                                @include border-radius(0.5rem);
+                                                @include box-shadow($box-shadow);
+                                                font-size: 1.6rem;
+                                                position: absolute;
+                                                text-align: center;
+                                                top: -8rem;
+                                                transition: 0.3s ease-in-out all;
+                                            
+                                            &::after {
+                                                content: "";
+                                                background: color(primary);
+                                                @include border-radius(50%);
+                                                @include transform(translateY(.2rem));
+                                                position: absolute;
+                                                left: 1.9rem;
+                                                width: 1rem;
+                                                height: 1rem;
+                                            }
+                                        }
+                                        
+                                                &:hover {
+                                                    .label-on-hover {
+                                                    opacity: 1;
+                                                }
+                                                    i {
+                                                    @include transform(scale(1));
+                                                    @include animation(shake 0.2s both alternate infinite ease-in-out);
+                                                    transform-origin: center center;
+                                                }
+                                            }
+                                        }
+                                    }
+                                        
+                                        @keyframes shake {
+                                        0% {
+                                            transform: rotate(-15deg);
+                                        }
+                                        100% {
+                                            transform: scale(1.1) rotate(15deg);
+                                        }
+                                    }
+                                        
+                                        //responsive
+                                        @include respond-to(from-sm) {
+                                        
+                                        .label-on-hover {
+                                            &::after {
+                                            @include transform(translateX(-8rem));
+                                            margin-left: -1rem;
+                                            position: absolute;
+                                            top: 100%;
+                                            left: 50%;
+                                            }
+                                        }
+                                    }
+    
+                                    </code>
+                                </pre>
+                             
                             </details>
                         </article>
                     </div>
                     <div class="col-12 col-md-6">
                             <figure>
-                                <img class="content-img" src="../static/images/laptop-with-code-photo.jpeg" alt="Image 2">
-                                <figcaption> Alternatieve tekst </figcaption>
+                                <img class="content-img" src="../static/images/wordpress/teamoverzicht-detail.png" alt="Detail van een collega">
+                                <figcaption> De Vormgeving teamoverzicht</figcaption>
+                            </figure>
+
+                            <figure>
+                                <img class="content-img" src="../static/images/code/html-code-teamoverzicht.png"
+                                    alt="Stageopdracht in wordpress">
+                                <figcaption>HTML structuur  van de team overzicht</figcaption>
                             </figure>
                     </div>
+                </div>
+                <div class="row">
+                    <figure>
+                        <img class="content-img" src="../static/images/wordpress/team-overzicht.png" alt="Wordpress gebruiken om nieuwe collega's toe te voegen">
+                        <figcaption> Wordpress gebruiken om nieuwe collega's toe te voegen</figcaption>
+                    </figure>
+                    <figure>
+                        <img class="content-img" src="../static/images/wordpress/info-over-collegas.png" alt="Hoe de content van wordpress is weergegeven op de website">
+                        <figcaption> Hoe de content van wordpress is weergegeven op de website</figcaption>
+                    </figure>
+                
                 </div>
                 <div class="row">
                     <div class="col-12 col-md-6">
@@ -761,17 +1100,34 @@
                             </ol>
                             <hr>
                             <h3>Dynamisch content met ACF</h3>
-                            <p>Ik heb gebruikt gemaakt van de acf wordpress plugin om content op een dynamische manier te kunne invoeren. Dus de persoon die content wil toevoegen moet alleen velden invullen. In ACf heb ik verschillende velden gemaakt waarmee je kan bepalen welke werkwijze en code richtlijnen je wilt tovoegen, maar je kan ook link en toevoegen. In de code heb ik dan data vormgegeven. </p>
+                            <p>Ik heb gebruikt gemaakt van de acf wordpress plugin om content op een dynamische manier te kunne invoeren. Dus de persoon die content wil toevoegen moet alleen velden invullen. In ACf heb ik verschillende velden gemaakt waarmee je kan bepalen welke werkwijze en code richtlijnen je wilt toevoegen, maar je kan ook link en toevoegen. In de code heb ik dan data vormgegeven. </p>
+                            <figure>
+                                <img class="content-img" src="../static/images/wordpress/dynamisch-content.png" alt="Stagiairs pagina">
+                                <figcaption> dynamisch content toevoegen </figcaption>
+                            </figure>
+
                             <h3>Code Ophalen in PHP</h3>
                             <details>
                                 <summary>Php logica</summary>
+                                <pre>
+                                    <code class="language-php">
+                                        $context = Timber::context();
+                                        $context['post'] = Timber::query_post();
+                                        $context['fields'] = get_fields($context['post']->ID);
+                                        $context['programming_languages_tax'] = get_the_terms($context['post']->ID, 'learnings');
+                                        $context['methods_tax'] = get_the_terms($context['post']->ID, 'method');
+                                        $context['team_members'] = get_field('selected_team_members');
+
+                                    </code>
+                                </pre>
+
                             </details>
                         </article>
                     </div>
                     <div class="col-12 col-md-6">
                         <figure>
-                            <img class="content-img" src="../static/images/laptop-with-code-photo.jpeg" alt="Image 2">
-                            <figcaption> Alternatieve tekst </figcaption>
+                            <img class="content-img" src="../static/images/opdracht-6/4stagiairs-stageopdrachten-v3.png" alt="Stagiairs pagina">
+                            <figcaption> Stagiairs pagina </figcaption>
                         </figure>
                     </div>
                 </div>
@@ -781,6 +1137,11 @@
                             <h3>Stageopdrachten</h3>
                             <p>Verder heb je heeft de stagiair de mogelijkheden om hun stageopdrachten te bekijken via de website. In de stagiairs pagina heb je overzicht van alle stage opdrachten die de stagiair zou krijgen tijdens zijn stage. Als je op de thumbnails hover kun je de category van de opdrachten bekijken, de category noem je taxonomy elk post op wordpress heb een. Dus je iet welke programmeertaal je gaat leren bij de opdracht. Daarnaast krijg je ook een link om de detailpagina van de stage opdracht als de stagiair het uitleg van de opdracht te lezen </p>
                             <hr>
+                            <figure>
+                                <img class="content-img" src="../static/images/opdracht-6/4stagiairs-stageopdrachten-v2.png  "
+                                    alt="Stageopdracht detailpagina">
+                                <figcaption>Stageopdracht detailpagina</figcaption>
+                            </figure>
                             <h3>Functionaliteit op de stageopdracht detailpagina</h3>
                             <ol>
                                 <li class="custom-numbered-list">Staat een titel met de naam stageopdracht en beschrijving in een zin waarover het gaat</li>
@@ -793,9 +1154,52 @@
 
                             
                             </ol>
-                            <h3>Code Ophalen in PHP</h3>
+                            <h3>Code  die ik heb gebruikt om de stegopdrachten uit de wordpress op te halen</h3>
                             <details>
                                 <summary>PHP code logica</summary>
+                                <pre>
+                                    <code class="language-php">
+
+                                        $context = Timber::context();
+                                        $context['post'] = Timber::query_post();
+                                        $context['fields'] = get_fields();
+                                        $context['external_links'] = $context['fields']['external_links'];
+
+                                        $args = [
+                                                'post_type' => 'opdracht',
+                                                'orderby' => 'name',
+                                                'order' => 'ASC',
+                                                'posts_per_page' => -1,
+                                                'tax_query' => [
+                                                [
+                                                    'taxonomy' => 'service-line',
+                                                    'field' => 'term_id',
+                                                    'terms' => (int)$context['fields']['type_serviceline'],
+                                                ]
+                                            ]
+                                        ];
+
+
+                                        //$context['assignments'] = Timber::get_posts($args);
+                                            $context['assignments'] = new PostQuery($args);
+
+
+                                        foreach ($context['assignments'] as $assignment) {
+                                            $learnings_terms = [
+                                            'learnings' => [],
+                                        ];
+
+                                        foreach ($assignment->terms as $term) {
+                                            if ($term->taxonomy === 'learnings') {
+                                            $learnings_terms['learnings'][] = $term->name;
+                                            }
+                                        }
+
+                                        $assignment->terms = $learnings_terms;
+
+                                        }
+                                    </code>
+                                </pre>
                             </details>
                             <hr>
                             <h3>ACF velden voor de detailpagina</h3>
@@ -812,10 +1216,23 @@
                     </div>
                     <div class="col-12 col-md-6">
                         <figure>
-                            <img class="content-img" src="../static/images/laptop-with-code-photo.jpeg" alt="Image 2">
-                            <figcaption> Alternatieve tekst </figcaption>
+                            <img class="content-img" src="../static/images/opdracht-6/stageopdracht-detailpagina.png" alt="Stageopdracht detailpagina">
+                            <figcaption>Stageopdracht detailpagina</figcaption>
                         </figure>
+                    
                     </div>
+                </div>
+                <div class="row">
+                    <figure>
+                        <img class="content-img" src="../static/images/opdracht-6/4stagiairs-stageopdrachten-v2.png"
+                            alt="Stageopdracht detailpagina">
+                        <figcaption>Links naar de stageopdracht detailpagina</figcaption>
+                    </figure>
+                    <figure>
+                        <img class="content-img" src="../static/images/wordpress/wordpress-stageopdrachten.png"
+                            alt="Stageopdracht in wordpress">
+                        <figcaption>Stageopdracht in wordpress</figcaption>
+                    </figure>
                 </div>
                 <div class="row">
                     <div class="col-12 col-md-6">
@@ -877,6 +1294,7 @@
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
         </script>
     <script src="../static/lib/swiper/swiper-bundle.min.js"></script>
+    <script src="../static/lib/prism/prism.js"></script>
 </body>
 
 </html>
