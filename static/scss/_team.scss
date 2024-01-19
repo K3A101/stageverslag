@@ -12,12 +12,15 @@
             height: 100%;
             @include border-radius($border-radius-medium);
             @include box-shadow($box-shadow);
+            background: color(background);
             padding: 0;
             position: relative;
     
             .member-content {
                 padding: 3rem;
                 position: relative;
+                @include border-radius($border-radius-medium);
+
     
                 h2 {
                     margin: 0;

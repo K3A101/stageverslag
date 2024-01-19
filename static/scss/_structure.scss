@@ -354,6 +354,7 @@ main {
     }
 
     .metadata {
+        position: relative;
         padding: 0;
         margin: 0;
             
@@ -428,39 +429,19 @@ main {
 .jobtask-overview {
     background: color(background-variation-3);
 
-    // table {
-    //     color: color(text-light);
-       
-
-    //     th {
-    //         background: color(background-variation-4);
-    //         border-top: solid 1px color(background);
-    //     }
-    
-    //     td,
-    //     th {
-    //         border-right: .1rem solid color(background);
-    //         border-bottom: .1rem solid color(background);
-    //     }
-    
-    //     tr {
-    //         th,
-    //         td {
-    //             &:first-child {
-    //                 border-left: .1rem solid color(background);
-    //             }
-    //         }
-    //     }
-    // }
-
-    // .category {
-    //     color: color(text);
-        
-    // }
 }
 
+.company-clients {
+    padding: 2rem 0;
+    position: relative;
+    h2 {
+        text-align: center;
+    }
+}
 
-
+.assignment {
+    position: relative;
+}
 //De bijlages
 .resources {
     padding: 2.5rem 0;
@@ -494,8 +475,9 @@ main {
     position: absolute;
     width: 60rem;
     height: 60rem;
-    left: -10%;
-    bottom: -30%;
+    left: 0;
+    bottom: 0;
+    z-index:0;
 }
 .circles-variation-2 {
     background: radial-gradient(
@@ -509,6 +491,7 @@ main {
     height: 60rem;
     right: -10%;
     top: -30%;
+    z-index:-2;
 }
 //  Bron: go2people dienstenpagina;
 
@@ -533,7 +516,7 @@ main {
     position: fixed;
     top: 0;
     bottom: 0;
-    left: 0;
+   left: -49rem;
     
     z-index: 200;
     width: 100%;
@@ -559,7 +542,8 @@ main {
     }
 
     &.open-table-of-content {
-        @include transform(translateX(-100%));
+        
+       left: 0;
     }
     
 }
