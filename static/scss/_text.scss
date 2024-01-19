@@ -33,6 +33,8 @@ a {
     &:focus {
         color: color(background-variation-3);
     }
+
+    
 }
 
 .link-icons {
@@ -85,8 +87,28 @@ button.button {
             color: color(hover);
         }
     }
+    
+    &.small-btn {
+        background: color(primary);
+        border-color: color(primary);
+        width: auto;
+        &:hover {
+            background: color(hover);
+
+            .link-icons {
+                @include transform(translateX(1.5rem));
+            }
+        }
+    }
 }
 
+.go-to-top-btn {
+        min-width: 0;
+        position: fixed;
+        z-index: 300;
+        bottom:0;
+        right:0;
+    }
 figcaption {
     font-size: 1.6rem;
     padding: 1.5rem;
