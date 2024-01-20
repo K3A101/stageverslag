@@ -374,18 +374,18 @@ main {
 }
 
 
-.introduction p {
-    columns: 1;
-}
+// .introduction p {
+//     columns: 1;
+// }
 
-//on mobile
-@include respond-to(from-sm) {
-    .introduction {
-        p {
-            columns: 2;
-        }
-    }
-}
+// //on mobile
+// @include respond-to(from-sm) {
+//     .introduction {
+//         p {
+//             columns: 2;
+//         }
+//     }
+// }
 
 .company-description {
     background: color(background-variation-3);
