@@ -167,6 +167,19 @@
     text-underline-offset: .8rem;
     color: color(primary);
 
+  &.current-open-page {
+    font-family: "Lato Bold", sans-serif;
+        color: color(background-variation-4);
+        text-decoration: underline;
+        text-underline-offset: .8rem;
+   
+        .fa-arrow-up-right-from-square {
+            color: color(background-variation-4);
+        }
+
+     
+
+    }
 
     &:hover {
         .fa-arrow-up-right-from-square {
@@ -174,6 +187,8 @@
         }
     }
 }
+
+
 
 @include respond-to(from-sm) {
         .custom-list-container {

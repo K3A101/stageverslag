@@ -28,104 +28,89 @@ table {
     border-spacing: 0;
 
     tr {
-         &:first-child {
-    
-                th {
-                    &:first-child {
-                        border-top-left-radius: .5rem;
-                    }
-    
-                    &:last-child {
-                        border-top-right-radius: .5rem;
-                    }
+        &:first-child {
+            th {
+                &:first-child {
+                    border-top-left-radius: 0.5rem;
                 }
-    
-            }
-    
-            &:last-child {
-    
-                td {
-                    &:first-child {
-                        border-bottom-left-radius: .5rem;
-                    }
-    
-                    &:last-child {
-                        border-bottom-right-radius: .5rem;
-                    }
+
+                &:last-child {
+                    border-top-right-radius: 0.5rem;
                 }
             }
-    
-   
+        }
+
+        &:last-child {
+            td {
+                &:first-child {
+                    border-bottom-left-radius: 0.5rem;
+                }
+
+                &:last-child {
+                    border-bottom-right-radius: 0.5rem;
+                }
+            }
+        }
     }
-     &.table-light-mode {
+    &.table-light-mode {
         padding: 1rem 0;
-         color: color(text);
-         
-         th {
-            background:color(background-variation-3);
+        color: color(text);
+
+        th {
+            background: color(background-variation-3);
             text-align: left;
             border-top: solid 1px color(background-variation-4);
             color: color(text-light);
 
             span {
-                padding:0 1rem;
+                padding: 0 1rem;
             }
         }
-    
-    
+
         td,
         th {
-            border-right: .1rem solid color(background-variation-3);
-            border-bottom: .1rem solid color(background-variation-3);
+            border-right: 0.1rem solid color(background-variation-3);
+            border-bottom: 0.1rem solid color(background-variation-3);
         }
-    
-    
+
         tr {
-    
             th,
             td {
                 &:first-child {
-                    border-left: .1rem solid color(border-variation-2);
+                    border-left: 0.1rem solid color(border-variation-2);
                 }
             }
-    
-           }
         }
-
+    }
 
     &.table-dark-mode {
-         color: color(text-light);
-       
+        color: color(text-light);
 
         th {
             background: color(background-variation-4);
             border-top: solid 1px color(background);
         }
-    
+
         td,
         th {
-            border-right: .1rem solid color(background);
-            border-bottom: .1rem solid color(background);
+            border-right: 0.1rem solid color(background);
+            border-bottom: 0.1rem solid color(background);
         }
-    
+
         tr {
             th,
             td {
                 &:first-child {
-                    border-left: .1rem solid color(background);
+                    border-left: 0.1rem solid color(background);
                 }
             }
         }
 
-       .category {
-        color: color(text);
-        
-        }  
+        .category {
+            color: color(text);
+        }
     }
-
-    
 }
-
 
 section {
     padding: 5rem 0;
@@ -181,17 +166,16 @@ hr {
 /**
  * Fontawesome icons changes
  */
- .fa-arrow-up-right-from-square {
-    padding: 0 .5rem;
+.fa-arrow-up-right-from-square {
+    padding: 0 0.5rem;
     color: color(primary);
- }
+}
 
- .fa-hashtag {
+.fa-hashtag {
     color: color(background-variation-2);
- }
+}
 
- .fa-circle-check {
-
+.fa-circle-check {
     &.variation-1 {
         color: color(background-light);
     }
@@ -199,13 +183,13 @@ hr {
     &.variation-2 {
         color: color(background-variation-3);
     }
- }
+}
 /**
  * Bootstrap changes
  */
- .row {
+.row {
     row-gap: 1.5rem;
- }
+}
 
 @include respond-to(only-sm) {
     .container,
@@ -278,7 +262,6 @@ main {
     min-height: 0.1rem; // This fixes the huge white space on IE11
 }
 
-
 .card {
     height: 35rem;
     width: 100%;
@@ -332,12 +315,12 @@ main {
     }
 }
 
- .category {
-     background: color(background-variation-2);
-     padding: 0.5rem;
-     @include border-radius($border-radius-extra-small);
-     width: fit-content;
- }
+.category {
+    background: color(background-variation-2);
+    padding: 0.5rem;
+    @include border-radius($border-radius-extra-small);
+    width: fit-content;
+}
 
 //Introduction Hero
 .introduction-hero {
@@ -357,22 +340,17 @@ main {
         position: relative;
         padding: 0;
         margin: 0;
-            
     }
-    
 }
 
 .metadata {
-        padding: 0;
-        margin: 1rem;
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-        gap: 1.5rem;
-
-      
+    padding: 0;
+    margin: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 1.5rem;
 }
-
 
 // .introduction p {
 //     columns: 1;
@@ -406,13 +384,13 @@ main {
     overflow: hidden;
     border-radius: 10px;
     transform: translateZ(0px);
-    
+
     .embed {
-            width: 100%;
-            position: relative;
-            padding: 1rem 0;
-            @include border-radius($border-radius-large);
-        }
+        width: 100%;
+        position: relative;
+        padding: 1rem 0;
+        @include border-radius($border-radius-large);
+    }
 }
 // Bron: https://stackoverflow.com/a/36110063
 
@@ -428,7 +406,6 @@ main {
 
 .jobtask-overview {
     background: color(background-variation-3);
-
 }
 
 .company-clients {
@@ -451,7 +428,6 @@ main {
         padding: 0;
 
         li {
-            
             .learning-item {
                 display: flex;
                 justify-content: space-between;
@@ -477,7 +453,7 @@ main {
     height: 60rem;
     left: 0;
     bottom: 0;
-    z-index:0;
+    z-index: 0;
 }
 .circles-variation-2 {
     background: radial-gradient(
@@ -491,7 +467,7 @@ main {
     height: 60rem;
     right: -10%;
     top: -30%;
-    z-index:-2;
+    z-index: -2;
 }
 //  Bron: go2people dienstenpagina;
 
@@ -511,74 +487,90 @@ main {
     text-align: center;
 }
 
-
-.table-of-contents  {
+.table-of-contents {
     position: fixed;
     top: 0;
     bottom: 0;
-   left: -49rem;
-    
+    left: -49rem;
+    // overflow-y: scroll;
+    // overflow-x:hidden;
     z-index: 200;
     width: 100%;
     height: 100%;
-   padding: 2rem;
+    padding: 2rem;
     @include box-shadow($box-shadow);
     @include transition($transition);
     background: color(background);
 
-    
     .scrolling-toc {
         overflow-y: scroll;
         height: 95%;
-       margin-top: 9rem;
+        padding: 9rem 0;
         li {
             padding-bottom: 0;
             font-size: 1.6rem;
+
+            ul {
+                li {
+                    a {
+                        &.current-open-page {
+                            font-family: "Lato Bold", sans-serif;
+                            color: color(background-variation-4);
+                          
+
+                            .fa-arrow-up-right-from-square {
+                                color: color(background-variation-4);
+                            }
+                        }
+
+                        &:hover {
+                            .fa-arrow-up-right-from-square {
+                                color: color(background-variation-3);
+                            }
+                        }
+                    }
+                }
+            }
             a {
                 font-size: 1.6rem;
             }
         }
-
     }
 
     &.open-table-of-content {
-        
-       left: 0;
+        left: 0;
     }
-    
 }
- .table-of-contents-button {
-        position: absolute;
-         @include transform(translateX(-10%));
-        right: -13%;
-        border: 0.1rem solid color(background);
-        background: color(primary);
-        
-        min-width: 5rem;
-        padding: 1.5rem;
-        margin: 0.5rem 0;
-        border-radius: 1.1rem;
-        cursor: pointer;
-        @include transition($transition);
-        color: color(text-light);
-        
-        span {
-            font-size: 1.8rem;
-            padding: 0 1.3rem;
-        }
+.table-of-contents-button {
+    position: absolute;
+    @include transform(translateX(-10%));
+    right: -13%;
+    border: 0.1rem solid color(background);
+    background: color(primary);
 
-        &:hover {
-            background: color(background-variation-3);
-            @include transform(translateX(15%));
-        }
-       
+    min-width: 5rem;
+    padding: 1.5rem;
+    margin: 0.5rem 0;
+    border-radius: 1.1rem;
+    cursor: pointer;
+    @include transition($transition);
+    color: color(text-light);
+
+    span {
+        font-size: 1.8rem;
+        padding: 0 1.3rem;
     }
+
+    &:hover {
+        background: color(background-variation-3);
+        @include transform(translateX(15%));
+    }
+}
 @include respond-to(from-md) {
     .table-of-contents {
-    top: 0;
-    bottom: 0;
-    width: fit-content;
-
+        top: 0;
+        bottom: 0;
+        width: fit-content;
     }
 
     .table-of-contents-button {
