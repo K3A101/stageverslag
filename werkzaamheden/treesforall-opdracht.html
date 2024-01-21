@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="../static/css/style.css">
     <link rel="stylesheet" href="../static/lib/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="../static/lib/fontawesome/css/all.min.css">
+        <link rel="stylesheet" href="../static/lib/prism/prism.css">
     <script src="https://kit.fontawesome.com/c37b867389.js" crossorigin="anonymous"></script>
     <script defer src="static/js/swiper.js"></script>
 </head>
@@ -300,6 +301,50 @@
                                     buttons een padding geven en de breedte van de element 100% maken.
 
                                 </p>
+                                <hr>
+                                <details>
+                                    <summary>CSS code voor de opklapbaar link</summary>
+                                    <pre>
+                                        <code class="language-css">
+                                        details {
+                                            cursor: pointer;
+                                            display: flex;
+                                            flex-direction: row;
+                                            align-items: center;
+                                            padding: 1rem 4rem 1rem 1rem;
+                                            border-bottom: 1px solid var(--border-bottom-color);
+                                            position: relative;
+                                        }
+                                        
+                                        details summary {
+                                            padding: 2rem;
+                                            font-family: var(--fonts-for-headings);
+                                            font-size: 2.1rem;
+                                            width: 100%;
+                                            list-style: none;
+                                            cursor: pointer;
+                                        }
+                                        
+                                        details[open] summary:before {
+                                            content: "-";
+                                        }
+                                        
+                                        details summary:before {
+                                            content: "+";
+                                            position: absolute;
+                                            right: 0;
+                                        }
+                                        
+                                        details p {
+                                            font-family: var(--fonts-for-paragraph);
+                                            font-size: 1.8rem;
+                                            margin: 1rem 0 0 0;
+                                            padding: 0 3rem 3rem 3rem;
+                                        }
+
+                                        </code>
+                                    </pre>
+                                </details>
                                 <figure>
                                     <img class="content-img" src="../static/images/opdracht-1/klikbare-opdr1.png"
                                         alt="Opdracht 1 Beschrijving">
@@ -374,6 +419,7 @@
             integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
             </script>
         <script src="../static/lib/swiper/swiper-bundle.min.js"></script>
+        <script src="../static/lib/prism/prism.js"></script>
 
 </body>
 
