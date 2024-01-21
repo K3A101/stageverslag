@@ -6,7 +6,6 @@ const subMenuContainer = document.querySelector('.header-nav .has-submenu ul');
 const hamburgerMobile = document.querySelector('.nav-toggle');
     const tableOfContentBtn = document.querySelector('.table-of-contents-button');
     const tableOfContentSideMenu = document.querySelector('.table-of-contents');
-    console.log("button:", tableOfContentBtn, "menu", tableOfContentSideMenu);
 
     if (tableOfContentBtn) {
         tableOfContentBtn.addEventListener('click', () => {
@@ -17,10 +16,13 @@ const hamburgerMobile = document.querySelector('.nav-toggle');
 
 const mobileHeader = document.querySelector('.off-canvas-nav .has-submenu');
 
-submitButton.addEventListener('click', e =>{
+    if (submitButton) {
+        submitButton.addEventListener('click', e =>{
     e.preventDefault()
 })
-    /*
+   
+    }
+ /*
      * Header:
      * Sticky add class on scroll
      */
