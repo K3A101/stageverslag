@@ -1,3 +1,5 @@
+@use 'helpers/mixins' as *;
+@use 'helpers/variables' as *;
 
 
 html.off-canvas,
@@ -45,7 +47,7 @@ html.off-canvas body {
             height: .4rem;
             position: absolute;
             width: 100%;
-            @include transition(all 300ms ease-in-out);
+             transition: all 300ms ease-in-out;
         }
 
         span:before {
@@ -69,11 +71,12 @@ html.off-canvas body {
             }
 
             span:before {
-                @include transform(rotate(45deg));
+                 transform: rotate(45deg);
             }
 
             span:after {
-                @include transform(rotate(-45deg));
+                transform: rotate(-45deg);
+
             }
         }
     }
@@ -107,20 +110,20 @@ nav {
                     vertical-align: middle;
 
                     a {
-                        color: color(text);
+                        color: var(--text);
                         display: inline-block;
                         font-family: "Lato Bold", sans-serif;
                         font-size: 1.6rem;
                         font-weight: 900;
                         padding: 1rem;
-                        @include transition(all $duration ease-in-out);
+                         transition:all var(--duration) ease-in-out;
                     }
 
                     a:hover,
                     a:focus,
                     &.current-menu-item a,
                     &.current-menu-parent a {
-                        color: color(primary);
+                        color: var(--primary);
 
                     }
 
@@ -131,12 +134,12 @@ nav {
 
                     // dropdown menu
                     ul {
-                        background-color: color(background-light);
+                        background-color: var(--background-light);
                         min-width: 100%;
                         position: absolute;
                         text-align: left;
                         z-index: 200;
-                        box-shadow: $box-shadow;
+                        box-shadow: var(--box-shadow);
                         border-radius: 1.1rem;
 
 
@@ -152,41 +155,41 @@ nav {
                             display: block;
                             border: 0;
                             text-align: left;
-                            @include transition(all $duration ease-in-out);
+                             transition:all var(--duration) ease-in-out;
 
                             &:hover {
-                                color: color(hover);
+                                color: var(--hover);
                             }
 
                             &.current-menu-item {
-                                background-color: color(primary);
+                                background-color: var(--primary);
                             }
 
                             a {
                                 position: relative;
-                                color: color(text);
+                                color: var(--text);
                                 display: block;
                                 font-size: 1.6rem;
                                 white-space: nowrap;
                                 margin: 0 .6rem 0 .6rem;
                                 padding: 1rem 10rem 1rem 1rem;
-                                border-bottom: .1rem solid color(border-variation-1);
+                                border-bottom: .1rem solid var(--border-variation-1);
 
                                 i.link-icons {
                                     position: absolute;
                                     top: 2rem;
                                     right: .6rem;
-                                    color: color(text);
+                                    color: var(--text);
                                     margin-left: 1rem;
                                 }
 
                                 &:hover,
                                 &:focus {
-                                    color: color(primary);
+                                    color: var(--primary);
                                     outline: none;
 
                                     i.link-icons {
-                                        color: color(primary);
+                                        color: var(--primary);
                                     }
                                 }
                             }
@@ -197,8 +200,8 @@ nav {
 
                     &:hover .toggle-button,
                     a:focus+.toggle-button {
-                        @include transform(scaleY(-1));
-                        color: color(primary);
+                         transform: scaleY(-1);
+                        color: var(--primary);
                     }
 
                     &:hover ul,
@@ -225,7 +228,7 @@ nav {
         }
 
         .menu {
-            background: color(background-light);
+            background: var(--background-light);
             //display: none;
             opacity: 0;
             overflow-y: scroll;
@@ -236,14 +239,14 @@ nav {
             visibility: hidden;
             width: 100%;
             z-index: 100;
-            @include transition(transform 0.3s, opacity 0.3s, visibility 0.3s);
+             transition:transform 0.3s, opacity 0.3s, visibility 0.3s;
             //@include transform(scale(0.8));
 
             &.active {
                 //display: block; //flex
                 opacity: 1;
                 visibility: visible;
-                @include transform(scale(1));
+                 transform: scale(1);
             }
 
             ul {
@@ -251,7 +254,7 @@ nav {
                 padding: 0 1.5rem;
 
                 li {
-                    border-top: 0.1rem solid color(border-variation-1);
+                    border-top: 0.1rem solid var(--border-variation-1);
                     display: block;
                     list-style-type: none;
                     position: relative;
@@ -272,13 +275,13 @@ nav {
                         width: 100%;
                         font-family: 'Lato Bold', sans-serif;
                         font-weight: 700;
-                        color: color(text);
+                        color: var(--text);
                         display: inline-block;
                         font-size: 2rem;
                         padding: 1rem;
 
                         &:hover {
-                            color: color(primary);
+                            color: var(--primary);
                         }
                     }
 
@@ -300,7 +303,7 @@ nav {
                             }
 
                             a {
-                                color: color(text);
+                                color: var(--text);
                                 display: block;
                                 font-size: 1.6rem;
                                 white-space: nowrap;
@@ -310,16 +313,16 @@ nav {
                                     position: absolute;
                                     top: 2rem;
                                     right: .6rem;
-                                    color: color(text);
+                                    color: var(--text);
                                     margin-left: 1rem;
 
                                 }
 
                                 &:hover {
-                                    color: color(primary);
+                                    color: var(--primary);
 
                                     i.link-icons {
-                                        color: color(primary);
+                                        color: var(--primary);
                                     }
 
                                 }
@@ -330,7 +333,7 @@ nav {
                     &.submenu-open {
 
                         .toggle-button {
-                            @include transform(scaleY(-1));
+                             transform: scaleY(-1);
                         }
 
                         ul {

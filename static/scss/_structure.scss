@@ -1,10 +1,13 @@
+@use 'helpers/mixins' as *;
+@use 'helpers/variables' as *;
+
 html {
     font-size: 62.5%; // Set default px to 10px, so 16px is 1.6rem
 }
 
 html,
 body {
-    font-family: $font;
+    font-family: var(--font);
     height: 100%;
     margin: 0;
     padding: 0;
@@ -18,7 +21,7 @@ body {
     height: auto; // Fixed sticky header#top
     min-height: 100%;
     overflow-x: hidden;
-    background-color: color(background);
+    background: var(--background-light);
 }
 table {
     width: 100%;
@@ -54,13 +57,13 @@ table {
     }
     &.table-light-mode {
         padding: 1rem 0;
-        color: color(text);
+        color: var(--text);
 
         th {
-            background: color(background-variation-3);
+            background: var(--background-variation-3);
             text-align: left;
-            border-top: solid 1px color(background-variation-4);
-            color: color(text-light);
+            border-top: solid 1px var(--background-variation-4);
+            color: var(--text-light);
 
             span {
                 padding: 0 1rem;
@@ -69,45 +72,45 @@ table {
 
         td,
         th {
-            border-right: 0.1rem solid color(background-variation-3);
-            border-bottom: 0.1rem solid color(background-variation-3);
+            border-right: 0.1rem solid var(--background-variation-3);
+            border-bottom: 0.1rem solid var(--background-variation-3);
         }
 
         tr {
             th,
             td {
                 &:first-child {
-                    border-left: 0.1rem solid color(border-variation-2);
+                    border-left: 0.1rem solid var(--border-variation-2);
                 }
             }
         }
     }
 
     &.table-dark-mode {
-        color: color(text-light);
+        color: var(--text-light);
 
         th {
-            background: color(background-variation-4);
-            border-top: solid 1px color(background);
+            background: var(--background-variation-4);
+            border-top: solid 1px var(--background);
         }
 
         td,
         th {
-            border-right: 0.1rem solid color(background);
-            border-bottom: 0.1rem solid color(background);
+            border-right: 0.1rem solid var(--background);
+            border-bottom: 0.1rem solid var(--background);
         }
 
         tr {
             th,
             td {
                 &:first-child {
-                    border-left: 0.1rem solid color(background);
+                    border-left: 0.1rem solid var(--background);
                 }
             }
         }
 
         .category {
-            color: color(text);
+            color: var(--text);
         }
     }
 }
@@ -121,8 +124,8 @@ img {
     max-inline-size: 100%;
 
     &.content-img {
-        @include border-radius($border-radius-large);
-        @include box-shadow($box-shadow);
+         border-radius:var(--radius-lg);
+         box-shadow:var(--box-shadow);
         width: 100%;
         object-fit: cover;
 
@@ -158,8 +161,8 @@ hr {
         width: auto;
         left: 0.5rem;
         top: 0.5rem;
-        color: color(primary);
-        border: 1px solid color(primary);
+        color: var(--primary);
+        border: 1px solid var(--primary);
         padding: 1rem;
     }
 }
@@ -168,20 +171,20 @@ hr {
  */
 .fa-arrow-up-right-from-square {
     padding: 0 0.5rem;
-    color: color(primary);
+    color: var(--primary);
 }
 
 .fa-hashtag {
-    color: color(background-variation-2);
+    color: var(--background-variation-2);
 }
 
 .fa-circle-check {
     &.variation-1 {
-        color: color(background-light);
+        color: var(--background-light);
     }
 
     &.variation-2 {
-        color: color(background-variation-3);
+        color: var(--background-variation-3);
     }
 }
 /**
@@ -228,7 +231,7 @@ header {
     left: 0;
     width: 100%;
     z-index: 150; // higher z-index than nav.off-canvas-nav .menu
-    background: color(background-light);
+    background: var(--background-light);
     padding: 1.3rem 0;
 
     .row {
@@ -246,7 +249,6 @@ header {
             padding: 2rem;
 
             &:nth-child(2) {
-                // 'mijn frankrijk' with heart icon
                 padding: 2rem 2rem 2rem 0.4rem;
             }
         }
@@ -265,8 +267,8 @@ main {
 .card {
     height: 35rem;
     width: 100%;
-    border-radius: $border-radius-medium;
-    box-shadow: $box-shadow;
+    border-radius:var(--radius-md);
+    box-shadow: var(--box-shadow);
     position: relative;
     overflow: hidden;
 
@@ -278,7 +280,7 @@ main {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            @include transition($transition);
+            transition: var(--transition);
         }
     }
 
@@ -286,15 +288,15 @@ main {
         position: absolute;
         bottom: 0;
         padding: 1.5rem;
-        background: color(background-light);
+        background: var(--background-light);
         width: 100%;
-        @include transform(translateY(8.5rem));
-        @include transition($transition);
+         transform: translateY(8.5rem);
+        transition: var(--transition);
 
         .category {
-            background: color(background-variation-2);
+            background: var(--background-variation-2);
             padding: 0.5rem;
-            @include border-radius($border-radius-extra-small);
+             border-radius: var(--radius-xs);
         }
         h2 {
             height: 5.5rem;
@@ -307,24 +309,24 @@ main {
     }
     &:hover {
         img {
-            @include transform(scale(1.1));
+        transform: scale(1.1);
         }
         .card-content {
-            @include transform(translateY(0));
+             transform:translateY(0);
         }
     }
 }
 
 .category {
-    background: color(background-variation-2);
+    background: var(--background-variation-2);
     padding: 0.5rem;
-    @include border-radius($border-radius-extra-small);
+     border-radius: var(--radius-xs);
     width: fit-content;
 }
 
 //Introduction Hero
 .introduction-hero {
-    background: color(background-variation-2);
+    background: var(--background-variation-2);
     padding: 2.5rem;
     position: relative;
     width: 100%;
@@ -352,22 +354,9 @@ main {
     gap: 1.5rem;
 }
 
-// .introduction p {
-//     columns: 1;
-// }
-
-// //on mobile
-// @include respond-to(from-sm) {
-//     .introduction {
-//         p {
-//             columns: 2;
-//         }
-//     }
-// }
-
 .company-description {
-    background: color(background-variation-3);
-    color: color(background-light);
+    background: var(--background-variation-3);
+    color: var(--background-light);
     position: relative;
     overflow: hidden;
 
@@ -389,14 +378,14 @@ main {
         width: 100%;
         position: relative;
         padding: 1rem 0;
-        @include border-radius($border-radius-large);
+         border-radius: var(--radius-lg);
     }
 }
 // Bron: https://stackoverflow.com/a/36110063
 
 //learning goals
 .learn-goals {
-    background: color(background-variation-2);
+    background: var(--background-variation-2);
     position: relative;
     overflow: hidden;
     .row {
@@ -405,7 +394,7 @@ main {
 }
 
 .jobtask-overview {
-    background: color(background-variation-3);
+    background: var(--background-variation-3);
 }
 
 .company-clients {
@@ -433,7 +422,7 @@ main {
                 justify-content: space-between;
                 align-items: center;
                 width: 100%;
-                border-bottom: 0.2rem solid color(primary);
+                border-bottom: 0.2rem solid var(--primary);
                 text-align: center;
                 padding: 2rem;
             }
@@ -442,11 +431,10 @@ main {
 }
 //circles
 .circles {
-    background: radial-gradient(
-        closest-corner,
-        color(transparent) 0% 20%,
-        color(primary) 20% 40%,
-        color(transparent) 40%
+    background: radial-gradient(circle closest-corner,
+            var(--transparent) 0%,
+            var(--primary) 20%,
+            var(--transparent) 40%
     );
     position: absolute;
     width: 60rem;
@@ -457,11 +445,12 @@ main {
 }
 .circles-variation-2 {
     background: radial-gradient(
-        closest-corner,
-        color(transparent) 0% 20%,
-        color(background-variation-1) 20% 40%,
-        color(transparent) 40%
+                    circle closest-corner,
+                    var(--transparent) 0% 20%,
+                    var(--background-variation-1) 20% 40%,
+                    var(--transparent) 40%
     );
+
     position: absolute;
     width: 60rem;
     height: 60rem;
@@ -473,10 +462,10 @@ main {
 
 // Word cloud
 .word-cloud {
-    background: color(background-light);
+    background: var(--background-light);
     padding: 1.6rem;
-    @include border-radius($border-radius-small);
-    @include box-shadow($box-shadow);
+     border-radius: var(--radius-sm);
+     box-shadow: var(--box-shadow);
     width: auto;
     display: inline-block;
     font-family: "Lato Light", sans-serif;
@@ -498,9 +487,9 @@ main {
     width: 100%;
     height: 100%;
     padding: 2rem;
-    @include box-shadow($box-shadow);
-    @include transition($transition);
-    background: color(background);
+    box-shadow: var(--box-shadow);
+     transition: var(--transition);
+    background: var(--background);
 
     .scrolling-toc {
         overflow-y: scroll;
@@ -515,17 +504,17 @@ main {
                     a {
                         &.current-open-page {
                             font-family: "Lato Bold", sans-serif;
-                            color: color(background-variation-4);
+                            color: var(--background-variation-4);
                           
 
                             .fa-arrow-up-right-from-square {
-                                color: color(background-variation-4);
+                                color: var(--background-variation-4);
                             }
                         }
 
                         &:hover {
                             .fa-arrow-up-right-from-square {
-                                color: color(background-variation-3);
+                                color: var(--background-variation-3);
                             }
                         }
                     }
@@ -543,18 +532,18 @@ main {
 }
 .table-of-contents-button {
     position: absolute;
-    @include transform(translateX(-10%));
+     transform: translateX(-10%);
     right: -13%;
-    border: 0.1rem solid color(background);
-    background: color(primary);
+    border: 0.1rem solid var(--background);
+    background: var(--primary);
 
     min-width: 5rem;
     padding: 1.5rem;
     margin: 0.5rem 0;
     border-radius: 1.1rem;
     cursor: pointer;
-    @include transition($transition);
-    color: color(text-light);
+     transition:var(--transition);
+    color: var(--text-light);
 
     span {
         font-size: 1.8rem;
@@ -562,8 +551,8 @@ main {
     }
 
     &:hover {
-        background: color(background-variation-3);
-        @include transform(translateX(15%));
+        background: var(--background-variation-3);
+         transform: translateX(15%);
     }
 }
 @include respond-to(from-md) {
@@ -574,7 +563,7 @@ main {
     }
 
     .table-of-contents-button {
-        @include transform(translateX(-10%));
+         transform: translateX(-10%);
         right: -13%;
     }
 }

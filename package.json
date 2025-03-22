@@ -1,0 +1,26 @@
+{
+  "name": "stageverslag",
+  "version": "1.0.0",
+  "description": "Internship website",
+  "keywords": [
+    "internship",
+    "website",
+    "frontend-development"
+  ],
+  "homepage": "https://github.com/K3A101/stageverslag#readme",
+  "bugs": {
+    "url": "https://github.com/K3A101/stageverslag/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/K3A101/stageverslag.git"
+  },
+  "license": "MIT",
+  "author": "Keisha",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "scss": "sass --watch static/scss:static/css --style compressed"
+  }
+}

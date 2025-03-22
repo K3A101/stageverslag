@@ -1,3 +1,5 @@
+@use '../helpers/mixins' as *;
+@use '../helpers/variables' as *;
 .columns-spacing-left {
     padding: 0;
 
@@ -42,7 +44,7 @@
         font-weight: bold;
         display: inline-block;
         width: 1rem;
-        color: color(primary);
+        color: var(--primary);
         margin: 0 0.5rem 0 0;
     }
 }
@@ -63,7 +65,7 @@
         font-weight: bold;
         display: inline-block;
         width: 1rem;
-        color: color(primary);
+        color: var(--primary);
         margin: 0 0.5rem 0 0;
     }
 }
@@ -83,7 +85,7 @@
         font-weight: bold;
         display: inline-block;
         width: 1rem;
-        color: color(white);
+        color: var(--white);
         margin: 0 0.5rem 0 0;
     }
 }
@@ -106,9 +108,9 @@
         justify-content: space-between;
         align-items: center;
         flex-direction: column;
-        background: color(background-light);
-        @include box-shadow($box-shadow);
-        @include border-radius($border-radius-small);
+        background: var(--background-light);
+         box-shadow: var(--box-shadow);
+         border-radius: var(--radius-sm);
         width: 100%;
         height: 100%;
         padding: 3rem 1rem;
@@ -127,7 +129,7 @@
         }
 
         span {
-            color: color(text);
+            color: var(--text);
             font-family: "Lato", sans-serif;
             font-size: 1.6rem;
             text-align: center;
@@ -136,15 +138,15 @@
 
         &:hover {
             span {
-                color: color(primary);
+                color: var(--primary);
             }
         }
     }
 }
 
 .content-img {
-    @include border-radius($border-radius-large);
-    @include box-shadow($box-shadow);
+     border-radius: var(--radius-lg);
+     box-shadow: var(--box-shadow);
 }
 
 //colored word
@@ -153,11 +155,11 @@
     text-underline-offset: 1rem;
 
     &-variation-1 {
-        color: color(primary);
+        color: var(--primary);
     }
 
     &-variation-2 {
-        color: color(background-variation-1);
+        color: var(--background-variation-1);
     }
 }
 
@@ -165,16 +167,16 @@
     font-size: 1.8rem;
     text-decoration: underline;
     text-underline-offset: .8rem;
-    color: color(primary);
+    color: var(--primary);
 
   &.current-open-page {
     font-family: "Lato Bold", sans-serif;
-        color: color(background-variation-4);
+        color: var(--background-variation-4);
         text-decoration: underline;
         text-underline-offset: .8rem;
    
         .fa-arrow-up-right-from-square {
-            color: color(background-variation-4);
+            color: var(--background-variation-4);
         }
 
      
@@ -183,7 +185,7 @@
 
     &:hover {
         .fa-arrow-up-right-from-square {
-            color: color(background-variation-3);
+            color: var(--background-variation-3);
         }
     }
 }

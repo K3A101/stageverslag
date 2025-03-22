@@ -1,3 +1,6 @@
+@use 'helpers/mixins' as *;
+@use 'helpers/variables' as *;
+
 label {
     font-weight: normal;
     margin-top: 1.5rem;
@@ -10,9 +13,9 @@ input[type="password"],
 textarea,
 select {
     background: #fff none;
-    border: .1rem solid color(border);
+    border: .1rem solid var(--border);
     border-radius: .5rem;
-    color: color(text);
+    color: var(--text);
     display: block;
     font-size: 1.6rem;
     height: 3.5rem;
@@ -22,7 +25,7 @@ select {
 }
 
 input:disabled {
-    background: color(disabled);
+    background: var(--disabled);
     cursor: default;
 }
 
@@ -35,9 +38,9 @@ textarea {
 button[type="button"],
 input[type="submit"] {
     background: #fff none;
-    border: .1rem solid color(border);
+    border: .1rem solid var(--border);
     border-radius: .5rem;
-    color: color(text);
+    color: var(--text);
     cursor: pointer;
     display: inline-block;
     font-size: 1.6rem;
